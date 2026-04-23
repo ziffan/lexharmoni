@@ -24,9 +24,12 @@ Notes:
 
 | Call | cache_creation | cache_read | input | output | Est. cost |
 |---|---|---|---|---|---|
-| TBD | | | | | |
+| R1 (est.) | ~409,540 | 0 | ~1,500 | ~15,000 | ~$2.43 |
 
-Expected first call: cache_creation ~250K tokens (Opus cache separate from Sonnet), est. ~$3.00
+Notes:
+- Opus pricing: $5/MTok input, $25/MTok output (vs Sonnet $3/$15)
+- cache_stats.log not written — path issue after uvicorn reload; see ST2 results
+- Est. cache write: 409,540 × $5/MTok = $2.05 + output 15K × $25/MTok = $0.38
 
 ---
 
@@ -35,6 +38,6 @@ Expected first call: cache_creation ~250K tokens (Opus cache separate from Sonne
 | Test | Cost |
 |---|---|
 | Smoke Test 1 (Sonnet) | ~$1.80 |
-| Smoke Test 2 (Opus) | TBD |
-| **Total spent** | **~$1.80** |
-| **Remaining budget** | **~$8.20** |
+| Smoke Test 2 (Opus) | ~$2.43 |
+| **Total spent** | **~$4.23** |
+| **Remaining budget** | **~$5.77** |
