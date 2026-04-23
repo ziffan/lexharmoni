@@ -130,7 +130,7 @@ def load_system_blocks() -> list[dict]:
         historical_text += "\n\n"
 
     def block(text: str) -> dict:
-        return {"type": "text", "text": text, "cache_control": {"type": "ephemeral"}}
+        return {"type": "text", "text": text, "cache_control": {"type": "ephemeral", "ttl": "1h"}}
 
     return [
         block(BLOCK1_ROLE),

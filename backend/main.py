@@ -94,6 +94,7 @@ async def analyze(req: AnalyzeRequest):
                 max_tokens=16000,
                 system=system_blocks,
                 messages=[{"role": "user", "content": user_message}],
+                extra_headers={"anthropic-beta": "extended-cache-ttl-2025-04-11"},
             ) as stream:
                 for text_chunk in stream.text_stream:
                     full_text += text_chunk
