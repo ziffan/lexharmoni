@@ -91,7 +91,7 @@ async def analyze(req: AnalyzeRequest):
 
             with client.messages.stream(
                 model=req.model,
-                max_tokens=32000,
+                max_tokens=128000,
                 system=system_blocks,
                 messages=[{"role": "user", "content": user_message}],
                 extra_headers={"anthropic-beta": "extended-cache-ttl-2025-04-11"},
