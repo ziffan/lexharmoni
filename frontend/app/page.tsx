@@ -44,9 +44,9 @@ interface FindingsData {
 }
 
 function severityBadge(severity: string) {
-  if (severity === 'critical') return 'bg-red-900 text-red-200 border border-red-700';
-  if (severity === 'major') return 'bg-orange-900 text-orange-200 border border-orange-700';
-  return 'bg-yellow-900 text-yellow-200 border border-yellow-700';
+  if (severity === 'critical') return 'bg-red-100 text-red-800 border border-red-300';
+  if (severity === 'major') return 'bg-amber-100 text-amber-800 border border-amber-300';
+  return 'bg-slate-100 text-slate-700 border border-slate-300';
 }
 
 function severityOrder(s: string) {
@@ -57,31 +57,31 @@ function FindingCard({ finding }: { finding: Finding }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="rounded-lg border border-slate-700 bg-slate-800 overflow-hidden">
+    <div className="bg-white border border-slate-200 shadow-sm rounded-lg overflow-hidden">
       <button
         onClick={() => setExpanded(v => !v)}
-        className="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-slate-750 transition-colors"
+        className="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-slate-50 transition-colors"
       >
-        <span className={`mt-0.5 shrink-0 px-2 py-0.5 rounded text-xs font-bold uppercase ${severityBadge(finding.severity)}`}>
+        <span className={`mt-0.5 shrink-0 px-2 py-0.5 rounded text-xs font-medium uppercase tracking-wide ${severityBadge(finding.severity)}`}>
           {finding.severity}
         </span>
         <div className="min-w-0 flex-1">
-          <h3 className="font-semibold text-slate-100 text-sm leading-snug">{finding.title}</h3>
-          <p className="text-slate-400 text-xs mt-0.5">{finding.type} · {finding.id}</p>
+          <h3 className="font-semibold text-slate-900 text-sm leading-snug">{finding.title}</h3>
+          <p className="text-slate-500 text-xs uppercase tracking-wider mt-0.5">{finding.type} · {finding.id}</p>
         </div>
-        <span className="text-slate-500 text-xs shrink-0 mt-0.5">{expanded ? '▲' : '▼'}</span>
+        <span className="text-slate-400 text-xs shrink-0 mt-0.5">{expanded ? '▲' : '▼'}</span>
       </button>
 
       {expanded && (
-        <div className="px-4 pb-4 border-t border-slate-700 space-y-4 pt-3">
-          <p className="text-slate-300 text-sm">{finding.summary}</p>
+        <div className="px-4 pb-4 border-t border-slate-200 space-y-4 pt-3">
+          <p className="text-slate-700 text-sm">{finding.summary}</p>
 
           {finding.reasoning_steps.length > 0 && (
             <div>
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-1">Reasoning</p>
               <ol className="list-decimal list-inside space-y-1">
                 {finding.reasoning_steps.map((step, i) => (
-                  <li key={i} className="text-slate-300 text-xs">{step}</li>
+                  <li key={i} className="text-slate-600 text-xs">{step}</li>
                 ))}
               </ol>
             </div>
@@ -92,14 +92,14 @@ function FindingCard({ finding }: { finding: Finding }) {
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-1">Affected Regulations</p>
               <div className="space-y-2">
                 {finding.affected_regulations.map((reg, i) => (
-                  <div key={i} className="bg-slate-900 rounded p-2 text-xs">
+                  <div key={i} className="bg-slate-50 border border-slate-200 rounded p-2 text-xs">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono font-bold text-indigo-400">{reg.regulation_id}</span>
-                      <span className="text-slate-400">{reg.article_or_section}</span>
+                      <span className="font-mono font-bold text-indigo-600">{reg.regulation_id}</span>
+                      <span className="text-slate-600">{reg.article_or_section}</span>
                       <span className="ml-auto text-slate-500 uppercase text-xs">{reg.role}</span>
                     </div>
                     {reg.quoted_text && (
-                      <blockquote className="border-l-2 border-indigo-700 pl-2 text-slate-400 italic leading-relaxed">
+                      <blockquote className="border-l-4 border-slate-400 px-3 py-2 font-mono text-sm text-slate-800 bg-slate-50 leading-relaxed">
                         {reg.quoted_text}
                       </blockquote>
                     )}
@@ -112,7 +112,7 @@ function FindingCard({ finding }: { finding: Finding }) {
           {(finding.temporal_window.friction_active_from || finding.temporal_window.friction_active_until) && (
             <div>
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-1">Temporal Window</p>
-              <p className="text-slate-300 text-xs">
+              <p className="text-slate-600 text-xs">
                 {finding.temporal_window.friction_active_from ?? '?'} →{' '}
                 {finding.temporal_window.friction_active_until ?? 'ongoing'}
                 {finding.temporal_window.duration_months != null && ` (${finding.temporal_window.duration_months} months)`}
@@ -123,11 +123,11 @@ function FindingCard({ finding }: { finding: Finding }) {
           {finding.recommended_resolution && (
             <div>
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-1">Resolution</p>
-              <p className="text-slate-300 text-xs">{finding.recommended_resolution}</p>
+              <p className="text-slate-600 text-xs">{finding.recommended_resolution}</p>
             </div>
           )}
 
-          <p className="text-slate-500 text-xs">Confidence: <span className="text-slate-400">{finding.confidence}</span></p>
+          <p className="text-slate-500 text-xs">Confidence: <span className="text-slate-600">{finding.confidence}</span></p>
         </div>
       )}
     </div>
@@ -145,16 +145,16 @@ function FindingsList({ data }: { data: FindingsData | null }) {
 
   return (
     <div className="mt-4 space-y-3">
-      <div className="flex items-center gap-4 text-xs pb-2 border-b border-slate-700">
-        <span className="text-slate-400 font-semibold">{data.findings.length} findings</span>
+      <div className="flex items-center gap-4 text-xs pb-2 border-b border-slate-200">
+        <span className="text-slate-700 font-semibold">{data.findings.length} findings</span>
         {by_severity.critical > 0 && (
-          <span className="text-red-400">{by_severity.critical} critical</span>
+          <span className="text-red-700">{by_severity.critical} critical</span>
         )}
         {by_severity.major > 0 && (
-          <span className="text-orange-400">{by_severity.major} major</span>
+          <span className="text-amber-700">{by_severity.major} major</span>
         )}
         {by_severity.minor > 0 && (
-          <span className="text-yellow-400">{by_severity.minor} minor</span>
+          <span className="text-slate-600">{by_severity.minor} minor</span>
         )}
       </div>
       <div className="space-y-2">
@@ -178,20 +178,20 @@ function ReasoningStream({ text, isStreaming }: { text: string; isStreaming: boo
   return (
     <div className="mt-3">
       <div className="flex items-center gap-2 mb-1">
-        <span className="text-slate-400 text-xs font-semibold uppercase tracking-wide">Opus 4.7 Reasoning</span>
+        <span className="text-slate-500 text-xs font-semibold uppercase tracking-wide">Opus 4.7 Reasoning</span>
         {isStreaming && (
-          <span className="px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-300 text-xs font-medium animate-pulse">
+          <span className="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium animate-pulse">
             streaming…
           </span>
         )}
       </div>
       <div
         ref={boxRef}
-        className="h-64 overflow-y-auto rounded-lg border border-slate-700 bg-slate-900 p-3 font-mono text-xs text-slate-300 leading-relaxed"
+        className="h-64 overflow-y-auto rounded-lg border border-slate-200 bg-slate-900 p-4 font-mono text-sm text-slate-100 leading-relaxed"
       >
         <span>{text}</span>
         {isStreaming && (
-          <span className="inline-block w-1.5 h-3 bg-indigo-400 ml-0.5 animate-pulse align-middle" />
+          <span className="inline-block w-1.5 h-3 bg-emerald-400 ml-0.5 animate-pulse align-middle" />
         )}
       </div>
     </div>
@@ -207,16 +207,16 @@ function StatusBar({ status, findingsCount }: { status: AppStatus; findingsCount
     error: 'Error',
   };
 
-  const color: Record<AppStatus, string> = {
-    idle: 'text-slate-500',
-    loading_preset: 'text-indigo-400',
-    analyzing: 'text-emerald-400',
-    complete: 'text-emerald-300',
-    error: 'text-red-400',
+  const style: Record<AppStatus, string> = {
+    idle: 'bg-slate-100 text-slate-600',
+    loading_preset: 'bg-indigo-100 text-indigo-700',
+    analyzing: 'bg-indigo-100 text-indigo-700',
+    complete: 'bg-emerald-100 text-emerald-700',
+    error: 'bg-red-100 text-red-700',
   };
 
   return (
-    <div className={`text-xs font-semibold uppercase tracking-widest ${color[status]}`}>
+    <div className={`px-2 py-1 rounded text-xs font-semibold uppercase tracking-wider ${style[status]}`}>
       {label[status]}
     </div>
   );
@@ -326,31 +326,31 @@ export default function Home() {
   const isStreaming = status === 'analyzing';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
       {/* Header */}
-      <header className="border-b border-slate-800 px-6 py-4">
-        <h1 className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400">
+      <header className="border-b border-slate-200 bg-white px-6 py-4">
+        <h1 className="text-2xl font-bold tracking-tight text-indigo-700">
           LexHarmoni
         </h1>
-        <p className="text-slate-400 text-sm mt-0.5">AI-Powered Regulatory Stress-Testing</p>
+        <p className="text-slate-600 text-sm mt-0.5">AI-Powered Regulatory Stress-Testing</p>
       </header>
 
       {/* Main layout */}
-      <main className="flex flex-1 overflow-hidden">
+      <main className="flex flex-1 overflow-hidden px-6 py-4 gap-6">
         {/* Left column — 40% */}
-        <div className="w-2/5 border-r border-slate-800 flex flex-col p-5 gap-4 overflow-y-auto">
+        <div className="w-2/5 bg-white border border-slate-200 shadow-sm rounded-lg flex flex-col p-5 gap-4 overflow-y-auto">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-500">Draft Under Test</h2>
 
           <div className="flex flex-col gap-2">
             <button
               onClick={loadPreset}
               disabled={status === 'loading_preset' || status === 'analyzing'}
-              className="w-full px-3 py-2 rounded-lg bg-indigo-700 hover:bg-indigo-600 disabled:opacity-50 text-sm font-medium transition-colors text-white"
+              className="w-full px-3 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-sm font-medium transition-colors text-white"
             >
               Load POJK 40/2024 (Demo)
             </button>
 
-            <label className="w-full px-3 py-2 rounded-lg border border-slate-700 hover:border-slate-500 text-sm text-slate-400 text-center cursor-pointer transition-colors">
+            <label className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 text-sm text-center cursor-pointer transition-colors">
               Upload .txt file
               <input
                 type="file"
@@ -368,7 +368,7 @@ export default function Home() {
               value={model}
               onChange={e => setModel(e.target.value)}
               disabled={status === 'analyzing'}
-              className="flex-1 bg-slate-800 border border-slate-700 rounded px-2 py-1 text-xs text-slate-200 disabled:opacity-50"
+              className="flex-1 bg-white border border-slate-300 rounded px-2 py-1 text-xs text-slate-900 disabled:opacity-50"
             >
               <option value="claude-opus-4-7">Opus 4.7</option>
               <option value="claude-sonnet-4-6">Sonnet 4.6</option>
@@ -378,7 +378,7 @@ export default function Home() {
           <button
             onClick={analyze}
             disabled={!draftText.trim() || status === 'analyzing' || status === 'loading_preset'}
-            className="w-full px-3 py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-sm font-semibold transition-colors text-white"
+            className="w-full px-3 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-sm font-semibold transition-colors text-white"
           >
             {status === 'analyzing' ? 'Analyzing…' : `Analyze with ${model === 'claude-opus-4-7' ? 'Opus 4.7' : 'Sonnet 4.6'}`}
           </button>
@@ -391,19 +391,19 @@ export default function Home() {
             readOnly
             value={draftText}
             placeholder="No draft loaded. Click 'Load POJK 40/2024' or upload a .txt file."
-            className="flex-1 min-h-64 font-mono text-xs bg-slate-900 border border-slate-800 rounded-lg p-3 text-slate-300 resize-none placeholder:text-slate-600"
+            className="flex-1 min-h-64 font-mono text-sm bg-slate-900 border border-slate-200 rounded-lg p-3 text-slate-100 resize-none placeholder:text-slate-500"
           />
         </div>
 
         {/* Right column — 60% */}
-        <div className="w-3/5 flex flex-col p-5 overflow-y-auto">
+        <div className="w-3/5 bg-white border border-slate-200 shadow-sm rounded-lg flex flex-col p-5 overflow-y-auto">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-500">Friction Analysis</h2>
             <StatusBar status={status} findingsCount={findingsCount} />
           </div>
 
           {errorMsg && (
-            <div className="mb-3 px-3 py-2 rounded-lg bg-red-950 border border-red-800 text-red-300 text-xs">
+            <div className="mb-3 px-3 py-2 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs">
               {errorMsg}
             </div>
           )}
@@ -412,7 +412,7 @@ export default function Home() {
           <FindingsList data={findings} />
 
           {status === 'idle' && !reasoning && (
-            <div className="flex-1 flex items-center justify-center text-slate-700 text-sm">
+            <div className="flex-1 flex items-center justify-center text-slate-400 text-sm">
               Load a draft and click Analyze to begin.
             </div>
           )}
