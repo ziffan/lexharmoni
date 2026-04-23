@@ -1,0 +1,24 @@
+RANCANGAN POJK TENTANG PENAGIHAN UTANG LPBBTI
+(Draft fiktif untuk smoke testing — bukan peraturan resmi)
+
+Pasal 1
+Dalam peraturan ini yang dimaksud dengan:
+a. Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi adalah
+   penyelenggaraan layanan jasa keuangan untuk mempertemukan pemberi
+   pinjaman dengan penerima pinjaman dalam rangka melakukan perjanjian
+   pinjam meminjam dalam mata uang rupiah secara langsung melalui sistem
+   elektronik.
+b. Pemberi Pinjaman adalah orang, badan hukum, dan/atau lembaga yang
+   memberikan pinjaman kepada Penerima Pinjaman.
+
+Pasal 2
+Penyelenggara wajib melakukan penagihan sesuai dengan ketentuan
+sebagaimana diatur dalam Pasal 62 ayat (3) POJK 10/2022.
+
+Pasal 3
+Penagihan dilaksanakan pada hari kerja, dari pukul 08.00 sampai dengan
+pukul 22.00 waktu setempat.
+
+Pasal 4
+Pada saat peraturan ini mulai berlaku, ketentuan teknis lebih lanjut
+diatur dalam Surat Edaran OJK tersendiri.

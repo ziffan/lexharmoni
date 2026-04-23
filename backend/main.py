@@ -100,6 +100,20 @@ async def analyze(req: AnalyzeRequest):
                     full_text += text_chunk
                     yield {"event": "reasoning", "data": text_chunk}
 
+                final = stream.get_final_message()
+                u = final.usage
+                cache_log = (
+                    f"[CACHE] model={req.model} "
+                    f"cache_creation={getattr(u, 'cache_creation_input_tokens', 'n/a')} "
+                    f"cache_read={getattr(u, 'cache_read_input_tokens', 'n/a')} "
+                    f"input={u.input_tokens} output={u.output_tokens}"
+                )
+                print(cache_log, file=sys.stderr, flush=True)
+                print(cache_log, flush=True)
+                log_path = Path(__file__).parent / "cache_stats.log"
+                with open(log_path, "a", encoding="utf-8") as lf:
+                    lf.write(cache_log + "\n")
+
         except anthropic.APIError as e:
             msg = f"API error: {type(e).__name__}"
             print(f"[ERROR] {msg}: {e}", file=sys.stderr)

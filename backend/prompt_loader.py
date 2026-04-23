@@ -251,4 +251,14 @@ def parse_findings(text: str) -> dict:
     if not match:
         raise ValueError("findings_not_found")
     raw = match.group(1).strip()
-    return json.loads(raw)
+    # strip markdown code fences if model wraps JSON in ```json ... ```
+    raw = re.sub(r"^```(?:json)?\s*", "", raw)
+    raw = re.sub(r"\s*```$", "", raw)
+    raw = raw.strip()
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as e:
+        import sys
+        print(f"[PARSE_ERROR] JSONDecodeError: {e}", file=sys.stderr, flush=True)
+        print(f"[PARSE_ERROR] raw preview: {repr(raw[:300])}", file=sys.stderr, flush=True)
+        raise
