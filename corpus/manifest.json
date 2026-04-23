@@ -1,0 +1,288 @@
+{
+  "version": "1.0",
+  "generated_date": "2026-04-23",
+  "total_regulations": 7,
+  "regulations": [
+    {
+      "regulation_id": "POJK-77-2016",
+      "full_name": "Peraturan Otoritas Jasa Keuangan Nomor 77/POJK.01/2016 tentang Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi",
+      "short_name": "POJK Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi",
+      "hierarchy_level": 3,
+      "hierarchy_label": "POJK",
+      "date_enacted": "2016-12-29",
+      "date_effective": "2016-12-29",
+      "date_revoked": "2022-07-04",
+      "status": "revoked",
+      "revokes": null,
+      "revoked_by": [
+        {
+          "regulation_id": "POJK-10-2022",
+          "scope": "full",
+          "articles": null,
+          "date": "2022-07-04",
+          "note": "Dicabut keseluruhan oleh POJK LPBBTI yang menggantikan rezim P2P lending"
+        }
+      ],
+      "primary_topics": [
+        "p2p_lending",
+        "fintech_licensing"
+      ],
+      "primary_subjects": [
+        "Penyelenggara",
+        "Pengguna",
+        "Pemberi_Pinjaman",
+        "Penerima_Pinjaman"
+      ],
+      "file_path": "corpus/historical/POJK-77-2016.txt"
+    },
+    {
+      "regulation_id": "POJK-31-2020",
+      "full_name": "Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 31/POJK.07/2020 tentang Penyelenggaraan Layanan Konsumen dan Masyarakat di Sektor Jasa Keuangan oleh Otoritas Jasa Keuangan",
+      "short_name": "POJK Layanan Konsumen dan Masyarakat di Sektor Jasa Keuangan oleh OJK",
+      "hierarchy_level": 3,
+      "hierarchy_label": "POJK",
+      "date_enacted": "2020-04-29",
+      "date_effective": "2020-07-01",
+      "date_revoked": "2023-12-22",
+      "status": "partially_revoked",
+      "revokes": null,
+      "_revocation_note": "Pasal 27 mencabut ketentuan out-of-corpus: (1) PBI 8/5/PBI/2006 tentang Mediasi Perbankan; (2) PBI 10/1/PBI/2008 tentang Perubahan PBI Mediasi Perbankan; (3) Pasal 40-46 POJK 1/POJK.07/2013 tentang Perlindungan Konsumen Sektor Jasa Keuangan (partial — hanya pasal penyelesaian sengketa); (4) SE BI 8/14/DPNP/2006 perihal Mediasi Perbankan. Tidak ada regulasi dalam corpus 7 yang dicabut.",
+      "revoked_by": [
+        {
+          "regulation_id": "POJK-22-2023",
+          "scope": "partial",
+          "articles": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "22(1)-(5)",
+            "23",
+            "24"
+          ],
+          "date": "2023-12-22",
+          "note": "Pencabutan parsial 11 pasal terkait penyelesaian pengaduan dan koordinasi pengawasan. Pasal lainnya (Pasal 1-3, 9-21, 22(6)+, 25-28) tetap berlaku per April 2026 (confirmed registry hukumonline.com)."
+        }
+      ],
+      "primary_topics": [
+        "consumer_protection",
+        "complaint_handling"
+      ],
+      "primary_subjects": [
+        "OJK",
+        "PUJK",
+        "konsumen",
+        "masyarakat"
+      ],
+      "file_path": "corpus/historical/POJK-31-2020.txt"
+    },
+    {
+      "regulation_id": "POJK-10-2022",
+      "full_name": "Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 10/POJK.05/2022 tentang Layanan Pendanaan Bersama Berbasis Teknologi Informasi",
+      "short_name": "POJK Layanan Pendanaan Bersama Berbasis Teknologi Informasi",
+      "hierarchy_level": 3,
+      "hierarchy_label": "POJK",
+      "date_enacted": "2022-07-04",
+      "date_effective": "2022-07-04",
+      "date_revoked": "2024-12-27",
+      "status": "revoked",
+      "revokes": [
+        {
+          "regulation_id": "POJK-77-2016",
+          "scope": "full",
+          "articles": null,
+          "note": "Dicabut keseluruhan via Pasal 118. Pasal 117 menyertakan saving clause: ketentuan pelaksana POJK 77/2016 (SE/SEOJK turunannya) tetap berlaku sementara sepanjang tidak bertentangan dengan POJK 10/2022."
+        }
+      ],
+      "revoked_by": [
+        {
+          "regulation_id": "POJK-22-2023",
+          "scope": "partial",
+          "articles": [
+            "102",
+            "103",
+            "104"
+          ],
+          "date": "2023-12-22",
+          "note": "Pencabutan parsial Pasal 102-104 (Pengawasan Perilaku/Market Conduct). Kritis: Pasal 104 ayat (2) adalah cantolan delegasi untuk Bab Penagihan SEOJK 19/2023 — pencabutan ini menciptakan dangling delegation pada aturan teknis penagihan hingga terbitnya SEOJK 19/2025."
+        },
+        {
+          "regulation_id": "POJK-40-2024",
+          "scope": "full",
+          "articles": null,
+          "date": "2024-12-27",
+          "note": "Dicabut keseluruhan dan digantikan oleh POJK LPBBTI revisi."
+        }
+      ],
+      "_revocation_note": "Pasal 119 mencabut Pasal 30(a) POJK 4/POJK.05/2021 tentang Manajemen Risiko TI LJK Nonbank — partial, out-of-corpus, hanya berlaku bagi Penyelenggara. Pasal 117 berisi saving clause open-ended: implementing regulations POJK 77/2016 (termasuk SE OJK turunan era 2016-2022) tetap berlaku sementara sepanjang tidak bertentangan dengan POJK 10/2022, tanpa sunset clause atau tanggal pengakhiran eksplisit dari corpus.",
+      "primary_topics": [
+        "p2p_lending",
+        "fintech_licensing",
+        "business_conduct",
+        "debt_collection"
+      ],
+      "primary_subjects": [
+        "Penyelenggara",
+        "Pemberi_Dana",
+        "Penerima_Dana"
+      ],
+      "file_path": "corpus/historical/POJK-10-2022.txt"
+    },
+    {
+      "regulation_id": "SEOJK-19-2023",
+      "full_name": "Surat Edaran Otoritas Jasa Keuangan Republik Indonesia Nomor 19/SEOJK.06/2023 tentang Penyelenggaraan Layanan Pendanaan Bersama Berbasis Teknologi Informasi",
+      "short_name": "SEOJK Penyelenggaraan LPBBTI (2023)",
+      "hierarchy_level": 4,
+      "hierarchy_label": "SEOJK",
+      "date_enacted": "2023-11-08",
+      "date_effective": "2023-11-08",
+      "date_revoked": "2025-07-31",
+      "status": "revoked",
+      "revokes": null,
+      "_revocation_note": "Tidak ada klausul pencabutan eksplisit di Ketentuan Penutup. SEOJK pertama era LPBBTI (POJK 10/2022). Basis hukum mencakup Pasal 104 ayat (2) POJK 10/2022 tentang tata cara penagihan. Kronologi status hukum Bab Penagihan SEOJK ini: (1) 8 Nov 2023 — SEOJK terbit, Bab Penagihan (termasuk klausul jam 08.00-20.00 tanpa pembatasan hari) berlaku berdasarkan Pasal 104 ayat (2) POJK 10/2022 sebagai cantolan delegasi; (2) 22 Des 2023 — POJK 22/2023 mencabut Pasal 102-104 POJK 10/2022, Bab Penagihan SEOJK ini kehilangan cantolan hukum sektoral (dangling delegation) — basis hukum formal Bab Penagihan hilang, namun SEOJK belum dicabut; (3) 27 Des 2024 — POJK 40/2024 Pasal 235 saving clause secara eksplisit menyebut ketentuan pelaksanaan POJK 10/2022 (termasuk SEOJK ini) tetap berlaku sepanjang tidak bertentangan — cantolan hukum dipulihkan secara prosedural di bawah POJK 40/2024; (4) 31 Jul 2025 — SEOJK 19/2025 mencabut SEOJK ini secara formal via Ketentuan Penutup angka 1.",
+      "revoked_by": [
+        {
+          "regulation_id": "SEOJK-19-2025",
+          "scope": "full",
+          "articles": null,
+          "date": "2025-07-31",
+          "note": "Dicabut keseluruhan dan digantikan oleh SEOJK Penyelenggaraan LPBBTI revisi"
+        }
+      ],
+      "primary_topics": [
+        "p2p_lending",
+        "business_conduct",
+        "debt_collection",
+        "reporting_obligations",
+        "data_protection"
+      ],
+      "primary_subjects": [
+        "Penyelenggara",
+        "Pemberi_Dana",
+        "Penerima_Dana"
+      ],
+      "file_path": "corpus/historical/SEOJK-19-2023.txt"
+    },
+    {
+      "regulation_id": "POJK-22-2023",
+      "full_name": "Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 22 Tahun 2023 tentang Pelindungan Konsumen dan Masyarakat di Sektor Jasa Keuangan",
+      "short_name": "POJK Pelindungan Konsumen Sektor Jasa Keuangan",
+      "hierarchy_level": 3,
+      "hierarchy_label": "POJK",
+      "date_enacted": "2023-12-22",
+      "date_effective": "2023-12-22",
+      "date_revoked": null,
+      "status": "active",
+      "revokes": [
+        {
+          "regulation_id": "POJK-31-2020",
+          "scope": "partial",
+          "articles": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "22(1)-(5)",
+            "23",
+            "24"
+          ],
+          "note": "Pencabutan parsial pasal-pasal terkait penyelesaian pengaduan dan koordinasi pengawasan. Pasal-pasal lain POJK 31/2020 tetap berlaku."
+        },
+        {
+          "regulation_id": "POJK-10-2022",
+          "scope": "partial",
+          "articles": [
+            "102",
+            "103",
+            "104"
+          ],
+          "note": "Pencabutan parsial Bab Pengawasan Perilaku PUJK (Market Conduct). Kritis: Pasal 104 ayat (2) adalah cantolan delegasi untuk Bab Penagihan SEOJK 19/2023 — pencabutan ini menciptakan dangling delegation pada aturan teknis penagihan di tingkat SEOJK hingga terbitnya SEOJK 19/2025."
+        }
+      ],
+      "revoked_by": null,
+      "_revocation_note": "Pasal 121(1) mencabut 7 target regulasi. Out-of-corpus: (a) partial POJK 18/POJK.07/2018 Layanan Pengaduan Konsumen (Pasal 3,4,5,7,10-12,15-16,19,21-22,26-29,31-33,42-45); (b) partial POJK 35/POJK.05/2018 Perusahaan Pembiayaan (Pasal 47-52); (c) partial POJK 10/POJK.05/2019 Pembiayaan Syariah (Pasal 44-49); (d) full POJK 6/POJK.07/2022 tentang Perlindungan Konsumen — intermediate POJK antara 31/2020 dan 22/2023, tidak ada di corpus; (e) partial POJK 3 Tahun 2023 Literasi dan Inklusi Keuangan (Pasal 3,14,25-29,32,36). Terminologi: POJK ini menggunakan 'Pelindungan' (bukan 'Perlindungan' yang dipakai era POJK 1/POJK.07/2013, POJK 31/2020, dan POJK 6/POJK.07/2022) — perubahan nomenklatur resmi post-UU P2SK Nomor 4 Tahun 2023.",
+      "primary_topics": [
+        "consumer_protection",
+        "complaint_handling",
+        "debt_collection",
+        "business_conduct",
+        "reporting_obligations"
+      ],
+      "primary_subjects": [
+        "PUJK",
+        "konsumen",
+        "masyarakat"
+      ],
+      "file_path": "corpus/active/POJK-22-2023.txt"
+    },
+    {
+      "regulation_id": "POJK-40-2024",
+      "full_name": "Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 40 Tahun 2024 tentang Layanan Pendanaan Bersama Berbasis Teknologi Informasi",
+      "short_name": "POJK Layanan Pendanaan Bersama Berbasis Teknologi Informasi (2024)",
+      "hierarchy_level": 3,
+      "hierarchy_label": "POJK",
+      "date_enacted": "2024-12-27",
+      "date_effective": "2024-12-27",
+      "date_revoked": null,
+      "status": "active",
+      "revokes": [
+        {
+          "regulation_id": "POJK-10-2022",
+          "scope": "full",
+          "articles": null,
+          "note": "Dicabut keseluruhan via Pasal 236. Pasal 235 menyertakan saving clause open-ended: ketentuan pelaksanaan POJK 77/2016 dan POJK 10/2022 (termasuk SEOJK 19/2023) tetap berlaku sepanjang tidak bertentangan dengan POJK 40/2024, tanpa sunset clause eksplisit."
+        }
+      ],
+      "revoked_by": null,
+      "_revocation_note": "Pasal 235 saving clause mencakup dua generasi regulasi sekaligus: (a) implementer POJK 77/2016 dan (b) implementer POJK 10/2022 — termasuk secara eksplisit SEOJK 19/2023. Ini berarti SEOJK 19/2023 memiliki dasar hukum berlanjut di bawah Pasal 235 POJK 40/2024 sejak 27 Des 2024 hingga dicabut oleh SEOJK 19/2025 pada 31 Jul 2025. Saving clause bersifat open-ended, tidak ada tanggal pengakhiran eksplisit dari corpus.",
+      "primary_topics": [
+        "p2p_lending",
+        "fintech_licensing",
+        "business_conduct",
+        "debt_collection",
+        "reporting_obligations"
+      ],
+      "primary_subjects": [
+        "Penyelenggara",
+        "Pemberi_Dana",
+        "Penerima_Dana"
+      ],
+      "file_path": "corpus/active/POJK-40-2024.txt"
+    },
+    {
+      "regulation_id": "SEOJK-19-2025",
+      "full_name": "Surat Edaran Otoritas Jasa Keuangan Republik Indonesia Nomor 19/SEOJK.06/2025 tentang Penyelenggaraan Layanan Pendanaan Bersama Berbasis Teknologi Informasi",
+      "short_name": "SEOJK Penyelenggaraan LPBBTI (2025)",
+      "hierarchy_level": 4,
+      "hierarchy_label": "SEOJK",
+      "date_enacted": "2025-07-31",
+      "date_effective": "2025-07-31",
+      "date_revoked": null,
+      "status": "active",
+      "revokes": [
+        {
+          "regulation_id": "SEOJK-19-2023",
+          "scope": "full",
+          "articles": null,
+          "note": "Dicabut keseluruhan via Ketentuan Penutup angka 1. Pengganti langsung — basis hukum beralih dari POJK 10/2022 ke POJK 40/2024. Klausul penagihan spesifik (jam 08.00-20.00) dihapus, diganti referensi atributif ke ketentuan pelindungan konsumen."
+        }
+      ],
+      "revoked_by": null,
+      "_revocation_note": "Tidak ada saving clause di Ketentuan Penutup. Resolusi dangling delegation: SEOJK 19/2023 Bab Penagihan mengatur jam spesifik (08.00-20.00, tanpa pembatasan hari) sebagai turunan Pasal 104 ayat (2) POJK 10/2022 yang telah dicabut POJK 22/2023. SEOJK 19/2025 mengeliminasi seluruh ketentuan jam dan hari penagihan, menggantinya dengan klausul angka 9 Bab Penagihan: 'Penagihan...dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai pelindungan konsumen dan masyarakat di sektor jasa keuangan' — atribusi mutlak ke regulasi pelindungan konsumen sebagai gantinya parameter teknis sendiri.",
+      "primary_topics": [
+        "p2p_lending",
+        "business_conduct",
+        "debt_collection",
+        "reporting_obligations"
+      ],
+      "primary_subjects": [
+        "Penyelenggara",
+        "Pemberi_Dana",
+        "Penerima_Dana"
+      ],
+      "file_path": "corpus/active/SEOJK-19-2025.txt"
+    }
+  ]
+}
