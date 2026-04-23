@@ -38,9 +38,10 @@ Notes:
 
 ## Running Total
 
-| Test | Cost |
+| Item | Cost |
 |---|---|
-| Smoke Test 1 (Sonnet) | ~$1.80 |
-| Smoke Test 2 (Opus, 3 runs) | ~$3.59 |
-| **Total spent** | **~$5.39** |
-| **Remaining budget** | **~$4.61** |
+| Smoke Test 1 (Sonnet API) | ~$1.80 |
+| Smoke Test 2 (Opus API, 3 runs) | ~$3.59 |
+| Claude Code (session, IDE, agents) | ~$20.61 |
+| **Total spent 2026-04-23** | **~$26.00** |
+| **API budget cap remaining** | **~$4.61 (API only)** |
