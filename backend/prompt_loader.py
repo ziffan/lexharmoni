@@ -242,6 +242,23 @@ Based on the LPBBTI regulatory history in the corpus, pay special attention to:
 These are KNOWN historical frictions. Do not assume they appear in this draft,
 but prioritize these checks first.
 
+## Severity Assignment Rules (STRICT — do not deviate)
+
+Severity is determined by FRICTION TYPE, not by contextual reasoning:
+
+- normative → ALWAYS severity: "critical"
+- hierarchical → ALWAYS severity: "major"  
+- operational → ALWAYS severity: "minor"
+
+Do NOT downgrade severity because a friction is "being resolved" or 
+"partially mitigated by a saving clause." Severity describes the TYPE 
+of friction, not its resolution status. Resolution status is captured 
+in temporal_window, not severity.
+
+If a finding genuinely spans multiple types (e.g., a normative conflict 
+perpetuated by a saving clause), classify by the MOST SEVERE applicable 
+type: normative > hierarchical > operational.
+
 Begin your analysis now.\
 """
 
