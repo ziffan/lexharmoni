@@ -24,12 +24,15 @@ Notes:
 
 | Call | cache_creation | cache_read | input | output | Est. cost |
 |---|---|---|---|---|---|
-| R1 (est.) | ~409,540 | 0 | ~1,500 | ~15,000 | ~$2.43 |
+| R1 (cache write, est.) | ~409,540 | 0 | ~1,500 | ~15,000 | ~$2.43 |
+| R2 (cache warm, est.) | ~0 | ~409,540 | ~1,500 | ~15,000 | ~$0.58 |
+| R3 (cache warm, est.) | ~0 | ~409,540 | ~1,500 | ~15,000 | ~$0.58 |
+| **ST2 Total** | | | | | **~$3.59** |
 
 Notes:
-- Opus pricing: $5/MTok input, $25/MTok output (vs Sonnet $3/$15)
-- cache_stats.log not written — path issue after uvicorn reload; see ST2 results
-- Est. cache write: 409,540 × $5/MTok = $2.05 + output 15K × $25/MTok = $0.38
+- Opus pricing: $5/MTok input, $25/MTok output
+- Cache read rate: $0.50/MTok (90% saving vs uncached)
+- cache_stats.log not written during runs — path fix applied post-run; see ST2 results
 
 ---
 
@@ -38,6 +41,6 @@ Notes:
 | Test | Cost |
 |---|---|
 | Smoke Test 1 (Sonnet) | ~$1.80 |
-| Smoke Test 2 (Opus) | ~$2.43 |
-| **Total spent** | **~$4.23** |
-| **Remaining budget** | **~$5.77** |
+| Smoke Test 2 (Opus, 3 runs) | ~$3.59 |
+| **Total spent** | **~$5.39** |
+| **Remaining budget** | **~$4.61** |

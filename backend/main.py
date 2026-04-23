@@ -110,7 +110,7 @@ async def analyze(req: AnalyzeRequest):
                 )
                 print(cache_log, file=sys.stderr, flush=True)
                 print(cache_log, flush=True)
-                log_path = Path(__file__).parent / "cache_stats.log"
+                log_path = BASE / "backend" / "cache_stats.log"
                 with open(log_path, "a", encoding="utf-8") as lf:
                     lf.write(cache_log + "\n")
 
