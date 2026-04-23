@@ -1,0 +1,7 @@
+1. Peraturan Otoritas Jasa Keuangan Nomor 77/POJK.01/2016 tentang Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi, Tanggal Berlaku: Mulai berlaku sejak diundangkan pada 29 Desember 2016.
+2. Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 31/POJK.07/2020 tentang Penyelenggaraan Layanan Konsumen dan Masyarakat di Sektor Jasa Keuangan oleh Otoritas Jasa Keuangan, Tanggal Berlaku: Mulai berlaku pada 1 Juli 2020.
+3. Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 10/POJK.05/2022 tentang Layanan Pendanaan Bersama Berbasis Teknologi Informasi, Tanggal Berlaku: Mulai berlaku sejak diundangkan pada 4 Juli 2022.
+4. Surat Edaran Otoritas Jasa Keuangan Republik Indonesia Nomor 19/SEOJK.06/2023 tentang Penyelenggaraan Layanan Pendanaan Bersama Berbasis Teknologi Informasi, Tanggal Berlaku: Mulai berlaku pada tanggal ditetapkan, yaitu 8 November 2023.
+5. Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 22 Tahun 2023 tentang Pelindungan Konsumen dan Masyarakat di Sektor Jasa Keuangan, Tanggal Berlaku: Mulai berlaku sejak diundangkan pada 22 Desember 2023.
+6. Peraturan Otoritas Jasa Keuangan Republik Indonesia Nomor 40 Tahun 2024 tentang Layanan Pendanaan Bersama Berbasis Teknologi Informasi, Tanggal Berlaku: Mulai berlaku sejak diundangkan pada 27 Desember 2024.
+7. Surat Edaran Otoritas Jasa Keuangan Republik Indonesia Nomor 19/SEOJK.06/2025 tentang Penyelenggaraan Layanan Pendanaan Bersama Berbasis Teknologi Informasi, Tanggal Berlaku: Mulai berlaku pada tanggal ditetapkan, yaitu 31 Juli 2025.

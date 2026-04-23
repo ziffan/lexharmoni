@@ -1,0 +1,248 @@
+OTORITAS JASA KEUANGAN REPUBLIK INDONESIA SALINAN PERATURAN OTORITAS JASA KEUANGAN NOMOR 77 /POJK.01/2016 TENTANG LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI DENGAN RAHMAT TUHAN YANG MAHA ESA DEWAN KOMISIONER OTORITAS JASA KEUANGAN,
+Menimbang:
+a. bahwa teknologi informasi telah digunakan untuk mengembangkan industri keuangan yang dapat mendorong tumbuhnya alternatif pembiayaan bagi masyarakat;
+b. bahwa dalam rangka mendukung pertumbuhan lembaga jasa keuangan berbasis teknologi informasi sehingga dapat lebih berkontribusi terhadap perekonomian nasional;
+c. bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a dan b, perlu menetapkan Peraturan Otoritas Jasa Keuangan tentang Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi;
+Mengingat: Undang-Undang Nomor 21 Tahun 2011 tentang Otoritas Jasa Keuangan (Lembaran Negara Republik Indonesia Tahun 2011 Nomor 111, Tambahan Lembaran Negara Republik Indonesia Nomor 5253);
+MEMUTUSKAN:
+Menetapkan: PERATURAN OTORITAS JASA KEUANGAN TENTANG LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI.
+BAB I KETENTUAN UMUM
+Pasal 1 Dalam Peraturan Otoritas Jasa Keuangan ini, yang dimaksud dengan:
+1. Otoritas Jasa Keuangan yang selanjutnya disingkat OJK adalah lembaga yang independen, yang mempunyai fungsi, tugas, dan wewenang pengaturan, pengawasan, pemeriksaan, dan penyidikan sebagaimana dimaksud dalam Undang-Undang Nomor 21 Tahun 2011 tentang Otoritas Jasa Keuangan.
+2. Lembaga Jasa Keuangan Lainnya adalah pergadaian, lembaga penjaminan, lembaga pembiayaan ekspor Indonesia, perusahaan pembiayaan sekunder perumahan, dan lembaga yang menyelenggarakan pengelolaan dana masyarakat yang bersifat wajib, meliputi penyelenggara program jaminan sosial, pensiun, dan kesejahteraan, sebagaimana dimaksud dalam peraturan perundang-undangan mengenai pergadaian, penjaminan, lembaga pembiayaan ekspor Indonesia, perusahaan pembiayaan sekunder perumahan, dan lembaga yang menyelenggarakan pengelolaan dana masyarakat yang bersifat wajib, serta lembaga jasa keuangan lain yang dinyatakan diawasi oleh OJK berdasarkan peraturan perundang- undangan.
+3. Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi adalah penyelenggaraan layanan jasa keuangan untuk mempertemukan pemberi pinjaman dengan penerima pinjaman dalam rangka melakukan perjanjian pinjam meminjam dalam mata uang rupiah secara langsung melalui sistem elektronik dengan menggunakan jaringan internet.
+4. Sistem Elektronik adalah serangkaian perangkat dan prosedur elektronik yang berfungsi mempersiapkan, mengumpulkan, mengolah, menganalisis, menyimpan, menampilkan, mengumumkan, mengirimkan, dan/atau menyebarkan informasi elektronik di bidang layanan jasa keuangan.
+5. Teknologi Informasi adalah suatu teknik untuk mengumpulkan, menyiapkan, menyimpan, memproses, mengumumkan, menganalisis, dan/atau menyebarkan informasi di bidang layanan jasa keuangan.
+6. Penyelenggara Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi yang selanjutnya disebut Penyelenggara adalah badan hukum Indonesia yang menyediakan, mengelola, dan mengoperasikan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+7. Penerima Pinjaman adalah orang dan/atau badan hukum yang mempunyai utang karena perjanjian Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+8. Pemberi Pinjaman adalah orang, badan hukum, dan/atau badan usaha yang mempunyai piutang karena perjanjian Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+9. Pengguna Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi yang selanjutnya disebut Pengguna adalah Pemberi Pinjaman dan Penerima Pinjaman yang menggunakan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+10. Direksi: a. bagi Penyelenggara yang berbentuk badan hukum perseroan terbatas adalah direksi sebagaimana dimaksud dalam Undang-Undang Nomor 40 Tahun 2007 tentang Perseroan Terbatas; atau b. bagi Penyelenggara yang berbentuk badan hukum koperasi adalah pengurus sebagaimana dimaksud dalam Undang-Undang Nomor 25 Tahun 1992 tentang Perkoperasian.
+11. Komisaris: a. bagi Penyelenggara yang berbentuk badan hukum perseroan terbatas adalah komisaris sebagaimana dimaksud dalam Undang-Undang Nomor 40 Tahun 2007 tentang Perseroan Terbatas; atau b. bagi Penyelenggara yang berbentuk badan hukum koperasi adalah pengawas sebagaimana dimaksud dalam Undang-Undang Nomor 25 Tahun 1992 tentang Perkoperasian.
+12. Dokumen Elektronik adalah setiap informasi elektronik yang dibuat, diteruskan, dikirimkan, diterima, atau disimpan dalam bentuk analog, digital, elektromagnetik, optikal, atau sejenisnya, yang dapat dilihat, ditampilkan, dan/atau didengar melalui komputer atau Sistem Elektronik termasuk tetapi tidak terbatas pada tulisan, suara, gambar, peta rancangan, foto atau sejenisnya, huruf, tanda, angka, kode akses, simbol atau perforasi yang memiliki makna atau arti atau dapat dipahami oleh orang yang mampu memahaminya sebagaimana dimaksud dalam Undang- Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik.
+13. Sertifikat Elektronik adalah sertifikat yang bersifat elektronik yang memuat tanda tangan elektronik dan identitas yang menunjukkan status subjek hukum para pihak dalam transaksi elektronik yang dikeluarkan oleh penyelenggara sertifikasi elektronik sebagaimana dimaksud dalam Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik.
+14. Penyelenggara Sertifikasi Elektronik adalah badan hukum yang berfungsi sebagai pihak yang memberikan dan mengaudit Sertifikat Elektronik yang terdaftar di OJK.
+15. Tanda Tangan Elektronik adalah tanda tangan yang terdiri atas informasi elektronik yang dilekatkan, terasosiasi atau terkait dengan informasi elektronik lainnya yang digunakan sebagai alat verifikasi dan autentikasi sebagaimana dimaksud dalam Undang- Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik.
+BAB II PENYELENGGARA LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI Bagian Kesatu Bentuk Badan Hukum, Kepemilikan, dan Permodalan
+Pasal 2
+(1) Penyelenggara dinyatakan sebagai Lembaga Jasa Keuangan Lainnya.
+(2) Badan hukum Penyelenggara berbentuk: a. perseroan terbatas; atau b. koperasi.
+Pasal 3
+(1) Penyelenggara berbentuk badan hukum perseroan terbatas sebagaimana dimaksud dalam
+Pasal 2 ayat
+(2) huruf a, dapat didirikan dan dimiliki oleh: a. warga negara Indonesia dan/atau badan hukum Indonesia; dan/atau b. warga negara asing dan/atau badan hukum asing.
+(2) Kepemilikan saham Penyelenggara oleh warga negara asing dan/atau badan hukum asing sebagaimana dimaksud pada ayat
+(1) huruf b, baik secara langsung maupun tidak langsung paling banyak 85% (delapan puluh lima persen).
+Pasal 4
+(1) Penyelenggara berbentuk badan hukum perseroan terbatas wajib memiliki modal disetor paling sedikit Rp1.000.000.000,00 (satu miliar rupiah) pada saat pendaftaran.
+(2) Penyelenggara berbentuk badan hukum koperasi wajib memiliki modal sendiri paling sedikit Rp1.000.000.000,00 (satu miliar rupiah) pada saat pendaftaran.
+(3) Penyelenggara wajib memiliki modal disetor sebagaimana dimaksud pada ayat
+(1) atau modal sendiri sebagaimana dimaksud pada ayat
+(2) paling sedikit Rp2.500.000.000,00 (dua miliar lima ratus juta rupiah) pada saat mengajukan permohonan perizinan. Bagian Kedua Kegiatan Usaha
+Pasal 5
+(1) Penyelenggara menyediakan, mengelola, dan mengoperasikan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi dari pihak Pemberi Pinjaman kepada pihak Penerima Pinjaman yang sumber dananya berasal dari pihak Pemberi Pinjaman.
+(2) Penyelenggara dapat bekerja sama dengan penyelenggara layanan jasa keuangan berbasis teknologi informasi sesuai dengan ketentuan peraturan perundang-undangan. Bagian Ketiga Batasan Pemberian Pinjaman Dana
+Pasal 6
+(1) Penyelenggara wajib memenuhi ketentuan batas maksimum total pemberian pinjaman dana kepada setiap Penerima Pinjaman.
+(2) Batas maksimum total pemberian pinjaman dana sebagaimana dimaksud pada ayat
+(1) ditetapkan sebesar Rp2.000.000.000,00 (dua miliar rupiah).
+(3) OJK dapat melakukan peninjauan kembali atas batas maksimum total pemberian pinjaman dana sebagaimana dimaksud pada ayat (2). Bagian Keempat Pendaftaran dan Perizinan
+Pasal 7 Penyelenggara wajib mengajukan pendaftaran dan perizinan kepada OJK. Paragraf 1 Pendaftaran
+Pasal 8
+(1) Penyelenggara yang akan melakukan kegiatan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi mengajukan permohonan pendaftaran kepada OJK.
+(2) Penyelenggara yang telah melakukan kegiatan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi sebelum peraturan OJK ini diundangkan, harus mengajukan permohonan pendaftaran kepada OJK paling lambat 6 (enam) bulan setelah peraturan OJK ini berlaku.
+(3) Permohonan pendaftaran oleh Penyelenggara sebagaimana dimaksud pada ayat
+(1) dan ayat (2), disampaikan oleh Direksi kepada Kepala Eksekutif Pengawas Perasuransian, Dana Pensiun, Lembaga Pembiayaan, dan Lembaga Jasa Keuangan Lainnya dengan menggunakan Formulir 1 sebagaimana tercantum dalam Lampiran yang merupakan bagian yang tidak terpisahkan dari peraturan OJK ini, dan dilampiri dengan dokumen yang paling sedikit memuat: a. akta pendirian badan hukum termasuk anggaran dasar berikut perubahannya (jika ada) yang telah disahkan/disetujui oleh instansi yang berwenang atau diberitahukan kepada instansi yang berwenang sesuai dengan ketentuan peraturan perundang-undangan; b. bukti identitas diri dan daftar riwayat hidup yang dilengkapi dengan pas foto berwarna yang terbaru berukuran 4x6 cm dari:
+1. pemegang saham yang memiliki saham paling sedikit 20% (dua puluh persen);
+2. anggota Direksi; dan
+3. anggota Komisaris; c. fotokopi nomor pokok wajib pajak badan; d. surat keterangan domisili Penyelenggara dari instansi yang berwenang; e. bukti kesiapan operasional kegiatan usaha berupa dokumen terkait Sistem Elektronik yang digunakan Penyelenggara dan data kegiatan operasional. f. bukti pemenuhan syarat permodalan sebagaimana dimaksud dalam
+Pasal 4 ayat
+(1) atau
+Pasal 4 ayat (2); g. surat pernyataan rencana penyelesaian terkait hak dan kewajiban Pengguna dalam hal perizinan Penyelenggara tidak disetujui oleh OJK.
+(4) Persetujuan atas permohonan pendaftaran dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak diterimanya dokumen permohonan pendaftaran sesuai dengan persyaratan dalam peraturan OJK ini.
+(5) OJK menetapkan persetujuan pendaftaran Penyelenggara dengan memberikan surat tanda bukti terdaftar.
+Pasal 9
+(1) Penyelenggara yang telah terdaftar wajib menyampaikan laporan secara berkala setiap 3 (tiga) bulan untuk periode yang berakhir pada tanggal 31 Maret, 30 Juni, 30 September, dan 31 Desember kepada OJK dengan informasi yang paling sedikit memuat: a. jumlah Pemberi Pinjaman dan Penerima Pinjaman; b. kualitas pinjaman yang diterima oleh Penerima Pinjaman berikut dasar penilaian kualitas pinjaman; dan c. kegiatan yang telah dilakukan setelah terdaftar di OJK.
+(2) Laporan berkala setiap 3 (tiga) bulan sebagaimana dimaksud pada ayat
+(1) disampaikan kepada OJK paling lambat 10 (sepuluh) hari kerja terhitung sejak jatuh tempo tanggal pelaporan.
+Pasal 10
+(1) Penyelenggara yang telah terdaftar di OJK, wajib mengajukan permohonan izin sebagai Penyelenggara dalam jangka waktu paling lama 1 (satu) tahun sejak tanggal terdaftar di OJK.
+(2) Dalam hal jangka waktu sebagaimana dimaksud pada ayat
+(1) telah berakhir, Penyelenggara yang telah mendapatkan surat tanda bukti terdaftar dan tidak menyampaikan permohonan perizinan atau tidak memenuhi persyaratan perizinan, surat tanda bukti terdaftar Penyelenggara sebagaimana dimaksud dalam
+Pasal 8 ayat
+(5) dinyatakan batal.
+(3) Penyelenggara yang surat tanda bukti terdaftarnya dinyatakan batal sebagaimana dimaksud pada ayat
+(2) tidak dapat lagi menyampaikan permohonan pendaftaran kepada OJK.
+(4) Penyelenggara yang surat tanda bukti terdaftarnya dinyatakan batal sebagaimana dimaksud pada ayat (2), harus menyelesaikan hak dan kewajiban Pengguna sesuai dalam surat pernyataan rencana penyelesaian.
+(5) Penyelenggara yang masih terdaftar dan menyatakan tidak mampu meneruskan kegiatan operasionalnya, harus mengajukan permohonan kepada OJK disertai dengan alasan ketidakmampuan, dan rencana penyelesaian hak dan kewajiban Pengguna. Paragraf 2 Perizinan
+Pasal 11
+(1) Permohonan perizinan Penyelenggara sebagaimana dimaksud dalam
+Pasal 10 ayat
+(1) disampaikan oleh Direksi Penyelenggara kepada Kepala Eksekutif Pengawas Perasuransian, Dana Pensiun, Lembaga Pembiayaan, dan Lembaga Jasa Keuangan Lainnya dengan menggunakan Formulir 2 sebagaimana tercantum dalam Lampiran yang merupakan bagian yang tidak terpisahkan dari peraturan OJK ini dan dilampiri paling sedikit: a. akta pendirian badan hukum termasuk anggaran dasar berikut perubahannya (jika ada) yang telah disahkan/disetujui oleh instansi yang berwenang atau diberitahukan kepada instansi yang berwenang, yang paling sedikit memuat:
+1. nama dan tempat kedudukan;
+2. kegiatan usaha sebagai Perusahaan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi;
+3. permodalan;
+4. kepemilikan;
+5. wewenang, tanggung jawab, masa jabatan Direksi, dan Komisaris; dan
+6. perubahan anggaran dasar terakhir (jika ada) disertai dengan bukti pengesahan, persetujuan dan/atau surat penerimaan pemberitahuan dari instansi berwenang; b. daftar kepemilikan, berupa:
+1. daftar pemegang saham berikut rincian besarnya masing-masing kepemilikan saham bagi Penyelenggara berbentuk badan hukum perseroan terbatas; atau
+2. daftar anggota berikut jumlah simpanan pokok dan simpanan wajib bagi Penyelenggara berbentuk badan hukum koperasi; c. data pemegang saham:
+1. bagi orang perseorangan, dilampiri dengan: a) fotokopi tanda pengenal berupa kartu tanda penduduk yang masih berlaku atau paspor bagi warga negara asing; b) fotokopi nomor pokok wajib pajak; c) daftar riwayat hidup dengan dilengkapi pas foto berwarna yang terbaru berukuran 4x6 cm; dan d) surat pernyataan bermeterai yang menyatakan: 1) setoran modal Penyelenggara tidak berasal dari pinjaman; 2) setoran modal Penyelenggara tidak berasal dari kegiatan pencucian uang (money laundering) dan kejahatan keuangan; 3) tidak tercatat dalam daftar kredit macet; 4) tidak pernah dihukum karena melakukan tindak pidana di bidang usaha jasa keuangan dan/atau perekonomian berdasarkan putusan pengadilan yang telah mempunyai kekuatan hukum tetap dalam 5 (lima) tahun terakhir; 5) tidak pernah dihukum karena melakukan tindak pidana kejahatan berdasarkan putusan pengadilan yang telah mempunyai kekuatan hukum tetap dalam 5 (lima) tahun terakhir; 6) tidak pernah dinyatakan pailit atau bersalah yang menyebabkan suatu perseroan/perusahaan dinyatakan pailit berdasarkan keputusan pengadilan yang telah mempunyai kekuatan hukum tetap dalam 5 (lima) tahun terakhir; dan 7) tidak pernah menjadi pemegang saham pengendali, anggota direksi, atau anggota dewan komisaris, pada perusahaan jasa keuangan yang dicabut izin usahanya karena melakukan pelanggaran dalam 5 (lima) tahun terakhir;
+2. bagi badan hukum, dilampiri dengan: a) akta pendirian badan hukum termasuk anggaran dasar berikut perubahan yang terakhir (jika ada), disertai dengan bukti pengesahan, persetujuan, atau pencatatan dari instansi berwenang; b) surat pernyataan direksi atau yang setara yang menyatakan bahwa: 1) setoran modal Penyelenggara tidak berasal dari pinjaman; 2) setoran modal Penyelenggara tidak berasal dari kegiatan pencucian uang (money laundering) dan kejahatan keuangan; dan 3) tidak tercatat dalam daftar kredit macet;
+3. bagi pemerintah pusat, dilampiri dengan peraturan pemerintah mengenai penyertaan modal Negara untuk pendirian perusahaan;
+4. bagi pemerintah daerah, dilampiri dengan peraturan daerah mengenai penyertaan modal daerah untuk pendirian perusahaan; d. data Direksi dan Komisaris:
+1. fotokopi tanda pengenal berupa kartu tanda penduduk yang masih berlaku atau paspor bagi warga negara asing;
+2. daftar riwayat hidup dengan dilengkapi pas foto berwarna yang terbaru berukuran 4x6 cm;
+3. fotokopi nomor pokok wajib pajak; dan
+4. surat pernyataan bermeterai dari masing- masing anggota Direksi, dan Komisaris yang menyatakan: a) tidak tercatat dalam daftar kredit macet; b) tidak pernah dihukum karena melakukan tindak pidana di bidang jasa keuangan dan/atau perekonomian berdasarkan putusan pengadilan yang telah mempunyai kekuatan hukum tetap dalam 5 (lima) tahun terakhir; c) tidak pernah dihukum karena melakukan tindak pidana kejahatan berdasarkan putusan pengadilan yang telah mempunyai kekuatan hukum tetap dalam 5 (lima) tahun terakhir; d) tidak pernah dinyatakan pailit atau dinyatakan bersalah menyebabkan suatu badan usaha dinyatakan pailit berdasarkan putusan pengadilan yang mempunyai kekuatan hukum tetap dalam 5 (lima) tahun terakhir; dan e) tidak pernah menjadi pemegang saham, direksi, komisaris pada perusahaan jasa keuangan yang dicabut izin usahanya karena melakukan pelanggaran dalam 5 (lima) tahun terakhir; e. fotokopi bukti pemenuhan permodalan yang dilegalisasi dan masih berlaku selama proses permohonan perizinan atas nama pada salah satu bank umum yang melaksanakan kegiatan usaha secara konvensional dan/atau berdasarkan prinsip syariah yang berbadan hukum Indonesia; f. struktur organisasi Penyelenggara; g. pedoman/standar prosedur operasional terkait penerapan program anti pencucian uang dan pencegahan pendanaan terorisme; h. rencana kerja untuk 1 (satu) tahun pertama yang paling sedikit memuat:
+1. gambaran mengenai kegiatan usaha yang akan dilakukan;
+2. target dan langkah-langkah yang dilakukan untuk mewujudkan target dimaksud; dan
+3. proyeksi laporan keuangan untuk 1 (satu) tahun ke depan; i. bukti kesiapan operasional berupa:
+1. bukti kepemilikan atau penguasaan gedung dan ruangan kantor atau unit layanan (outlet), berupa fotokopi sertifikat hak milik, hak guna bangunan, atau hak pakai atas nama Penyelenggara, atau perjanjian sewa gedung/ruangan; dan
+2. daftar inventaris dan peralatan kantor; j. fotokopi nomor pokok wajib pajak atas nama Penyelenggara; k. surat pernyataan rencana penyelesaian terkait hak dan kewajiban Pengguna dalam hal Penyelenggara tidak dapat meneruskan kegiatan operasional sistem elektronik Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi; dan l. bukti pelunasan biaya perizinan.
+(2) OJK melakukan penelaahan atas permohonan perizinan yang disampaikan oleh Penyelenggara.
+(3) OJK memberikan persetujuan atau penolakan atas permohonan perizinan paling lama 20 (dua puluh) hari kerja sejak diterimanya dokumen permohonan perizinan sesuai dengan persyaratan dalam peraturan OJK ini.
+(4) Permohonan perizinan otomatis berlaku apabila jangka waktu sebagaimana dimaksud pada ayat
+(3) terlampaui. Bagian Kelima Perubahan Kepemilikan
+Pasal 12 Perubahan kepemilikan Penyelenggara harus terlebih dahulu mendapatkan persetujuan dari OJK. Bagian Keenam Pencabutan Izin Atas Permohonan Sendiri
+Pasal 13
+(1) Penyelenggara yang memperoleh izin dan menyatakan tidak mampu meneruskan kegiatan operasionalnya, harus mengajukan permohonan kepada OJK disertai dengan alasan ketidakmampuan, dan rencana penyelesaian hak dan kewajiban Pengguna.
+(2) OJK mencabut izin Penyelenggara paling lambat 20 (dua puluh) hari kerja sejak tanggal permohonan sebagaimana dimaksud pada ayat (1). Bagian Ketujuh Kualifikasi Sumber Daya Manusia
+Pasal 14
+(1) Penyelenggara wajib memiliki sumber daya manusia yang memiliki keahlian dan/atau latar belakang di bidang teknologi informasi.
+(2) Penyelenggara wajib memiliki paling sedikit 1 (satu) orang anggota Direksi dan 1 (satu) orang anggota Komisaris yang berpengalaman paling sedikit 1 (satu) tahun di industri jasa keuangan.
+(3) Penyelenggara harus meningkatkan kualitas sumber daya manusia melalui kegiatan pendidikan dan pelatihan yang mendukung pengembangan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+BAB III PENGGUNA JASA LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI Bagian Kesatu Penerima Pinjaman
+Pasal 15
+(1) Penerima Pinjaman harus berasal dan berdomisili di wilayah hukum Negara Kesatuan Republik Indonesia.
+(2) Penerima Pinjaman sebagaimana dimaksud pada ayat
+(1) terdiri dari: a. orang perseorangan warga negara Indonesia; atau b. badan hukum Indonesia. Bagian Kedua Pemberi Pinjaman
+Pasal 16
+(1) Pemberi Pinjaman dapat berasal dari dalam dan/atau luar negeri.
+(2) Pemberi Pinjaman sebagaimana dimaksud pada ayat
+(1) terdiri dari: a. orang perseorangan warga negara Indonesia; b. orang perseorangan warga negara asing; c. badan hukum Indonesia/asing; d. badan usaha Indonesia/asing; dan/atau e. lembaga internasional.
+Pasal 17
+(1) Penyelenggara memberikan masukan atas suku bunga yang ditawarkan oleh Pemberi Pinjaman dan Penerima Pinjaman dengan mempertimbangkan kewajaran dan perkembangan perekonomian nasional.
+(2) Dalam hal Penerima Pinjaman menerima pinjaman dari luar negeri, penyelenggaraan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi tunduk pada ketentuan peraturan perundang-undangan.
+BAB IV PERJANJIAN LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI
+Pasal 18 Perjanjian pelaksanaan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi meliputi: a. perjanjian antara Penyelenggara dengan Pemberi Pinjaman; dan b. perjanjian antara Pemberi Pinjaman dengan Penerima Pinjaman. Bagian Kesatu Perjanjian Penyelenggara Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi dengan Pemberi Pinjaman
+Pasal 19
+(1) Perjanjian penyelenggaraan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi antara Penyelenggara dengan Pemberi Pinjaman dituangkan dalam Dokumen Elektronik.
+(2) Dokumen Elektronik sebagaimana dimaksud pada pada ayat
+(1) wajib paling sedikit memuat: a. nomor perjanjian; b. tanggal perjanjian; c. identitas para pihak; d. ketentuan mengenai hak dan kewajiban para pihak; e. jumlah pinjaman; f. suku bunga pinjaman; g. besarnya komisi; h. jangka waktu; i. rincian biaya terkait; j. ketentuan mengenai denda (jika ada); k. mekanisme penyelesaian sengketa; dan l. mekanisme penyelesaian dalam hal Penyelenggara tidak dapat melanjutkan kegiatan operasionalnya.
+(3) Penyelenggara wajib menyediakan akses informasi kepada Pemberi Pinjaman atas penggunaan dananya.
+(4) Akses informasi sebagaimana dimaksud pada ayat
+(3) tidak termasuk informasi terkait identitas Penerima Pinjaman.
+(5) Informasi penggunaan dana sebagaimana dimaksud pada ayat
+(3) paling sedikit memuat: a. jumlah dana yang dipinjamkan kepada Penerima Pinjaman; b. tujuan pemanfaatan dana oleh Penerima Pinjaman; c. besaran bunga pinjaman; dan d. jangka waktu pinjaman. Bagian Kedua Perjanjian Pemberi Pinjaman dengan Penerima Pinjaman
+Pasal 20
+(1) Perjanjian pemberian pinjaman antara Pemberi Pinjaman dengan Penerima Pinjaman dituangkan dalam Dokumen Elektronik.
+(2) Dokumen Elektronik sebagaimana dimaksud pada ayat
+(1) wajib paling sedikit memuat: a. nomor perjanjian; b. tanggal perjanjian; c. identitas para pihak; d. ketentuan mengenai hak dan kewajiban para pihak; e. jumlah pinjaman; f. suku bunga pinjaman; g. nilai angsuran; h. jangka waktu; i. objek jaminan (jika ada); j. rincian biaya terkait; k. ketentuan mengenai denda (jika ada); dan l. mekanisme penyelesaian sengketa.
+(3) Penyelenggara wajib menyediakan akses informasi kepada Penerima Pinjaman atas posisi pinjaman yang diterima.
+(4) Akses informasi sebagaimana dimaksud pada ayat
+(3) tidak termasuk informasi terkait identitas Pemberi Pinjaman.
+BAB V MITIGASI RISIKO
+Pasal 21 Penyelenggara dan Pengguna harus melakukan mitigasi risiko.
+Pasal 22 Penyelenggara dapat menjadi anggota sistem layanan informasi keuangan OJK atau sistem layanan informasi lainnya yang terdaftar di OJK dengan memenuhi persyaratan sesuai dengan ketentuan peraturan perundang- undangan.
+Pasal 23 Penyelenggara dapat bekerjasama dan melakukan pertukaran data dengan penyelenggara layanan pendukung berbasis teknologi informasi dalam rangka peningkatan kualitas Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+Pasal 24
+(1) Penyelenggara wajib menggunakan escrow account dan virtual account dalam rangka Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+(2) Penyelenggara wajib menyediakan virtual account bagi setiap Pemberi Pinjaman.
+(3) Dalam rangka pelunasan pinjaman, Penerima Pinjaman melakukan pembayaran melalui escrow account Penyelenggara untuk diteruskan ke virtual account Pemberi Pinjaman.
+BAB VI TATA KELOLA SISTEM TEKNOLOGI INFORMASI PENYELENGGARAAN LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI Bagian Kesatu Pusat Data dan Pusat Pemulihan Bencana
+Pasal 25
+(1) Penyelenggara wajib menggunakan pusat data dan pusat pemulihan bencana.
+(2) Pusat data dan pusat pemulihan bencana sebagaimana dimaksud pada ayat
+(1) wajib ditempatkan di Indonesia.
+(3) Penyelenggara wajib memenuhi standar minimum sistem teknologi informasi, pengelolaan risiko teknologi informasi, pengamanan teknologi informasi, ketahanan terhadap gangguan dan kegagalan sistem, serta alih kelola sistem teknologi informasi. Bagian Kedua Kerahasiaan Data
+Pasal 26 Penyelenggara wajib: a. menjaga kerahasiaan, keutuhan, dan ketersediaan data pribadi, data transaksi, dan data keuangan yang dikelolanya sejak data diperoleh hingga data tersebut dimusnahkan; b. memastikan tersedianya proses autentikasi, verifikasi, dan validasi yang mendukung kenirsangkalan dalam mengakses, memproses, dan mengeksekusi data pribadi, data transaksi, dan data keuangan yang dikelolanya; c. menjamin bahwa perolehan, penggunaan, pemanfaatan, dan pengungkapan data pribadi, data transaksi, dan data keuangan yang diperoleh oleh Penyelenggara berdasarkan persetujuan pemilik data pribadi, data transaksi, dan data keuangan, kecuali ditentukan lain oleh ketentuan peraturan perundang- undangan; d. menyediakan media komunikasi lain selain Sistem Elektronik Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi untuk memastikan kelangsungan layanan nasabah yang dapat berupa surat elektronik, call center, atau media komunikasi lainnya; dan e. memberitahukan secara tertulis kepada pemilik data pribadi, data transaksi, dan data keuangan tersebut jika terjadi kegagalan dalam perlindungan kerahasiaan data pribadi, data transaksi, dan data keuangan yang dikelolanya. Bagian Ketiga Rekam Jejak Audit
+Pasal 27
+(1) Penyelenggara wajib menyediakan rekam jejak audit terhadap seluruh kegiatannya di dalam Sistem Elektronik Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+(2) Penyelenggara wajib memastikan bahwa perangkat sistem Teknologi Informasi yang dipergunakan mendukung penyediaan rekam jejak audit.
+(3) Rekam jejak audit sebagaimana dimaksud pada ayat
+(1) digunakan untuk keperluan pengawasan, penegakan hukum, penyelesaian sengketa, verifikasi, pengujian, dan pemeriksaan lainnya. Bagian Keempat Sistem Pengamanan
+Pasal 28
+(1) Penyelenggara wajib melakukan pengamanan terhadap komponen sistem teknologi informasi dengan memiliki dan menjalankan prosedur dan sarana untuk pengamanan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi dalam menghindari gangguan, kegagalan, dan kerugian.
+(2) Penyelenggara wajib menyediakan sistem pengamanan yang mencakup prosedur, sistem pencegahan, dan penanggulangan terhadap ancaman dan serangan yang menimbulkan gangguan, kegagalan, dan kerugian.
+(3) Penyelenggara wajib ikut serta dalam pengelolaan celah keamanan teknologi informasi dalam mendukung keamanan informasi di dalam industri layanan jasa keuangan berbasis teknologi informasi.
+(4) Penyelenggara wajib menampilkan kembali Dokumen Elektronik secara utuh sesuai dengan format dan masa retensi yang ditetapkan sesuai dengan ketentuan peraturan perundang-undangan.
+BAB VII EDUKASI DAN PERLINDUNGAN PENGGUNA LAYANAN PINJAM MEMINJAM UANG BERBASIS TEKNOLOGI INFORMASI
+Pasal 29 Penyelenggara wajib menerapkan prinsip dasar dari perlindungan Pengguna yaitu: a. transparansi; b. perlakuan yang adil; c. keandalan; d. kerahasiaan dan keamanan data; dan e. penyelesaian sengketa Pengguna secara sederhana, cepat, dan biaya terjangkau.
+Pasal 30
+(1) Penyelenggara wajib menyediakan dan/atau menyampaikan informasi terkini mengenai Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi yang akurat, jujur, jelas, dan tidak menyesatkan.
+(2) Informasi sebagaimana dimaksud pada ayat
+(1) dituangkan dalam dokumen atau sarana lain yang dapat digunakan sebagai alat bukti.
+Pasal 31
+(1) Penyelenggara wajib menyampaikan informasi kepada Pengguna tentang penerimaan, penundaan, atau penolakan permohonan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi.
+(2) Dalam hal Penyelenggara menyampaikan informasi penundaan atau penolakan permohonan layanan jasa keuangan sebagaimana dimaksud pada ayat (1), Penyelenggara wajib menyampaikan alasan penundaan atau penolakannya kecuali diatur lain oleh ketentuan peraturan perundang-undangan.
+Pasal 32
+(1) Penyelenggara wajib menggunakan istilah, frasa, dan/atau kalimat yang sederhana dalam bahasa Indonesia yang mudah dibaca dan dimengerti oleh Pengguna dalam setiap Dokumen Elektronik.
+(2) Bahasa Indonesia dalam dokumen sebagaimana dimaksud pada ayat
+(1) dapat disandingkan dengan bahasa lain jika diperlukan.
+Pasal 33 Penyelenggara mendukung pelaksanaan kegiatan dalam rangka meningkatkan literasi dan inklusi keuangan.
+Pasal 34 Penyelenggara wajib memperhatikan kesesuaian antara kebutuhan dan kemampuan Pengguna dengan layanan yang ditawarkan kepada Pengguna.
+Pasal 35 Penyelenggara wajib mencantumkan dan/atau menyebutkan dalam setiap penawaran atau promosi layanan yang terdiri atas: a. nama dan/atau logo Penyelenggara; dan b. pernyataan bahwa Penyelenggara terdaftar dan diawasi oleh OJK.
+Pasal 36
+(1) Dalam hal Penyelenggara menggunakan perjanjian baku, perjanjian baku tersebut wajib disusun sesuai dengan ketentuan peraturan perundang-undangan.
+(2) Perjanjian baku sebagaimana dimaksud pada ayat
+(1) yang digunakan oleh Penyelenggara dilarang: a. menyatakan pengalihan tanggung jawab atau kewajiban Penyelenggara kepada Pengguna; dan b. menyatakan bahwa Pengguna tunduk pada peraturan baru, tambahan, lanjutan dan/atau perubahan yang dibuat secara sepihak oleh Penyelenggara dalam periode Pengguna memanfaatkan layanan.
+Pasal 37 Penyelenggara wajib bertanggung jawab atas kerugian Pengguna yang timbul akibat kesalahan dan/atau kelalaian, Direksi, dan/atau pegawai Penyelenggara.
+Pasal 38 Penyelenggara wajib memiliki standar prosedur operasional dalam melayani Pengguna yang dimuat dalam Dokumen Elektronik.
+Pasal 39
+(1) Penyelenggara dilarang dengan cara apapun, memberikan data dan/atau informasi mengenai Pengguna kepada pihak ketiga.
+(2) Larangan sebagaimana dimaksud pada ayat
+(1) dikecualikan dalam hal: a. Pengguna memberikan persetujuan secara elektronik; dan/atau b. diwajibkan oleh ketentuan peraturan perundang- undangan.
+(3) Pembatalan atau perubahan sebagian persetujuan atas pengungkapan data dan/atau informasi sebagaimana dimaksud pada ayat
+(2) huruf a dilakukan secara elektronik oleh Pengguna dalam bentuk Dokumen Elektronik.
+Pasal 40 Penyelenggara wajib melaporkan secara elektronik setiap bulan dalam hal terdapat pengaduan Pengguna disertai dengan tindak lanjut penyelesaian pengaduan dimaksud kepada OJK.
+BAB VIII TANDA TANGAN ELEKTRONIK
+Pasal 41
+(1) Perjanjian sebagaimana dimaksud dalam
+Pasal 18 dilaksanakan dengan menggunakan tanda tangan elektronik.
+(2) Perjanjian selain sebagaimana dimaksud pada ayat
+(1) yang disusun dalam rangka penyelenggaraan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi dapat menggunakan tanda tangan elektronik.
+(3) Penggunaan tanda tangan elektronik sebagaimana dimaksud pada ayat
+(1) dan ayat
+(2) wajib dilaksanakan sesuai dengan ketentuan peraturan perundang- undangan yang mengatur mengenai tanda tangan elektronik.
+BAB IX PRINSIP DAN TEKNIS PENGENALAN NASABAH
+Pasal 42 Penyelenggara wajib menerapkan program anti pencucian uang dan pencegahan pendanaan terorisme di sektor jasa keuangan terhadap Pengguna sesuai dengan ketentuan peraturan perundang-undangan mengenai penerapan program anti pencucian uang dan pencegahan pendanaan terorisme.
+BAB X LARANGAN
+Pasal 43 Dalam menjalankan kegiatan usaha, Penyelenggara dilarang: a. melakukan kegiatan usaha selain kegiatan usaha Penyelenggara yang diatur dalam peraturan OJK ini; b. bertindak sebagai Pemberi Pinjaman atau Penerima Pinjaman; c. memberikan jaminan dalam segala bentuknya atas pemenuhan kewajiban pihak lain; d. menerbitkan surat utang; e. memberikan rekomendasi kepada Pengguna; f. mempublikasikan informasi yang fiktif dan/atau menyesatkan; g. melakukan penawaran layanan kepada Pengguna dan/atau masyarakat melalui sarana komunikasi pribadi tanpa persetujuan Pengguna; dan h. mengenakan biaya apapun kepada Pengguna atas pengajuan pengaduan.
+BAB XI LAPORAN BERKALA
+Pasal 44 Penyelenggara yang telah memperoleh izin, wajib menyampaikan laporan berkala secara elektronik kepada OJK, yaitu: a. laporan bulanan; dan b. laporan tahunan.
+Pasal 45
+(1) Laporan bulanan Penyelenggara wajib paling sedikit memuat: a. laporan kinerja keuangan Penyelenggara Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi yang disampaikan dalam bentuk dokumen fisik dan Dokumen Elektronik; b. laporan kinerja penyelenggaraan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi dalam bentuk dokumen fisik dan Dokumen Elektronik; c. Dokumen Elektronik dalam format database dengan struktur elemen database Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi; dan d. pengaduan Pengguna disertai dengan tindak lanjut penyelesaian pengaduan sebagaimana dimaksud dalam
+Pasal 40; sesuai Formulir 3 sebagaimana tercantum dalam Lampiran yang merupakan bagian yang tidak terpisahkan dari peraturan OJK ini.
+(2) Dalam hal diperlukan, OJK dapat meminta informasi dan/atau data tambahan kepada Penyelenggara.
+(3) Laporan bulanan disampaikan dalam bentuk dokumen fisik dan dokumen elektronik.
+(4) Laporan bulanan sebagaimana dimaksud pada ayat
+(3) disampaikan kepada Kepala Eksekutif Pengawas Perasuransian, Dana Pensiun, Lembaga Pembiayaan, dan Lembaga Jasa Keuangan Lainnya paling lambat 10 (sepuluh) hari kerja pada bulan berikutnya.
+(5) Penyampaian informasi laporan bulanan sebagaimana dimaksud pada ayat
+(1) huruf d ditembuskan pada anggota Dewan Komisioner Bidang Edukasi dan Perlindungan Konsumen.
+Pasal 46
+(1) Penyelenggara wajib menyampaikan laporan tahunan kepada OJK untuk periode pelaporan 1 Januari sampai 31 Desember.
+(2) Laporan tahunan terdiri dari: a. laporan keuangan; dan b. laporan kegiatan penyelenggaraan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi; sesuai Formulir 4 sebagaimana tercantum dalam Lampiran yang merupakan bagian yang tidak terpisahkan dari peraturan OJK ini.
+(3) Dalam hal diperlukan, OJK dapat meminta informasi dan/atau data tambahan kepada Penyelenggara.
+(4) Laporan tahunan disampaikan dalam bentuk dokumen fisik dan dokumen elektronik.
+(5) Laporan tahunan sebagaimana ayat
+(4) disampaikan kepada Kepala Eksekutif Pengawas Perasuransian, Dana Pensiun, Lembaga Pembiayaan, dan Lembaga Jasa Keuangan Lainnya paling lambat 20 (dua puluh) hari kerja setelah periode pelaporan berakhir.
+BAB XII SANKSI
+Pasal 47
+(1) Atas pelanggaran kewajiban dan larangan dalam peraturan OJK ini, OJK berwenang mengenakan sanksi administratif terhadap Penyelenggara berupa: a. peringatan tertulis; b. denda, yaitu kewajiban untuk membayar sejumlah uang tertentu; c. pembatasan kegiatan usaha; dan d. pencabutan izin.
+(2) Sanksi administratif sebagaimana dimaksud pada ayat
+(1) huruf b sampai dengan huruf d, dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat
+(1) huruf a.
+(3) Sanksi administratif berupa denda sebagaimana dimaksud pada ayat
+(1) huruf b dapat dikenakan secara tersendiri atau secara bersama-sama dengan pengenaan sanksi administratif sebagaimana dimaksud pada ayat
+(1) huruf c dan huruf d.
+BAB XIII KETENTUAN LAIN
+Pasal 48 Penyelenggara wajib terdaftar sebagai anggota asosiasi yang telah ditunjuk oleh OJK.
+BAB XIV KETENTUAN PERALIHAN
+Pasal 49 Pelaksanaan kerja sama antara Penyelenggara dengan penyelenggara layanan pendukung berbasis teknologi informasi yang terdaftar di OJK sebagaimana dimaksud dalam
+Pasal 23 mulai berlaku 2 (dua) tahun sejak Peraturan OJK ini diundangkan.
+Pasal 50 Pada saat peraturan OJK ini berlaku, perjanjian Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi yang masih berlangsung dengan nilai pinjaman dana melebihi batas maksimum total pemberian pinjaman dana sebagaimana dimaksud dalam
+Pasal 6, tetap dapat dilanjutkan sampai dengan berakhirnya jangka waktu perjanjian dimaksud.
+BAB XV KETENTUAN PENUTUP
+Pasal 51 Ketentuan lebih lanjut mengenai Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi antara lain terkait perubahan batas maksimum total pemberian pinjaman dana, tata cara pemberian pinjaman, kerja sama antara Penyelenggara dengan penyelenggara layanan pendukung lainnya berbasis teknologi informasi, penempatan pusat data dan standar minimum sistem teknologi informasi, pengelolaan risiko teknologi informasi, pengamanan teknologi informasi, ketahanan terhadap gangguan dan kegagalan sistem serta alih kelola sistem teknologi informasi, sistem keamanan, kerahasiaan data, kegagalan sistem transaksi Penyelenggara, pengamanan sistem teknologi informasi, pengelolaan celah keamanan teknologi informasi, retensi informasi dan/atau Dokumen Elektronik, dan tata cara penggunaan Tanda Tangan Elektronik dalam penyelenggaraan Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi, diatur dalam surat edaran OJK.
+Pasal 52 Peraturan OJK ini mulai berlaku pada tanggal diundangkan. Agar setiap orang mengetahuinya, memerintahkan pengundangan peraturan OJK ini dengan penempatannya dalam Lembaran Negara Republik Indonesia. Ditetapkan di Jakarta pada tanggal 28 Desember 2016 KETUA DEWAN KOMISIONER OTORITAS JASA KEUANGAN, ttd MULIAMAN D. HADAD Diundangan di Jakarta pada tanggal 29 Desember 2016 MENTERI HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd YASONNA H. LAOLY LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2016 NOMOR 324 Salinan sesuai dengan aslinya Direktur Hukum 1 Departemen Hukum ttd Yuliana
