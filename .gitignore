@@ -25,3 +25,9 @@ frontend/dev.log
 
 # Claude Code session data
 .claude/
+
+# Video recordings & assets
+recording/
+recordings/
+*.mp4
+*.mov

@@ -65,7 +65,7 @@ tests/
 - Beta header: `anthropic-beta: extended-cache-ttl-2025-04-11`
 - Corpus size: ~409,540 tokens (confirmed from cache_read stats)
 - **Caches are model-specific** — Sonnet and Opus maintain separate caches
-- First call after >1h = cache write (~$2.05 for corpus); subsequent calls = cache read (~$0.20)
+- First call after >1h = cache write (~$5.55 for corpus, Opus 4.7); subsequent calls = cache read (~$0.28); total per-run warm = ~$1.70
 
 ### SSE Endpoint (`/analyze`)
 - Uses synchronous `anthropic.Anthropic` client + `client.messages.stream()` inside async FastAPI generator
@@ -141,7 +141,7 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 
 ## Git
 
-- Remote: https://github.com/ziffan/hackathon.opus47.git
+- Remote: https://github.com/ziffan/lexharmoni.git
 - Branch: `master`
 - License: Apache 2.0 (headers on all `.py` files)
 - History is clean — sensitive strings removed via filter-branch in earlier session

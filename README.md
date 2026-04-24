@@ -33,17 +33,17 @@ LexHarmoni is not a replacement for legal expertise — it is augmentation. A se
 
 Indonesia's peer-to-peer lending sector is governed by seven regulations spanning nine years (2016–2025). Reading them chronologically, patterns emerge — saving clauses extending older circulars, terminology shifting between drafts, delegation chains tangled by successive revocations.
 
-Some of these patterns persist 17–19 months before being revisited in manual review. Not because anyone failed. Because the dependency web between documents exceeds what working memory can hold.
+Some of these patterns persist for 17–19 months before being resolved through subsequent OJK regulation. Not because anyone failed. Because the dependency web between documents exceeds what working memory can hold during any single drafting cycle.
 
-The table below summarizes three friction patterns documented in our [manual analysis baseline](ground-truth/manual-analysis.md) — patterns LexHarmoni independently surfaces when given the same corpus.
+The table below summarizes three friction patterns documented in our [manual analysis baseline](ground-truth/manual-analysis.md) — patterns LexHarmoni independently surfaces when given the same corpus. All three have since been resolved through subsequent regulation; the manual review was deliberately scoped to known, since-resolved frictions so that LexHarmoni's detections can be validated against ground truth.
 
-| Friction | Type | Duration Before Revisited | Nature of the Gap |
+| Friction | Type | Window (Duration) | Nature of the Gap |
 |---|---|---|---|
-| Terminology drift: `Pinjam Meminjam` vs `LPBBTI` | Operational | ~17 months | Shifted definitions across POJK generations |
-| Orphaned Bab XI SEOJK 19/2023 after POJK 10/2022 revoked | Hierarchical | ~19 months | Implementing chapter kept in force by saving clause while its parent delegation was revoked |
-| Collection-hours mismatch: SEOJK 19/2023 vs POJK 22/2023 | Normative | ~19 months | Two active regulations with different hour specifications, reconciled only by Lex Superior doctrine |
+| Terminology inconsistency: POJK 10/2022 (*LPBBTI*) vs POJK 31/2020 (*Pinjam Meminjam*) | Operational | Jul 2022 – Dec 2023 (~17 months) | Two simultaneously-active regulations used different identifiers for the same industry; resolved by POJK 22/2023 |
+| Orphaned Chapter XI of SEOJK 19/2023 after surgical revocation of POJK 10/2022 Art. 102–104 | Hierarchical | Dec 2023 – Jul 2025 (~19 months) | Implementing chapter operationally active but parent delegating article revoked by POJK 22/2023; resolved by SEOJK 19/2025 |
+| Collection-hours mismatch: SEOJK 19/2023 vs POJK 22/2023 | Normative | Dec 2023 – Jul 2025 (~19 months) | Two active regulations specified different permissible hours, reconciled only by Lex Superior doctrine; resolved by SEOJK 19/2025 |
 
-For detailed methodology, corpus selection rationale, and case studies, see [`docs/PROBLEM_STATEMENT.md`](docs/PROBLEM_STATEMENT.md) *(work in progress)*.
+For detailed methodology, corpus selection rationale, and case studies, see [`docs/PROBLEM_STATEMENT.md`](docs/PROBLEM_STATEMENT.md).
 
 ---
 
@@ -66,16 +66,16 @@ This is the architecture RAG cannot do.
 
 ## Demo — Retrospective Validation on POJK 40/2024
 
-LexHarmoni demonstrates its capability by retroactively analyzing POJK 40/2024 — an already-enacted P2P lending regulation — against the six other regulations in the corpus. This retrospective validation lets us compare LexHarmoni's findings against friction patterns that emerged over 17–19 months of real-world operation after enactment.
+LexHarmoni demonstrates its capability by retroactively analyzing POJK 40/2024 — an already-enacted P2P lending regulation — against the six other regulations in the corpus. This retrospective validation compares LexHarmoni's findings against three friction patterns that are already documented in the manual baseline, each of which persisted for 17–19 months before being resolved by subsequent OJK regulation. Because the resolution timeline is now known, the manual baseline provides a ground truth against which LexHarmoni's detections can be directly checked.
 
 **What the demo shows:**
 1. Opus 4.7 streams its reasoning in real time, quoting specific articles as it works.
-2. It identifies the normative contradiction on debt-collection hours with article-level citations.
-3. It traces the orphaned delegation chain through three regulations and one revocation act.
-4. It flags the terminology drift across the 2016 → 2022 era shift.
+2. It identifies the normative contradiction on debt-collection hours between SEOJK 19/2023 and POJK 22/2023, with article-level citations.
+3. It traces the orphaned Chapter XI delegation — from SEOJK 19/2023's original citation of *Pasal 104(2) POJK 10/2022*, through the surgical revocation of that article by POJK 22/2023 (22 Dec 2023), through the full repeal of POJK 10/2022 by POJK 40/2024 (27 Dec 2024).
+4. It flags the terminology inconsistency between POJK 10/2022 (*LPBBTI*) and the then-active POJK 31/2020 (*Pinjam Meminjam*) during their 17-month overlap.
 5. Every finding includes temporal window, severity level, and a recommended resolution path.
 
-**Duration:** Roughly two minutes from draft submission to complete findings (validated across three recorded Opus runs). The friction patterns themselves took 17–19 months to surface through manual review cycles.
+**Duration:** Roughly two minutes from draft submission to complete findings (validated across three recorded Opus runs). The friction patterns themselves persisted for 17–19 months before being resolved by subsequent OJK regulation.
 
 The validation baseline — a manual legal analysis conducted prior to the hackathon — is documented in [`ground-truth/manual-analysis.md`](ground-truth/manual-analysis.md).
 
@@ -172,7 +172,7 @@ LexHarmoni is an exploratory prototype. What it does not do matters as much as w
 - **Scope is narrow.** Seven Indonesian P2P lending regulations. Not a general-purpose legal AI. Not tested on other jurisdictions, other regulatory domains, or other legal systems.
 - **Not an adjudication tool.** LexHarmoni surfaces friction patterns. Applying Lex Superior, Lex Posterior, or Lex Specialis doctrine to resolve those frictions requires human legal counsel judgment.
 - **Stochasticity in secondary findings.** The three core frictions surface consistently across all three validation runs. Additional patterns vary by reasoning path — useful for broadening review surface, but the tool is not a single-answer oracle.
-- **Corpus captured through April 2025.** Amendments or new regulations after that date are not in scope for this prototype.
+- **Corpus captured through July 2025.** The most recent regulation in scope is SEOJK 19/2025 (31 July 2025). Amendments or new regulations after that date are not in scope for this prototype.
 - **Retrospective validation, not ex-ante deployment.** The demo validates LexHarmoni against already-enacted regulation. Ex-ante deployment in an active drafting workflow has not been tested and would require additional validation.
 - **Source accuracy not comprehensively verified.** Corpus documents were sourced from JDIH OJK and processed via automated scripts. Spot checks passed; full text-level verification against authoritative OJK prints has not been conducted.
 
@@ -220,10 +220,10 @@ Seven OJK regulations covering Indonesia's P2P lending sector across 9 years (20
 - SEOJK 19/2025 — LPBBTI Implementation (replaces SEOJK 19/2023)
 
 **Historical (revoked / superseded):**
-- POJK 77/2016 — Fintech Lending (original)
-- POJK 31/2020 — Consumer Services at OJK (partially revoked)
-- POJK 10/2022 — LPBBTI (revoked)
-- SEOJK 19/2023 — LPBBTI Implementation (revoked)
+- POJK 77/2016 — Fintech Lending (original, superseded by POJK 10/2022)
+- POJK 31/2020 — Consumer Services at OJK (several articles revoked by POJK 22/2023)
+- POJK 10/2022 — LPBBTI (Art. 102–104 surgically revoked by POJK 22/2023 on 22 Dec 2023; full repeal by POJK 40/2024 on 27 Dec 2024)
+- SEOJK 19/2023 — LPBBTI Implementation (revoked by SEOJK 19/2025 on 31 Jul 2025)
 
 Corpus is read-only after initial commit. See [`corpus/README.md`](corpus/README.md).
 
