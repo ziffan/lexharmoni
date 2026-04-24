@@ -162,7 +162,10 @@ Semua dokumen diupdate dengan angka aktual.
 | Findings parsing | ✅ Robust |
 | cache_stats.log | ✅ Verified working (5 entri tertulis) |
 | Severity calibration | ✅ Fixed — severity lock patch PASS 2/2 runs |
-| Streaming real-time | ✅ Fixed — flushSync applied |
+| Streaming real-time | ✅ Fixed — CRLF strip + ref/interval drain, VERIFIED Opus run |
+| Mock endpoint | ✅ Added — /analyze/mock, no API cost |
+| UI tag stripping | ✅ Fixed — \<reasoning\> tags stripped from panel |
+| Footer disclaimer | ✅ Added |
 
 ---
 
@@ -201,7 +204,7 @@ baeedb9 Start 24-04-2026
 
 Commit sesi ini (post-compaction):
 - Severity lock validation: `tests/validate_severity_lock.py` + `docs/SEVERITY_LOCK_VALIDATION.md`
-- Frontend streaming fix: `flushSync` di `frontend/app/page.tsx`
+- Frontend streaming + UI: `2919aa9` — CRLF strip, ref/interval drain, mock endpoint, tag strip, footer
 
 ---
 
@@ -212,3 +215,6 @@ Commit sesi ini (post-compaction):
 | High | Demo script — pilih 3 consistent findings, susun narasi demo |
 | Medium | Pertimbangkan `temperature=0` untuk output lebih deterministik |
 | Low | Stabilisasi Terminology Drift (stochastic 1/2 post-patch) — bisa tambah instruksi eksplisit di prompt |
+
+### Catatan Kualitas Opus Run Terakhir (Verify Run)
+4 findings, 1 critical/1 major/2 minor. Temporal window tepat (2024-12-27 → 2025-07-31, 7 bulan) — model mendeteksi SEOJK 19/2025 sebagai resolusi dan menghitung durasi. Zero hallucination. Cited articles benar (POJK 22/2023 Pasal 62 ayat 2 huruf e-f, SEOJK 19/2023 Romawi XI angka 5). Reasoning transparent dan traceable. **UI bekerja sempurna — streaming real-time, no broken words, no tag leak.**
