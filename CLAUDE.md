@@ -119,10 +119,10 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 | Sesi | API | Claude Code |
 |---|---|---|
 | 2026-04-23 | $14.16 | $11.11 |
-| 2026-04-24 | $18.52 | TBD |
-| **Total** | **$32.68** | **≥$11.11** |
+| 2026-04-24 | $21.39 | TBD |
+| **Total** | **$35.55** | **≥$11.11** |
 
-**Grand total: ≥$43.79** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
+**Grand total: ≥$46.66** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
 
 ---
 

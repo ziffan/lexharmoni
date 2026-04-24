@@ -173,18 +173,18 @@ Semua dokumen diupdate dengan angka aktual.
 
 | Token type | Biaya |
 |---|---|
-| Opus input_no_cache | $4.67 |
-| Opus input_cache_read | $1.94 |
+| Opus input_no_cache | $6.54 |
+| Opus input_cache_read | $2.50 |
 | Opus input_cache_write_5m (user msg auto-cache) | $2.33 |
 | Opus input_cache_write_1h (corpus re-write) | $5.55 |
-| Opus output | $1.56 |
-| **Opus subtotal** | **$16.05** |
+| Opus output | $2.00 |
+| **Opus subtotal** | **$18.92** |
 | Sonnet input_cache_write_1h (corpus write) | $2.46 |
 | Sonnet output | $0.01 |
 | **Sonnet subtotal** | **$2.47** |
-| **Total API 2026-04-24** | **$18.52** |
+| **Total API 2026-04-24** | **$21.39** |
 
-Note: Corpus Opus expired → re-write $5.55. User message auto-cached 2× = $2.33. Sonnet $2.47 tidak disengaja — dari curl diagnostic `model: claude-sonnet-4-6` saat debugging SSE yang men-trigger corpus write Sonnet baru ($2.46).
+Note: +$2.87 dari update sebelumnya ($18.52→$21.39) berasal dari sesi streaming fix (~2 Opus run tambahan). Corpus Opus expired → re-write $5.55. User message auto-cached 2× = $2.33. Sonnet $2.47 tidak disengaja — dari curl diagnostic `model: claude-sonnet-4-6` saat debugging SSE yang men-trigger corpus write Sonnet baru ($2.46).
 
 ---
 

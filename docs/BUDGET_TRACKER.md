@@ -1,7 +1,7 @@
 # LexHarmoni — Budget Tracker
 
 **Session start:** 2026-04-23
-**Source:** `claude_api_cost_2026_04_01_to_2026_04_24.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-update.csv` + Claude Code invoice
+**Source:** `claude_api_cost_2026_04_01_to_2026_04_24.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-update.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-streamfix.csv` + Claude Code invoice
 
 ---
 
@@ -58,18 +58,18 @@ write terjadi lebih dari 1×.
 
 ---
 
-## API Actual Cost — 2026-04-24 (dari CSV update)
+## API Actual Cost — 2026-04-24 (dari CSV streamfix — final)
 
 ### Claude Opus 4.7
 
 | Token type | Biaya aktual | Token est. |
 |---|---|---|
-| input_no_cache | $4.67 | ~934K tokens (~5 runs × 186K) |
-| input_cache_read | $1.94 | ~3.88M tokens (~7 reads × 554K) |
+| input_no_cache | $6.54 | ~1.31M tokens (~7 runs × 186K) |
+| input_cache_read | $2.50 | ~5.00M tokens (~9 reads × 554K) |
 | input_cache_write_5m | $2.33 | ~373K tokens (2× user msg auto-cache) |
 | input_cache_write_1h | $5.55 | ~555K tokens (corpus re-write, cache expired) |
-| output | $1.56 | ~62.4K tokens (~7 calls × 8.9K avg) |
-| **Opus Total April 24** | **$16.05** | |
+| output | $2.00 | ~80K tokens (~9 calls × 8.9K avg) |
+| **Opus Total April 24** | **$18.92** | |
 
 ### Claude Sonnet 4.6 (April 24)
 
@@ -80,9 +80,9 @@ write terjadi lebih dari 1×.
 | output | $0.01 | ~670 tokens |
 | **Sonnet Total April 24** | **$2.47** | |
 
-**April 24 total: $18.52**
+**April 24 total: $21.39**
 
-Note: Sonnet $2.47 berasal dari curl diagnostic saat debugging SSE (`model: claude-sonnet-4-6`, draft pendek) — men-trigger corpus cache write Sonnet $2.46 yang tidak disengaja. `input_cache_write_5m` = user message POJK-40-2024 (~186K tokens) auto-cached 2× oleh Anthropic.
+Note: +$2.87 dari CSV sebelumnya ($18.52→$21.39) — berasal dari sesi streaming fix (~2 Opus verify/debug run tambahan). Sonnet $2.47 berasal dari curl diagnostic saat debugging SSE — men-trigger corpus cache write Sonnet $2.46 yang tidak disengaja. `input_cache_write_5m` = user message POJK-40-2024 (~186K tokens) auto-cached 2× oleh Anthropic.
 
 ---
 
@@ -92,9 +92,9 @@ Note: Sonnet $2.47 berasal dari curl diagnostic saat debugging SSE (`model: clau
 |---|---|---|
 | API — Sonnet 4.6 | $4.38 | 2026-04-23 |
 | API — Opus 4.7 | $9.78 | 2026-04-23 |
-| API — Opus 4.7 | $16.05 | 2026-04-24 |
+| API — Opus 4.7 | $18.92 | 2026-04-24 |
 | API — Sonnet 4.6 | $2.47 | 2026-04-24 |
-| **Total API aktual** | **$32.68** | |
+| **Total API aktual** | **$35.55** | |
 | Claude Code (sesi 2026-04-23) | $11.11 | 2026-04-23 |
 | Claude Code (sesi 2026-04-24) | TBD | 2026-04-24 |
-| **Grand Total s.d. 2026-04-24** | **≥$43.79** | |
+| **Grand Total s.d. 2026-04-24** | **≥$46.66** | |
