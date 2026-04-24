@@ -17,3 +17,11 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Logs
+backend/cache_stats.log
+backend/server.log
+frontend/dev.log
+
+# Claude Code session data
+.claude/
