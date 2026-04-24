@@ -115,11 +115,11 @@ Navigate to: `http://localhost:3000`
 
 1. Click **"Load POJK 40/2024 (Demo)"**. The draft text appears in the left
    panel.
-2. Ensure model dropdown shows **"Opus 4.7"** (or switch to Sonnet 4.6 for
-   a cheaper smoke test).
+2. Ensure model dropdown shows **"Opus 4.7"**. Select **"Mock (no API)"** to
+   stream pre-canned findings without API cost.
 3. Click **"Analyze"**.
-4. Watch the reasoning stream fill the right panel (takes 30-90 seconds
-   depending on model).
+4. Watch the reasoning stream fill the right panel (~2 minutes for Opus 4.7,
+   ~35 seconds for Mock).
 5. When streaming completes, findings cards appear below.
 6. Click each card to expand and see detailed reasoning, quoted articles,
    and recommended resolutions.
@@ -132,10 +132,10 @@ Navigate to: `http://localhost:3000`
 
 ### Cost awareness
 
-Each analysis:
-- **Opus 4.7:** ~$5-15 per run with corpus caching (first run ~$10-15 due to
-  cache write; subsequent runs within 5 minutes ~$1-3).
-- **Sonnet 4.6:** ~$0.50-2 per run (recommended for development/debugging).
+Each analysis (validated from demo session):
+- **Opus 4.7, warm cache (within 1h of last run):** ~$1.70
+- **Opus 4.7, cold cache (corpus write):** ~$6.75
+- **Mock (no API):** $0.00
 
 ---
 
@@ -154,7 +154,7 @@ Virtual environment not activated. Activate it before running uvicorn.
 ### Analysis takes too long / times out
 - First run warms the cache (slower).
 - If >3 minutes with Opus, check your network and Anthropic status.
-- Try switching to Sonnet to isolate whether it's a model or plumbing issue.
+- Try switching to Mock to isolate whether it's a model or plumbing issue.
 
 ### Reasoning stream stops mid-way
 Refresh the page. Known issue with long-running SSE connections on some
