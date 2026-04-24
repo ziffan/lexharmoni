@@ -12,6 +12,23 @@ All notable changes to LexHarmoni are documented here.
 
 ---
 
+## [docs-final] — 2026-04-24
+
+### Added
+- `docs/PROBLEM_STATEMENT.md` — full 8K-word problem analysis: workflow as regulatory officer, corpus deep-dive, 3 friction case studies, why human review fails, opportunity window, scope
+- `recordings/voiceover-final-v1.md`, `recordings/HACKATHON_CONTEXT_v7.md` — video prep assets
+
+### Changed
+- `README.md` — promote READMEv2: accurate friction timelines (Dec 2023–Jul 2025), resolved-by annotations in corpus list, corpus date through Jul 2025
+- `CLAUDE.md` — correct Opus 4.7 cache cost figures; remote URL → lexharmoni
+- `.gitignore` — exclude recording/, *.mp4, *.mov
+
+### Budget
+- Claude Code sesi 2026-04-24 final: **$30.96** (Haiku $0.91 + Sonnet $30.06)
+- Grand total: **$89.44** (API $47.37 + Claude Code $42.07)
+
+---
+
 ## [demo-recording] — 2026-04-24
 
 ### Added

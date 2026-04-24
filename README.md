@@ -153,9 +153,9 @@ LexHarmoni was built during a 5-day hackathon window on a bounded budget. Actual
 
 | Phase | Cost |
 |---|---|
-| Development (2 days, smoke tests + iterations) | ~$47.37 API + ~$35 Claude Code |
+| Development (2 days, smoke tests + iterations) | ~$47.37 API + ~$42 Claude Code |
 | Recording session (1 warm-up + 3 recorded Opus runs) | $11.82 |
-| **Total project to date** | **~$82.40** |
+| **Total project to date** | **~$89.44** |
 
 **Per-inference cost (for operational reference, validated from demo session CSV):**
 - Opus 4.7 run with warm cache (1h TTL): ~$1.70 (corpus cache read $0.28 + user msg auto-cache $1.17 + output $0.25)

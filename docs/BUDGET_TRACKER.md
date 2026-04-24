@@ -96,14 +96,14 @@ Note: +$11.82 dari CSV streamfix ($21.39→$33.21) — recording session: 1 warm
 | API — Sonnet 4.6 | $2.47 | 2026-04-24 |
 | **Total API aktual** | **$47.37** | |
 | Claude Code (sesi 2026-04-23) | $11.11 | 2026-04-23 |
-| Claude Code (sesi 2026-04-24) | $23.92 | 2026-04-24 |
-| **Grand Total s.d. 2026-04-24** | **$82.40** | |
+| Claude Code (sesi 2026-04-24) | $30.96 | 2026-04-24 |
+| **Grand Total s.d. 2026-04-24** | **$89.44** | |
 
-### Claude Code 2026-04-24 Breakdown
+### Claude Code 2026-04-24 Breakdown (final)
 | Model | Input | Output | Cache Read | Cache Write | Cost |
 |---|---|---|---|---|---|
-| claude-haiku-4-5 | 29.5k | 12.2k | 325.7k | 124.5k | $0.28 |
-| claude-sonnet-4-6 | 16.0k | 343.6k | 43.7M | 1.4M | $23.64 |
-| **Total** | | | | | **$23.92** |
+| claude-haiku-4-5 | 49.3k | 32.2k | 2.3M | 371.5k | $0.91 |
+| claude-sonnet-4-6 | 17.6k | 393.7k | 55.2M | 2.0M | $30.06 |
+| **Total** | | | | | **$30.96** |
 
-Wall time: 7h 30m 50s · API time: 1h 41m 5s · Code changes: +2733 / -353 lines
+Wall time: 12h 16m 15s · API time: 2h 1m 45s · Code changes: +2907 / -482 lines
