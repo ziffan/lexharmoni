@@ -64,21 +64,27 @@ Setelah severity lock patch diterapkan manual ke `backend/prompt_loader.py` (ins
 
 Laporan lengkap: `docs/SEVERITY_LOCK_VALIDATION.md`
 
-### Streaming Fix — React 19 Auto-Batching
+### Streaming Fix — React 19 Auto-Batching + CRLF Root Cause
 
-Saat b-roll recording, user melaporkan reasoning text tidak muncul bertahap (token-by-token), melainkan muncul sekaligus setelah analisis selesai.
+Saat b-roll recording, user melaporkan reasoning text tidak muncul bertahap (token-by-token), melainkan muncul sekaligus setelah analisis selesai. Setelah Opus verify run, ditemukan dua isu tambahan: `<re asoning>` tag terlihat dan kata-kata terpotong spasi (`f ully`, `P asal`).
 
-**Root cause:** React 19 automatic batching — semua `setReasoning(prev => prev + data)` yang dipanggil di dalam async `while` loop di-batch ke satu render di akhir loop. UI tidak update sampai seluruh stream selesai.
+**Root cause 1 — React 19 automatic batching:** semua `setReasoning` di async `while` loop di-batch ke satu render di akhir loop.
+**Fix attempt 1:** `flushSync` — tidak efektif.
+**Fix final:** `useRef` accumulator + `setInterval(60ms)` drain — chunks dikumpulkan di ref, di-flush ke state setiap 60ms tanpa melalui React batching.
 
-**Fix:** Tambahkan `import { flushSync } from 'react-dom'` dan wrap `setReasoning` dengan `flushSync`:
-```javascript
-flushSync(() => {
-  setReasoning(prev => prev + data);
-});
-```
-Ini memaksa React me-render setiap chunk secara synchronous, sehingga teks tampil real-time.
+**Root cause 2 — HTTP CRLF line endings:** SSE data lines berakhir `\r\n`, setelah `split('\n')` tiap line menyisakan `\r` di ujung. Ketika di-concat antar-chunk, `\r` ter-embed: `"<re\rasoning>"` render sebagai `"<re asoning>"`, `"f\rully"` sebagai `"f ully"`.
+**Fix:** `.replace(/\r$/, '')` per SSE data field — strip `\r` sebelum append ke accumulator.
 
-**File yang diubah:** `frontend/app/page.tsx` — 2 baris (import + wrap).
+**Fix tambahan:** regex normalisasi spasi di dalam `<...>` sebelum strip tag, untuk handle tokenisasi BPE yang memecah tag lintas chunk.
+
+**File yang diubah:** `frontend/app/page.tsx` — ref/interval pattern, CRLF strip, tag-strip regex.
+
+### Mock Endpoint & UI Polish
+
+- `/analyze/mock` — stream pre-canned 3 findings tanpa API call, untuk development/testing
+- Dropdown model: Sonnet 4.6 dihapus, diganti **Mock (no API)**
+- Disclaimer footer ditambahkan di bawah `<main>`
+- Footer layout: full-width, `text-center`
 
 ### Pembuatan Dokumentasi
 Semua dokumen dibuat dalam satu sesi:
@@ -165,7 +171,7 @@ Semua dokumen diupdate dengan angka aktual.
 | Streaming real-time | ✅ Fixed — CRLF strip + ref/interval drain, VERIFIED Opus run |
 | Mock endpoint | ✅ Added — /analyze/mock, no API cost |
 | UI tag stripping | ✅ Fixed — \<reasoning\> tags stripped from panel |
-| Footer disclaimer | ✅ Added |
+| Footer disclaimer | ✅ Added — full-width, text-center |
 
 ---
 
@@ -205,6 +211,7 @@ baeedb9 Start 24-04-2026
 Commit sesi ini (post-compaction):
 - Severity lock validation: `tests/validate_severity_lock.py` + `docs/SEVERITY_LOCK_VALIDATION.md`
 - Frontend streaming + UI: `2919aa9` — CRLF strip, ref/interval drain, mock endpoint, tag strip, footer
+- Footer layout fix: full-width + text-center (post-verify)
 
 ---
 

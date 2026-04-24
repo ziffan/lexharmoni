@@ -6,8 +6,31 @@ All notable changes to LexHarmoni are documented here.
 
 ## [Unreleased]
 
-- Prompt fix: enforce type→severity mapping (normative→critical, hierarchical→major)
-- Verify `cache_stats.log` write after BASE-path fix
+- Demo script: pilih 3 consistent findings, susun narasi demo
+- Pertimbangkan `temperature=0` untuk output lebih deterministik
+
+---
+
+## [ui-streamfix] — 2026-04-24
+
+### Added
+- `backend/main.py` — `/analyze/mock` endpoint: streams pre-canned regulatory findings at 150ms/chunk, no API cost
+- `frontend/app/page.tsx` — **Mock** option in model dropdown (replaces Sonnet 4.6)
+- `frontend/app/page.tsx` — Disclaimer footer dengan copyright notice
+- `tests/validate_severity_lock.py` — post-patch severity validation script
+- `docs/SEVERITY_LOCK_VALIDATION.md` — hasil 2 post-patch runs (PASS)
+
+### Fixed
+- **Streaming real-time (React 19 auto-batching)**: ganti `flushSync` dengan `useRef` accumulator + `setInterval(60ms)` drain — bypass React 19 batching sepenuhnya
+- **`<reasoning>` tag leak + broken words**: SSE CRLF line endings (`\r\n`) menyebabkan `\r` ter-embed di data field setelah `split('\n')`, sehingga tag terpotong (`<re\rasoning>`) dan kata terpisah (`f\rully`). Fix: `.replace(/\r$/, '')` per SSE data line
+- **Tag strip regex**: normalisasi spasi di dalam `<...>` sebelum strip — handle tokenisasi BPE yang memecah tag lintas chunk
+- **Mock analyze guard**: `analyze()` early-return `if (!draftText.trim())` tidak berlaku saat mode Mock
+- **`cache_stats.log` path**: `Path(__file__).parent` → `BASE / "backend"` (uvicorn hot-reload path resolution)
+- **Severity calibration**: severity lock patch di `prompt_loader.py` — normative→critical, hierarchical→major, operational→minor. PASS 2/2 post-patch runs
+- **Footer layout**: hapus `max-w-4xl mx-auto`, teks `text-center`
+
+### Changed
+- `backend/main.py` — `max_tokens` 16K → 128K (Opus 4.7 actual API limit)
 
 ---
 

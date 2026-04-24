@@ -443,8 +443,8 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t border-slate-200 bg-slate-100 py-6 px-4 mt-auto">
-        <div className="max-w-4xl mx-auto space-y-2">
+      <footer className="border-t border-slate-200 bg-slate-100 py-6 px-6 mt-auto">
+        <div className="space-y-2 text-center">
           <p className="text-sm font-semibold text-slate-700">⚠ Disclaimer</p>
           <p className="text-xs text-slate-600 leading-relaxed">
             LexHarmoni is an educational exploration tool. Output is AI-generated (Claude Opus 4.7) based on a limited corpus of 7 Indonesian P2P lending regulations sourced from JDIH OJK and processed via automated scripts — source accuracy is not comprehensively verified.

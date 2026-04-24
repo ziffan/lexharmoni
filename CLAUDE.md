@@ -88,9 +88,11 @@ tests/
 
 | Issue | Status | Fix |
 |---|---|---|
-| `cache_stats.log` not written after uvicorn hot-reload | ✅ Fixed | Changed path from `Path(__file__).parent` to `BASE / "backend"` — needs verification in next run |
-| Severity calibration: F001 normative→should be critical | ⚠️ Pending | Add explicit type→severity constraint in `build_user_message()` prompt |
-| Findings count non-deterministic (4–5 across runs) | ℹ️ Expected | Stochastic sampling; 3 core frictions are always present |
+| `cache_stats.log` not written after uvicorn hot-reload | ✅ Fixed + Verified | `BASE / "backend"` path — 5+ entries confirmed written |
+| Severity calibration: normative→critical | ✅ Fixed + Verified | Severity lock patch in `prompt_loader.py` — PASS 2/2 post-patch runs |
+| Streaming all-at-once (React 19 auto-batching) | ✅ Fixed + Verified | `useRef` accumulator + `setInterval(60ms)` drain; CRLF `.replace(/\r$/, '')` |
+| `<reasoning>` tag visible / broken words | ✅ Fixed + Verified | CRLF strip + tag-strip regex with space normalization |
+| Findings count non-deterministic (4–5 across runs) | ℹ️ Expected | Stochastic sampling; 3 core frictions always present |
 
 ---
 
@@ -110,7 +112,9 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 | ST1 — Sonnet plumbing | Sonnet 4.6 | ✅ PASS | 2026-04-23 |
 | ST2 — Opus quality (3 runs) | Opus 4.7 | ✅ PASS | 2026-04-23 |
 
-**ST2 key finding:** 3/3 ground-truth frictions found in every run. Severity of anchor finding (collection hours conflict) fluktuatif: 1× major, 2× critical across 3 runs. Prompt fix pending.
+**ST2 key finding:** 3/3 ground-truth frictions found in every run. Severity calibration sudah di-fix (severity lock patch) dan di-verified PASS 2/2 runs.
+
+**Verify run (2026-04-24):** 4 findings, 1 critical/1 major/2 minor. Temporal window tepat (2024-12-27 → 2025-07-31, 7 bulan). UI streaming confirmed working.
 
 ---
 
@@ -128,12 +132,9 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 
 ## Pending Work (Next Session)
 
-1. **Prompt fix — severity calibration**: add to `build_user_message()` in `prompt_loader.py`:
-   > "Severity MUST follow type: normative → critical, hierarchical → major, operational → minor. Do not override based on perceived mitigation."
-
-2. **Verify `cache_stats.log`**: run one analysis and confirm file appears at `backend/cache_stats.log`
-
-3. **Demo prep**: decide which of the 3 consistent findings to script for demo narrative
+1. **Demo prep**: pilih 3 consistent findings (collection hours, orphaned delegation, terminology drift), susun narasi demo ~5 menit
+2. **Pertimbangkan `temperature=0`** untuk output lebih deterministik (findings count saat ini 4–5 stochastic)
+3. **Stabilisasi Terminology Drift** (stochastic 1/2 post-patch) — bisa tambah instruksi eksplisit di prompt
 
 ---
 
