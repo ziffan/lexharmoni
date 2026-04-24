@@ -204,11 +204,10 @@ ffbf745 [pre-ST2] Increase max_tokens to 32K and add budget tracker
 
 | Item | Biaya |
 |---|---|
-| API — ST1 Sonnet (warm-up + 2 confirmed runs) | ~$1.80 |
-| API — ST2 Opus R1 (cache write) | ~$2.43 |
-| API — ST2 Opus R2+R3 (cache read) | ~$1.16 |
-| Claude Code (session, agents, IDE) | ~$20.61 |
-| **Total hari ini** | **~$26.00** |
+| API — Sonnet 4.6 (semua calls, aktual) | $4.38 |
+| API — Opus 4.7 (semua calls, aktual) | $9.78 |
+| Claude Code (sesi 2026-04-23) | $11.11 |
+| **Total hari ini (aktual)** | **$25.27** |
 
 ---
 

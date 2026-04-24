@@ -116,7 +116,7 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 
 ## Budget (2026-04-23)
 
-Total spent today: ~$26.00 (API ~$5.39 + Claude Code ~$20.61)
+Total spent today: ~$25.27 (API $14.16 aktual + Claude Code $11.11)
 See `docs/BUDGET_TRACKER.md` for per-call breakdown.
 
 ---
