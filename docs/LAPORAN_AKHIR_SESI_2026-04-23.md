@@ -1,7 +1,7 @@
 # Laporan Akhir Sesi — LexHarmoni
 **Tanggal:** 2026-04-23
 **Durasi:** ~1 hari penuh
-**Total biaya:** ~$26.00 (API ~$5.39 + Claude Code ~$20.61)
+**Total biaya:** $25.27 aktual (API $14.16 + Claude Code $11.11)
 
 ---
 
