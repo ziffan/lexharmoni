@@ -446,12 +446,14 @@ export default function Home() {
       <footer className="border-t border-slate-200 bg-slate-100 py-6 px-6 mt-auto">
         <div className="space-y-2 text-center">
           <p className="text-sm font-semibold text-slate-700">⚠ Disclaimer</p>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            LexHarmoni is an educational exploration tool. Output is AI-generated (Claude Opus 4.7) based on a limited corpus of 7 Indonesian P2P lending regulations sourced from JDIH OJK and processed via automated scripts — source accuracy is not comprehensively verified.
-          </p>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Findings represent AI-assisted personal opinion and are <strong>NOT legal advice</strong>. All outputs require independent verification before being used as a basis for any decision-making. DYOR (Do Your Own Research).
-          </p>
+          <div className="space-y-0.5">
+            <p className="text-xs text-slate-600 leading-relaxed">
+              LexHarmoni is an educational exploration tool. Output is AI-generated (Claude Opus 4.7) based on a limited corpus of 7 Indonesian P2P lending regulations sourced from JDIH OJK and processed via automated scripts — source accuracy is not comprehensively verified.
+            </p>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Findings represent AI-assisted personal opinion and are <strong>NOT legal advice</strong>. All outputs require independent verification before being used as a basis for any decision-making. DYOR (Do Your Own Research).
+            </p>
+          </div>
           <p className="text-xs text-slate-500 pt-1">
             © 2026 Ziffany Firdinal. Built for Anthropic &ldquo;Built with Opus 4.7&rdquo; Hackathon, April 2026.
           </p>
