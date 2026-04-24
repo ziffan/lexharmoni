@@ -1,7 +1,7 @@
 # LexHarmoni — Budget Tracker
 
 **Session start:** 2026-04-23
-**Source:** `claude_api_cost_2026_04_01_to_2026_04_24.csv` (actual) + Claude Code invoice
+**Source:** `claude_api_cost_2026_04_01_to_2026_04_24.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-update.csv` + Claude Code invoice
 
 ---
 
@@ -58,12 +58,43 @@ write terjadi lebih dari 1×.
 
 ---
 
+## API Actual Cost — 2026-04-24 (dari CSV update)
+
+### Claude Opus 4.7
+
+| Token type | Biaya aktual | Token est. |
+|---|---|---|
+| input_no_cache | $4.67 | ~934K tokens (~5 runs × 186K) |
+| input_cache_read | $1.94 | ~3.88M tokens (~7 reads × 554K) |
+| input_cache_write_5m | $2.33 | ~373K tokens (2× user msg auto-cache) |
+| input_cache_write_1h | $5.55 | ~555K tokens (corpus re-write, cache expired) |
+| output | $1.56 | ~62.4K tokens (~7 calls × 8.9K avg) |
+| **Opus Total April 24** | **$16.05** | |
+
+### Claude Sonnet 4.6 (April 24)
+
+| Token type | Biaya aktual | Token est. |
+|---|---|---|
+| input_no_cache | $0.00 | ~0 |
+| input_cache_write_1h | $2.46 | ~410K tokens (1 corpus write) |
+| output | $0.01 | ~670 tokens |
+| **Sonnet Total April 24** | **$2.47** | |
+
+**April 24 total: $18.52**
+
+Note: Sonnet $2.47 berasal dari curl diagnostic saat debugging SSE (`model: claude-sonnet-4-6`, draft pendek) — men-trigger corpus cache write Sonnet $2.46 yang tidak disengaja. `input_cache_write_5m` = user message POJK-40-2024 (~186K tokens) auto-cached 2× oleh Anthropic.
+
+---
+
 ## Running Total — Aktual
 
-| Item | Biaya |
-|---|---|
-| API — Sonnet 4.6 (all calls) | $4.38 |
-| API — Opus 4.7 (all calls) | $9.78 |
-| **Total API aktual** | **$14.16** |
-| Claude Code (sesi 2026-04-23) | $11.11 |
-| **Grand Total 2026-04-23** | **$25.27** |
+| Item | Biaya | Tanggal |
+|---|---|---|
+| API — Sonnet 4.6 | $4.38 | 2026-04-23 |
+| API — Opus 4.7 | $9.78 | 2026-04-23 |
+| API — Opus 4.7 | $16.05 | 2026-04-24 |
+| API — Sonnet 4.6 | $2.47 | 2026-04-24 |
+| **Total API aktual** | **$32.68** | |
+| Claude Code (sesi 2026-04-23) | $11.11 | 2026-04-23 |
+| Claude Code (sesi 2026-04-24) | TBD | 2026-04-24 |
+| **Grand Total s.d. 2026-04-24** | **≥$43.79** | |

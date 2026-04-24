@@ -230,6 +230,22 @@ export default function Home() {
   const [findings, setFindings] = useState<FindingsData | null>(null);
   const [status, setStatus] = useState<AppStatus>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const pendingReasoningRef = useRef('');
+
+  // Drain accumulated streaming chunks into React state at ~60fps
+  useEffect(() => {
+    if (status !== 'analyzing') return;
+    const id = setInterval(() => {
+      const pending = pendingReasoningRef.current;
+      if (pending) setReasoning(
+        pending
+          .replace(/<([^>]{0,60})>/g, (_, i) => '<' + i.replace(/\s+/g, '') + '>')
+          .replace(/<\/?reasoning>/gi, '')
+          .trimStart()
+      );
+    }, 60);
+    return () => clearInterval(id);
+  }, [status]);
 
   const loadPreset = useCallback(async () => {
     setStatus('loading_preset');
@@ -259,14 +275,16 @@ export default function Home() {
   }, []);
 
   const analyze = useCallback(async () => {
-    if (!draftText.trim()) return;
+    if (model !== 'mock' && !draftText.trim()) return;
     setStatus('analyzing');
     setReasoning('');
+    pendingReasoningRef.current = '';
     setFindings(null);
     setErrorMsg('');
 
     try {
-      const res = await fetch(`${API_URL}/analyze`, {
+      const endpoint = model === 'mock' ? `${API_URL}/analyze/mock` : `${API_URL}/analyze`;
+      const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ draft_id: draftId || 'draft', draft_text: draftText, model }),
@@ -296,9 +314,9 @@ export default function Home() {
           if (line.startsWith('event: ')) {
             currentEvent = line.slice(7).trim();
           } else if (line.startsWith('data: ')) {
-            const data = line.slice(6);
+            const data = line.slice(6).replace(/\r$/, '');
             if (currentEvent === 'reasoning') {
-              setReasoning(prev => prev + data);
+              pendingReasoningRef.current += data;
             } else if (currentEvent === 'findings') {
               try {
                 setFindings(JSON.parse(data));
@@ -315,6 +333,12 @@ export default function Home() {
         }
       }
 
+      setReasoning(
+        pendingReasoningRef.current
+          .replace(/<([^>]{0,60})>/g, (_, i) => '<' + i.replace(/\s+/g, '') + '>')
+          .replace(/<\/?reasoning>/gi, '')
+          .trimStart()
+      );
       setStatus(prev => prev === 'analyzing' ? 'complete' : prev);
     } catch (e) {
       setErrorMsg(`Analysis failed: ${e instanceof Error ? e.message : String(e)}`);
@@ -371,16 +395,16 @@ export default function Home() {
               className="flex-1 bg-white border border-slate-300 rounded px-2 py-1 text-xs text-slate-900 disabled:opacity-50"
             >
               <option value="claude-opus-4-7">Opus 4.7</option>
-              <option value="claude-sonnet-4-6">Sonnet 4.6</option>
+              <option value="mock">Mock (no API)</option>
             </select>
           </div>
 
           <button
             onClick={analyze}
-            disabled={!draftText.trim() || status === 'analyzing' || status === 'loading_preset'}
+            disabled={(model !== 'mock' && !draftText.trim()) || status === 'analyzing' || status === 'loading_preset'}
             className="w-full px-3 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-sm font-semibold transition-colors text-white"
           >
-            {status === 'analyzing' ? 'Analyzing…' : `Analyze with ${model === 'claude-opus-4-7' ? 'Opus 4.7' : 'Sonnet 4.6'}`}
+            {status === 'analyzing' ? 'Analyzing…' : `Analyze with ${model === 'claude-opus-4-7' ? 'Opus 4.7' : 'Mock'}`}
           </button>
 
           {draftId && (
@@ -418,6 +442,21 @@ export default function Home() {
           )}
         </div>
       </main>
+
+      <footer className="border-t border-slate-200 bg-slate-100 py-6 px-4 mt-auto">
+        <div className="max-w-4xl mx-auto space-y-2">
+          <p className="text-sm font-semibold text-slate-700">⚠ Disclaimer</p>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            LexHarmoni is an educational exploration tool. Output is AI-generated (Claude Opus 4.7) based on a limited corpus of 7 Indonesian P2P lending regulations sourced from JDIH OJK and processed via automated scripts — source accuracy is not comprehensively verified.
+          </p>
+          <p className="text-xs text-slate-600 leading-relaxed">
+            Findings represent AI-assisted personal opinion and are <strong>NOT legal advice</strong>. All outputs require independent verification before being used as a basis for any decision-making. DYOR (Do Your Own Research).
+          </p>
+          <p className="text-xs text-slate-500 pt-1">
+            © 2026 Ziffany Firdinal. Built for Anthropic &ldquo;Built with Opus 4.7&rdquo; Hackathon, April 2026.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

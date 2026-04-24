@@ -2,7 +2,7 @@
 **Tanggal:** 2026-04-24
 **Waktu mulai:** 06:34 WIB (commit `baeedb9 Start 24-04-2026`)
 **Konteks:** Kelanjutan sesi 2026-04-23 — backend + frontend + ST1 sudah selesai kemarin
-**Total biaya hari ini:** lihat Budget Tracker (API terakumulasi di tanggal 23, Claude Code $11.11)
+**Total biaya hari ini:** API $18.52 (Opus $16.05 + Sonnet $2.47) + Claude Code TBD — lihat Budget Tracker
 
 ---
 
@@ -52,6 +52,34 @@ Tiga run dilakukan secara berurutan selagi cache Opus masih warm:
 2. Orphaned cantolan Bab XI — selalu ada
 3. Terminology "multiguna" vs "konsumtif" — paling stabil
 
+### Severity Lock Validation (Post-Patch)
+
+Setelah severity lock patch diterapkan manual ke `backend/prompt_loader.py` (instruksi STRICT type→severity), dilakukan validasi via script `tests/validate_severity_lock.py`:
+
+- **Run 1:** 119.4s — data valid, aborted karena `UnicodeEncodeError` Windows cp1252 tidak bisa encode emoji ✅/❌ di stdout. Fix: ganti output ke ASCII `PASS`/`FAIL`.
+- **Run 2:** 114.4s — **PASS** — 4/4 findings dengan severity benar (F001 normative·critical, F002 hierarchical·major, F003-F004 operational·minor)
+- **Run 3:** 121.9s — **PASS** — 3/3 findings dengan severity benar (Terminology Drift stochastic — tidak muncul, bukan masalah severity)
+
+**Verdict:** Severity lock bekerja. Pre-patch: 1/3 run mismatch (normative→major). Post-patch: 0/2 mismatch.
+
+Laporan lengkap: `docs/SEVERITY_LOCK_VALIDATION.md`
+
+### Streaming Fix — React 19 Auto-Batching
+
+Saat b-roll recording, user melaporkan reasoning text tidak muncul bertahap (token-by-token), melainkan muncul sekaligus setelah analisis selesai.
+
+**Root cause:** React 19 automatic batching — semua `setReasoning(prev => prev + data)` yang dipanggil di dalam async `while` loop di-batch ke satu render di akhir loop. UI tidak update sampai seluruh stream selesai.
+
+**Fix:** Tambahkan `import { flushSync } from 'react-dom'` dan wrap `setReasoning` dengan `flushSync`:
+```javascript
+flushSync(() => {
+  setReasoning(prev => prev + data);
+});
+```
+Ini memaksa React me-render setiap chunk secara synchronous, sehingga teks tampil real-time.
+
+**File yang diubah:** `frontend/app/page.tsx` — 2 baris (import + wrap).
+
 ### Pembuatan Dokumentasi
 Semua dokumen dibuat dalam satu sesi:
 - `CHANGELOG.md` — log seluruh perubahan dari MT-0 hingga ST2
@@ -82,9 +110,20 @@ Semua dokumen diupdate dengan angka aktual.
 **Akar masalah:** `Path(__file__).parent` tidak resolve ke path absolut setelah uvicorn hot-reload. File dicari ke seluruh filesystem — tidak ditemukan di mana pun.
 **Percobaan 1:** `Path(os.path.abspath(__file__)).parent` — tidak membantu.
 **Solusi akhir:** Ubah ke `BASE / "backend" / "cache_stats.log"` — `BASE` sudah proven benar karena dipakai untuk load corpus yang berfungsi.
-**Status:** Fix diterapkan, belum diverifikasi di run berikutnya.
+**Status:** ✅ **Verified** — file terbuat dan terisi dengan benar di semua run validate_severity_lock (5 entri total).
 
-### K-3: Estimasi biaya meleset 2.6×
+### K-3: UnicodeEncodeError pada Windows cp1252
+**Gejala:** `validate_severity_lock.py` Run 1 crash saat print output ke console: `UnicodeEncodeError: 'charmap' codec can't encode character '✅'`
+**Akar masalah:** Windows console default encoding cp1252 tidak mendukung emoji ✅/❌ yang digunakan di output script.
+**Solusi:** Ganti seluruh emoji di output script dengan ASCII string `PASS`/`FAIL`. Tambahkan env `PYTHONIOENCODING=utf-8` sebagai backup.
+
+### K-4: Streaming tidak real-time (React 19 auto-batching)
+**Gejala:** Reasoning text muncul sekaligus setelah analisis selesai, bukan token-by-token.
+**Akar masalah:** React 19 automatic batching — `setReasoning` di async loop tidak trigger re-render per chunk, melainkan di-batch ke satu flush di akhir.
+**Solusi:** `flushSync(() => setReasoning(...))` dari `react-dom` — memaksa synchronous render per chunk.
+**File:** `frontend/app/page.tsx`
+
+### K-5: Estimasi biaya meleset 2.6×
 **Gejala:** Estimasi API $5.39, aktual $14.16.
 **Akar masalah:** Harga cache write 1h TTL adalah **2× input price** (bukan sama dengan input):
 - Sonnet: $6/MTok write (bukan $3/MTok)
@@ -121,12 +160,32 @@ Semua dokumen diupdate dengan angka aktual.
 | max_tokens | ✅ 128K (benar) |
 | Prompt caching 1h TTL | ✅ Verified working |
 | Findings parsing | ✅ Robust |
-| cache_stats.log | ⚠️ Fix diterapkan, belum diverifikasi |
-| Severity calibration | ⚠️ Pending prompt fix |
+| cache_stats.log | ✅ Verified working (5 entri tertulis) |
+| Severity calibration | ✅ Fixed — severity lock patch PASS 2/2 runs |
+| Streaming real-time | ✅ Fixed — flushSync applied |
 
 ---
 
-## 5. Commit History Hari Ini
+## 5. Biaya API Hari Ini (2026-04-24, dari CSV update)
+
+| Token type | Biaya |
+|---|---|
+| Opus input_no_cache | $4.67 |
+| Opus input_cache_read | $1.94 |
+| Opus input_cache_write_5m (user msg auto-cache) | $2.33 |
+| Opus input_cache_write_1h (corpus re-write) | $5.55 |
+| Opus output | $1.56 |
+| **Opus subtotal** | **$16.05** |
+| Sonnet input_cache_write_1h (corpus write) | $2.46 |
+| Sonnet output | $0.01 |
+| **Sonnet subtotal** | **$2.47** |
+| **Total API 2026-04-24** | **$18.52** |
+
+Note: Corpus Opus expired → re-write $5.55. User message auto-cached 2× = $2.33. Sonnet $2.47 tidak disengaja — dari curl diagnostic `model: claude-sonnet-4-6` saat debugging SSE yang men-trigger corpus write Sonnet baru ($2.46).
+
+---
+
+## 6. Commit History Hari Ini
 
 ```
 3a6bcb6 [docs] Update budget with actual CSV data ($25.27 total)
@@ -140,13 +199,16 @@ d067212 Update manual-analysis.md
 baeedb9 Start 24-04-2026
 ```
 
+Commit sesi ini (post-compaction):
+- Severity lock validation: `tests/validate_severity_lock.py` + `docs/SEVERITY_LOCK_VALIDATION.md`
+- Frontend streaming fix: `flushSync` di `frontend/app/page.tsx`
+
 ---
 
-## 6. Pekerjaan Sesi Berikutnya
+## 7. Pekerjaan Sesi Berikutnya
 
 | Prioritas | Item |
 |---|---|
-| High | Fix severity calibration — tambah constraint tipe→severity di `build_user_message()` |
-| High | Verifikasi `cache_stats.log` tertulis — jalankan 1 analyze setelah restart backend |
-| Medium | Demo script — pilih 3 consistent findings, susun narasi demo |
-| Low | Pertimbangkan `temperature=0` untuk output lebih deterministik |
+| High | Demo script — pilih 3 consistent findings, susun narasi demo |
+| Medium | Pertimbangkan `temperature=0` untuk output lebih deterministik |
+| Low | Stabilisasi Terminology Drift (stochastic 1/2 post-patch) — bisa tambah instruksi eksplisit di prompt |

@@ -4,6 +4,7 @@
 # You may obtain a copy of the License at
 #     http://www.apache.org/licenses/LICENSE-2.0
 
+import asyncio
 import json
 import os
 import sys
@@ -73,6 +74,99 @@ async def get_preset_pojk():
         return {"draft_id": "POJK-40-2024", "draft_text": text}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error reading file: {str(e)}")
+
+
+_MOCK_CHUNKS = [
+    "<reasoning>\n",
+    "## Analisis Regulasi: POJK-40-2024 (MOCK)\n\n",
+    "Memulai analisis persilangan regulasi antara POJK 40/2024 sebagai draft uji ",
+    "dengan korpus regulasi aktif: POJK 22/2023, SEOJK 19/2023, POJK 10/2022.\n\n",
+    "### 1. Pemeriksaan Konflik Jam Penagihan\n\n",
+    "POJK 22/2023 Pasal 62 ayat (2) huruf f menetapkan jam penagihan ",
+    "08.00-20.00 WIB untuk hari kerja dan 08.00-17.00 WIB untuk Sabtu.\n",
+    "SEOJK 19/2023 Bab XI angka 5 mengatur hari penagihan Senin-Sabtu ",
+    "dengan ketentuan jam yang berbeda dari POJK 22/2023.\n\n",
+    "POJK 40/2024 Pasal 235 memuat saving clause open-ended yang memperpanjang ",
+    "berlakunya SEOJK 19/2023 tanpa batas waktu dan tanpa resolusi konflik.\n",
+    "Dua norma setingkat dengan isi berbeda berlaku bersamaan.\n\n",
+    "**Kualifikasi:** normative conflict. **Severity:** critical.\n\n",
+    "### 2. Pemeriksaan Orphaned Delegation\n\n",
+    "POJK 10/2022 mendelegasikan pengaturan teknis penagihan ke SEOJK 19/2023. ",
+    "POJK 40/2024 Pasal 236 mencabut POJK 10/2022 sepenuhnya. ",
+    "Namun SEOJK 19/2023 masih dipertahankan via saving clause Pasal 235.\n",
+    "Delegation chain menjadi orphaned: parent dicabut, child masih berlaku.\n\n",
+    "**Kualifikasi:** hierarchical conflict. **Severity:** major.\n\n",
+    "### 3. Pemeriksaan Terminology Drift\n\n",
+    "SEOJK 19/2023 menggunakan istilah 'Pendanaan multiguna'. ",
+    "POJK 40/2024 menggunakan 'Pendanaan konsumtif' untuk kategori yang sama. ",
+    "Tidak ada pasal bridging yang menyamakan kedua istilah.\n\n",
+    "**Kualifikasi:** operational. **Severity:** minor.\n\n",
+    "### Ringkasan\n\n",
+    "Ditemukan 3 friction. Semua konsisten dengan ground truth. ",
+    "Severity lock rules diterapkan: normative->critical, hierarchical->major, operational->minor.\n",
+    "</reasoning>\n",
+]
+
+_MOCK_FINDINGS = {
+    "findings": [
+        {
+            "id": "F001", "type": "normative", "severity": "critical",
+            "title": "[MOCK] Konflik jam penagihan via saving clause Pasal 235",
+            "summary": "POJK 22/2023 dan SEOJK 19/2023 memiliki ketentuan jam penagihan berbeda. Pasal 235 POJK 40/2024 memperpanjang SEOJK 19/2023 tanpa resolusi konflik.",
+            "affected_regulations": [
+                {"regulation_id": "POJK-22-2023", "article_or_section": "Pasal 62 ayat (2) huruf f", "quoted_text": "08.00-20.00 WIB", "role": "conflicting_norm"},
+                {"regulation_id": "SEOJK-19-2023", "article_or_section": "Bab XI angka 5", "quoted_text": "hari penagihan Senin-Sabtu", "role": "conflicting_norm"},
+            ],
+            "reasoning_steps": ["Identifikasi dua norma berlaku bersamaan", "Verifikasi tidak ada hierarki eksplisit", "Klasifikasi sebagai normative conflict"],
+            "temporal_window": {"friction_active_from": "2024-01-01", "friction_active_until": None, "duration_months": None},
+            "recommended_resolution": "Tambahkan sunset clause pada Pasal 235 atau harmonisasi eksplisit ketentuan jam penagihan.",
+            "confidence": 0.95,
+        },
+        {
+            "id": "F002", "type": "hierarchical", "severity": "major",
+            "title": "[MOCK] Orphaned delegation: SEOJK 19/2023 kehilangan cantolan parent",
+            "summary": "Pasal 236 POJK 40/2024 mencabut POJK 10/2022 selaku parent delegasi SEOJK 19/2023, sementara SEOJK 19/2023 masih dipertahankan via saving clause.",
+            "affected_regulations": [
+                {"regulation_id": "POJK-10-2022", "article_or_section": "Pasal 25", "quoted_text": "delegasi ke SEOJK", "role": "revoked_parent"},
+                {"regulation_id": "SEOJK-19-2023", "article_or_section": "Bab XI", "quoted_text": "Bab Penagihan", "role": "orphaned_child"},
+            ],
+            "reasoning_steps": ["Trace delegation chain", "Verifikasi pencabutan parent", "Konfirmasi anak masih berlaku"],
+            "temporal_window": {"friction_active_from": "2024-01-01", "friction_active_until": None, "duration_months": None},
+            "recommended_resolution": "Cantumkan dasar delegasi baru di POJK 40/2024 yang menggantikan POJK 10/2022.",
+            "confidence": 0.92,
+        },
+        {
+            "id": "F003", "type": "operational", "severity": "minor",
+            "title": "[MOCK] Terminology drift: 'multiguna' vs 'konsumtif'",
+            "summary": "SEOJK 19/2023 menggunakan 'Pendanaan multiguna', POJK 40/2024 menggunakan 'Pendanaan konsumtif' untuk kategori yang sama tanpa pasal bridging.",
+            "affected_regulations": [
+                {"regulation_id": "SEOJK-19-2023", "article_or_section": "Bab I", "quoted_text": "Pendanaan multiguna", "role": "source_term"},
+                {"regulation_id": "POJK-40-2024", "article_or_section": "Pasal 1 angka 5", "quoted_text": "Pendanaan konsumtif", "role": "target_term"},
+            ],
+            "reasoning_steps": ["Temukan penggunaan istilah", "Verifikasi tidak ada pasal ekuivalensi", "Klasifikasi sebagai terminologi drift"],
+            "temporal_window": {"friction_active_from": "2024-01-01", "friction_active_until": None, "duration_months": None},
+            "recommended_resolution": "Tambahkan pasal definisi yang menyamakan kedua istilah.",
+            "confidence": 0.85,
+        },
+    ],
+    "summary_stats": {
+        "total_findings": 3,
+        "by_severity": {"critical": 1, "major": 1, "minor": 1},
+        "by_type": {"normative": 1, "hierarchical": 1, "operational": 1},
+    },
+}
+
+
+@app.post("/analyze/mock")
+async def analyze_mock(req: AnalyzeRequest):
+    """Mock SSE endpoint — streams pre-canned text with delays, no API call."""
+    async def mock_stream():
+        for chunk in _MOCK_CHUNKS:
+            yield {"event": "reasoning", "data": chunk}
+            await asyncio.sleep(0.15)
+        yield {"event": "findings", "data": json.dumps(_MOCK_FINDINGS)}
+        yield {"event": "done", "data": "complete"}
+    return EventSourceResponse(mock_stream())
 
 
 @app.post("/analyze")
