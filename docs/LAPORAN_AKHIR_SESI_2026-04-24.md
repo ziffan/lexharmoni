@@ -2,13 +2,13 @@
 **Tanggal:** 2026-04-24
 **Waktu mulai:** 06:34 WIB (commit `baeedb9 Start 24-04-2026`)
 **Konteks:** Kelanjutan sesi 2026-04-23 — backend + frontend + ST1 sudah selesai kemarin
-**Total biaya hari ini:** API $18.52 (Opus $16.05 + Sonnet $2.47) + Claude Code TBD — lihat Budget Tracker
+**Total biaya hari ini:** API $33.21 (Opus $30.74 + Sonnet $2.47) + Claude Code $23.92 = **$57.13** — lihat Budget Tracker
 
 ---
 
 ## Ringkasan Eksekutif
 
-Sesi ini melanjutkan dari titik di mana Smoke Test 1 (Sonnet plumbing) sudah PASS dan sistem siap untuk Smoke Test 2 (Opus quality). Fokus hari ini: koreksi `max_tokens`, 3 run Opus 4.7 dengan analisis konsistensi lintas-run, pembuatan seluruh dokumentasi sesi (CHANGELOG, CLAUDE.md, laporan, budget), serta analisis biaya aktual dari CSV Anthropic.
+Sesi ini melanjutkan dari titik di mana Smoke Test 1 (Sonnet plumbing) sudah PASS dan sistem siap untuk Smoke Test 2 (Opus quality). Fokus hari ini: koreksi `max_tokens`, 3 run Opus 4.7 dengan analisis konsistensi lintas-run, streaming fix (React 19 + CRLF), mock endpoint, severity lock validation, pembuatan dokumentasi, dan **demo recording session** (1 warm-up + 3 Opus recorded runs, semua cache HIT). Total biaya hari ini: $57.13 (API $33.21 + Claude Code $23.92).
 
 ---
 
@@ -94,13 +94,18 @@ Semua dokumen dibuat dalam satu sesi:
 - `docs/BUDGET_TRACKER.md` — tracking biaya per call
 
 ### Koreksi Budget dengan Data CSV Aktual
-User menyediakan `claude_api_cost_2026_04_01_to_2026_04_24.csv` dari Anthropic dashboard:
-- Sonnet 4.6 aktual: **$4.38** (estimasi awal $1.80)
-- Opus 4.7 aktual: **$9.78** (estimasi awal $3.59)
-- Claude Code aktual: **$11.11** (bukan $20.61 seperti estimasi awal)
-- **Total aktual: $25.27**
+User menyediakan 4 CSV bertahap dari Anthropic dashboard (update intraday):
+- CSV 1: Sonnet $4.38 + Opus $9.78 (sesi Apr 23)
+- CSV 2 (update): April 24 awal — $18.52
+- CSV 3 (streamfix): +$2.87 → $21.39 (streaming fix runs)
+- CSV 4 (update_demo): +$11.82 → **$33.21** (recording session)
 
-Semua dokumen diupdate dengan angka aktual.
+Claude Code aktual (dari `/usage`): **$23.92** (Sonnet 4.6 $23.64 + Haiku 4.5 $0.28)
+
+### Demo Recording Session
+Pre-recording checklist selesai (Phase 1 PASS semua). Cache warm-up jam 18:35 WIB. 3 Opus recorded runs selesai jam 18:46 WIB — semua cache HIT (cache_read=554,518 setiap run). Total recording session cost: **$11.82**.
+
+Detail: `docs/DEMO_RECORDING_SESSION.md`
 
 ---
 
@@ -123,10 +128,11 @@ Semua dokumen diupdate dengan angka aktual.
 **Akar masalah:** Windows console default encoding cp1252 tidak mendukung emoji ✅/❌ yang digunakan di output script.
 **Solusi:** Ganti seluruh emoji di output script dengan ASCII string `PASS`/`FAIL`. Tambahkan env `PYTHONIOENCODING=utf-8` sebagai backup.
 
-### K-4: Streaming tidak real-time (React 19 auto-batching)
-**Gejala:** Reasoning text muncul sekaligus setelah analisis selesai, bukan token-by-token.
-**Akar masalah:** React 19 automatic batching — `setReasoning` di async loop tidak trigger re-render per chunk, melainkan di-batch ke satu flush di akhir.
-**Solusi:** `flushSync(() => setReasoning(...))` dari `react-dom` — memaksa synchronous render per chunk.
+### K-4: Streaming tidak real-time (React 19 auto-batching + CRLF)
+**Gejala:** Reasoning text muncul sekaligus; `<re asoning>` tag visible; kata terpotong (`f ully`).
+**Akar masalah 1:** React 19 batching — `setReasoning` di-batch ke satu render di akhir stream.
+**Akar masalah 2:** HTTP CRLF `\r` ter-embed di data field setelah `split('\n')`.
+**Solusi:** `useRef` accumulator + `setInterval(60ms)` drain + `.replace(/\r$/, '')` per data line.
 **File:** `frontend/app/page.tsx`
 
 ### K-5: Estimasi biaya meleset 2.6×
@@ -172,25 +178,28 @@ Semua dokumen diupdate dengan angka aktual.
 | Mock endpoint | ✅ Added — /analyze/mock, no API cost |
 | UI tag stripping | ✅ Fixed — \<reasoning\> tags stripped from panel |
 | Footer disclaimer | ✅ Added — full-width, text-center |
+| Demo footage | ✅ Recorded — 3 Opus takes, semua cache HIT |
 
 ---
 
-## 5. Biaya API Hari Ini (2026-04-24, dari CSV update)
+## 5. Biaya API Hari Ini (2026-04-24, dari CSV update_demo — final)
 
 | Token type | Biaya |
 |---|---|
-| Opus input_no_cache | $6.54 |
-| Opus input_cache_read | $2.50 |
-| Opus input_cache_write_5m (user msg auto-cache) | $2.33 |
-| Opus input_cache_write_1h (corpus re-write) | $5.55 |
-| Opus output | $2.00 |
-| **Opus subtotal** | **$18.92** |
+| Opus input_no_cache | $7.47 |
+| Opus input_cache_read | $3.33 |
+| Opus input_cache_write_5m (user msg auto-cache) | $5.83 |
+| Opus input_cache_write_1h (corpus re-write ×2) | $11.09 |
+| Opus output | $3.02 |
+| **Opus subtotal** | **$30.74** |
 | Sonnet input_cache_write_1h (corpus write) | $2.46 |
 | Sonnet output | $0.01 |
 | **Sonnet subtotal** | **$2.47** |
-| **Total API 2026-04-24** | **$21.39** |
+| **Total API 2026-04-24** | **$33.21** |
+| **Claude Code 2026-04-24** | **$23.92** |
+| **Total Hari Ini** | **$57.13** |
 
-Note: +$2.87 dari update sebelumnya ($18.52→$21.39) berasal dari sesi streaming fix (~2 Opus run tambahan). Corpus Opus expired → re-write $5.55. User message auto-cached 2× = $2.33. Sonnet $2.47 tidak disengaja — dari curl diagnostic `model: claude-sonnet-4-6` saat debugging SSE yang men-trigger corpus write Sonnet baru ($2.46).
+Note: +$11.82 dari CSV streamfix ($21.39→$33.21) = recording session (warm-up corpus write + 3 recorded Opus runs cache HIT). Claude Code $23.92 = Sonnet 4.6 $23.64 + Haiku 4.5 $0.28, wall time 7j30m.
 
 ---
 
@@ -209,9 +218,13 @@ baeedb9 Start 24-04-2026
 ```
 
 Commit sesi ini (post-compaction):
-- Severity lock validation: `tests/validate_severity_lock.py` + `docs/SEVERITY_LOCK_VALIDATION.md`
-- Frontend streaming + UI: `2919aa9` — CRLF strip, ref/interval drain, mock endpoint, tag strip, footer
-- Footer layout fix: full-width + text-center (post-verify)
+- `3e09ba4` — severity lock validation
+- `2919aa9` — streaming fix: CRLF strip, ref/interval drain, mock endpoint, footer
+- `abef3d9` — laporan update: verified streaming fix + Opus run quality notes
+- `5777287` — budget: streamfix CSV ($21.39)
+- `fe9b30d` — footer center, CHANGELOG, CLAUDE.md known issues
+- `aeeea36` — footer paragraph spacing
+- `2f72eae` — gitignore logs+.claude, smoke test docs, remove integration spec
 
 ---
 
@@ -219,9 +232,13 @@ Commit sesi ini (post-compaction):
 
 | Prioritas | Item |
 |---|---|
-| High | Demo script — pilih 3 consistent findings, susun narasi demo |
+| High | Review footage B1/B2/B3 di CapCut — pilih best take |
+| High | Edit video demo: mock intro + Opus full run + narasi |
 | Medium | Pertimbangkan `temperature=0` untuk output lebih deterministik |
-| Low | Stabilisasi Terminology Drift (stochastic 1/2 post-patch) — bisa tambah instruksi eksplisit di prompt |
+| Low | Stabilisasi Terminology Drift (stochastic 1/2 post-patch) |
 
 ### Catatan Kualitas Opus Run Terakhir (Verify Run)
 4 findings, 1 critical/1 major/2 minor. Temporal window tepat (2024-12-27 → 2025-07-31, 7 bulan) — model mendeteksi SEOJK 19/2025 sebagai resolusi dan menghitung durasi. Zero hallucination. Cited articles benar (POJK 22/2023 Pasal 62 ayat 2 huruf e-f, SEOJK 19/2023 Romawi XI angka 5). Reasoning transparent dan traceable. **UI bekerja sempurna — streaming real-time, no broken words, no tag leak.**
+
+### Catatan Demo Recording
+3 Opus takes tersedia (B1: 9,414 tok · B2: 11,084 tok · B3: 9,482 tok). B2 output tertinggi — kemungkinan reasoning paling detail. Semua cache HIT. Deadline submission: 27 April 07:00 WIB.

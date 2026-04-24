@@ -123,18 +123,19 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 | Sesi | API | Claude Code |
 |---|---|---|
 | 2026-04-23 | $14.16 | $11.11 |
-| 2026-04-24 | $21.39 | TBD |
-| **Total** | **$35.55** | **≥$11.11** |
+| 2026-04-24 | $33.21 | $23.92 |
+| **Total** | **$47.37** | **$35.03** |
 
-**Grand total: ≥$46.66** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
+**Grand total: $82.40** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
 
 ---
 
 ## Pending Work (Next Session)
 
-1. **Demo prep**: pilih 3 consistent findings (collection hours, orphaned delegation, terminology drift), susun narasi demo ~5 menit
-2. **Pertimbangkan `temperature=0`** untuk output lebih deterministik (findings count saat ini 4–5 stochastic)
-3. **Stabilisasi Terminology Drift** (stochastic 1/2 post-patch) — bisa tambah instruksi eksplisit di prompt
+1. **Video editing**: review footage B1/B2/B3 di CapCut, pilih best take, edit demo video (mock intro + Opus full run + narasi/VO)
+2. **Submit**: deadline 27 April 07:00 WIB — upload video + submission form
+3. **Pertimbangkan `temperature=0`** untuk output lebih deterministik (findings count 4–5 stochastic)
+4. **Stabilisasi Terminology Drift** (stochastic 1/2 post-patch)
 
 ---
 

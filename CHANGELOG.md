@@ -6,8 +6,27 @@ All notable changes to LexHarmoni are documented here.
 
 ## [Unreleased]
 
-- Demo script: pilih 3 consistent findings, susun narasi demo
+- Video editing: review B1/B2/B3 footage, pilih best take, edit demo video
+- Submit ke Anthropic hackathon (deadline: 27 April 07:00 WIB)
 - Pertimbangkan `temperature=0` untuk output lebih deterministik
+
+---
+
+## [demo-recording] — 2026-04-24
+
+### Added
+- `docs/DEMO_RECORDING_SESSION.md` — recording session log (timeline, cache stats, cost)
+- `docs/smoke_test_2_detailed.md`, `docs/smoke_test_summary.md` — committed as permanent docs
+- `.gitignore` — exclude `backend/cache_stats.log`, `backend/server.log`, `frontend/dev.log`, `.claude/`
+
+### Removed
+- `docs/INTEGRATION_SPEC_MT-3.2_MT-4.2.md` — superseded
+
+### Recording Results
+- Pre-recording Phase 1 checklist: PASS semua (health, manifest, API key, cache config, frontend)
+- Cache warm-up: 18:35 WIB, `cache_creation=554,518` tokens confirmed
+- Recorded runs: 3× Opus 4.7, semua `cache_read=554,518` (HIT), output 9.4K–11.1K tokens
+- Recording session cost: $11.82
 
 ---
 

@@ -1,7 +1,7 @@
 # LexHarmoni — Budget Tracker
 
 **Session start:** 2026-04-23
-**Source:** `claude_api_cost_2026_04_01_to_2026_04_24.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-update.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-streamfix.csv` + Claude Code invoice
+**Source:** `claude_api_cost_2026_04_01_to_2026_04_24.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-update.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-streamfix.csv` + `claude_api_cost_2026_04_24_to_2026_04_24-update_demo.csv` + Claude Code invoice
 
 ---
 
@@ -58,18 +58,18 @@ write terjadi lebih dari 1×.
 
 ---
 
-## API Actual Cost — 2026-04-24 (dari CSV streamfix — final)
+## API Actual Cost — 2026-04-24 (dari CSV update_demo — final)
 
 ### Claude Opus 4.7
 
 | Token type | Biaya aktual | Token est. |
 |---|---|---|
-| input_no_cache | $6.54 | ~1.31M tokens (~7 runs × 186K) |
-| input_cache_read | $2.50 | ~5.00M tokens (~9 reads × 554K) |
-| input_cache_write_5m | $2.33 | ~373K tokens (2× user msg auto-cache) |
-| input_cache_write_1h | $5.55 | ~555K tokens (corpus re-write, cache expired) |
-| output | $2.00 | ~80K tokens (~9 calls × 8.9K avg) |
-| **Opus Total April 24** | **$18.92** | |
+| input_no_cache | $7.47 | ~1.49M tokens (~8 runs × 186K) |
+| input_cache_read | $3.33 | ~6.66M tokens (~12 reads × 554K) |
+| input_cache_write_5m | $5.83 | ~932K tokens (5× user msg auto-cache) |
+| input_cache_write_1h | $11.09 | ~1.11M tokens (2× corpus write) |
+| output | $3.02 | ~120K tokens (~13 calls × 9.2K avg) |
+| **Opus Total April 24** | **$30.74** | |
 
 ### Claude Sonnet 4.6 (April 24)
 
@@ -80,9 +80,9 @@ write terjadi lebih dari 1×.
 | output | $0.01 | ~670 tokens |
 | **Sonnet Total April 24** | **$2.47** | |
 
-**April 24 total: $21.39**
+**April 24 total: $33.21**
 
-Note: +$2.87 dari CSV sebelumnya ($18.52→$21.39) — berasal dari sesi streaming fix (~2 Opus verify/debug run tambahan). Sonnet $2.47 berasal dari curl diagnostic saat debugging SSE — men-trigger corpus cache write Sonnet $2.46 yang tidak disengaja. `input_cache_write_5m` = user message POJK-40-2024 (~186K tokens) auto-cached 2× oleh Anthropic.
+Note: +$11.82 dari CSV streamfix ($21.39→$33.21) — recording session: 1 warm-up (corpus write $5.54) + 3 recorded Opus runs (cache read $0.83, cache_write_5m $3.50, output $1.02). `cache_write_1h` +$5.54 = corpus re-warm untuk demo session. Sonnet $2.47 tidak berubah.
 
 ---
 
@@ -92,9 +92,18 @@ Note: +$2.87 dari CSV sebelumnya ($18.52→$21.39) — berasal dari sesi streami
 |---|---|---|
 | API — Sonnet 4.6 | $4.38 | 2026-04-23 |
 | API — Opus 4.7 | $9.78 | 2026-04-23 |
-| API — Opus 4.7 | $18.92 | 2026-04-24 |
+| API — Opus 4.7 | $30.74 | 2026-04-24 |
 | API — Sonnet 4.6 | $2.47 | 2026-04-24 |
-| **Total API aktual** | **$35.55** | |
+| **Total API aktual** | **$47.37** | |
 | Claude Code (sesi 2026-04-23) | $11.11 | 2026-04-23 |
-| Claude Code (sesi 2026-04-24) | TBD | 2026-04-24 |
-| **Grand Total s.d. 2026-04-24** | **≥$46.66** | |
+| Claude Code (sesi 2026-04-24) | $23.92 | 2026-04-24 |
+| **Grand Total s.d. 2026-04-24** | **$82.40** | |
+
+### Claude Code 2026-04-24 Breakdown
+| Model | Input | Output | Cache Read | Cache Write | Cost |
+|---|---|---|---|---|---|
+| claude-haiku-4-5 | 29.5k | 12.2k | 325.7k | 124.5k | $0.28 |
+| claude-sonnet-4-6 | 16.0k | 343.6k | 43.7M | 1.4M | $23.64 |
+| **Total** | | | | | **$23.92** |
+
+Wall time: 7h 30m 50s · API time: 1h 41m 5s · Code changes: +2733 / -353 lines
