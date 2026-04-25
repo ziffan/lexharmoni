@@ -17,7 +17,7 @@
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/<your-username>/lexharmoni.git
+git clone https://github.com/ziffan/lexharmoni.git
 cd lexharmoni
 ```
 

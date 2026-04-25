@@ -26,6 +26,10 @@ frontend/dev.log
 # Claude Code session data
 .claude/
 
+# Build artifacts
+dist/
+build/
+
 # Video recordings & assets
 recording/
 recordings/

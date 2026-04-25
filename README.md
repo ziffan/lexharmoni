@@ -78,6 +78,8 @@ LexHarmoni demonstrates its capability by retroactively analyzing POJK 40/2024 �
 **Duration:** Roughly two minutes from draft submission to complete findings (validated across three recorded Opus runs). For comparison: the manual review baseline that established these friction patterns took ~8 hours of focused expert work. The 17–19 month resolution timeline cited elsewhere is a separate metric — it measures the gap from friction onset to enactment of corrective regulation, which includes drafting, public consultation, and enactment cycles, not just analytical detection time.
 The validation baseline — a manual legal analysis conducted prior to the hackathon — is documented in [`ground-truth/manual-analysis.md`](ground-truth/manual-analysis.md).
 
+**Demo video:** [https://youtu.be/v1EbVazszEs](https://youtu.be/v1EbVazszEs)
+
 ---
 
 ## Architecture
@@ -128,7 +130,7 @@ Friction detection is fundamentally cross-document reasoning. A normative confli
 
 ### 2. Why 1-hour cache TTL (not 5-minute default)
 
-Our recording session needed multiple consecutive runs without re-paying corpus ingestion cost. The Anthropic extended-cache-ttl beta header (`extended-cache-ttl-2025-04-11`) lets us hold the ~554K-token cache for a full hour at roughly 10% of re-write cost on subsequent reads. Without this, each demo run would incur a $5+ cache write; with it, runs 2–4 in a warm window cost ~$0.58 each.
+Our recording session needed multiple consecutive runs without re-paying corpus ingestion cost. The Anthropic extended-cache-ttl beta header (`extended-cache-ttl-2025-04-11`) lets us hold the ~554K-token cache for a full hour at roughly 10% of re-write cost on subsequent reads. Without this, each demo run would incur a $5+ cache write; with it, runs 2–4 in a warm window cost ~$1.70 each.
 
 ### 3. Why streaming with a dual-stream UI (reasoning + findings)
 
