@@ -79,6 +79,8 @@ LexHarmoni demonstrates its capability by retroactively analyzing POJK 40/2024 �
 The validation baseline — a manual legal analysis conducted prior to the hackathon — is documented in [`ground-truth/manual-analysis.md`](ground-truth/manual-analysis.md).
 
 **Demo video:** [https://youtu.be/v1EbVazszEs](https://youtu.be/v1EbVazszEs)
+Watch a 3-minute walkthrough showing draft submission, real-time reasoning stream, and three friction findings:
+
 
 ---
 
