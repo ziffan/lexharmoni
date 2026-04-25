@@ -22,7 +22,7 @@ I worked as an Officer in the Regulatory Unit at the Indonesia Stock Exchange (I
 
 My actual workflow, day-to-day, came down to two tools.
 
-**First, institutional memory.** I would walk to a senior colleague's desk and ask them whether a particular provision had been discussed before, whether there was precedent I should be aware of, whether a similar clause had been tried in another regulation and failed. Those conversations were immensely valuable. Senior regulators carry in their heads a map of connections across hundreds of documents built over decades — which article depends on which, where the exceptions live, which provisions had been quietly softened through implementing circulars.
+**First, institutional memory.** I would walk to a senior colleague's desk and ask them whether a particular provision had been discussed before, whether there was precedent I should be aware of, whether a similar clause had been tried in another regulation and failed. Those conversations were immensely valuable. Senior regulators carry in their heads a map of connections across hundreds of documents built over decades — which article depends on which, where the exceptions live, which provisions had been quietly softened through implementing circulars. This kind of expert recall is well-documented in cognitive science: skilled performers in knowledge-intensive domains develop long-term working memory structures that let them rapidly access domain content through retrieval cues, far beyond the ~4-chunk active capacity of general working memory (Ericsson & Kintsch, 1995; Cowan, 2001).
 
 **Second, Ctrl+F.** When a draft mentioned a specific term, I would search across the small set of documents I suspected might be relevant. If the term appeared, I would check the context. If it appeared in a context that contradicted the draft, I would flag it.
 
@@ -30,7 +30,7 @@ Both tools worked — for a narrow range of problems.
 
 They worked beautifully when a draft touched one or two existing regulations. Senior colleagues could pull the relevant context from memory; Ctrl+F could confirm their intuition; the friction, if any, was usually surfaced within the day.
 
-They did not work when a draft touched fifteen regulations across a decade of regulatory evolution. At that scale, memory becomes partial. Ctrl+F becomes a matter of guessing the right search terms. Context slips — not from negligence, but because a thousand documents cannot live in any single reviewer's working memory.
+They did not work when a draft touched fifteen regulations across a decade of regulatory evolution. At that scale, recall becomes partial. Ctrl+F becomes a matter of guessing the right search terms. Context slips — not from negligence, but because the dependency web between regulations exceeds what any single reviewer can actively traverse during a drafting cycle, even with the deep long-term memory that experienced regulators bring.
 
 This is not a problem unique to IDX. It is a problem inherent to the scale of modern regulatory work.
 
@@ -194,11 +194,11 @@ The three friction patterns above each persisted for 17–19 months before being
 
 ### 5.1 Reading capacity limits
 
-A skilled regulatory reviewer can read and internalize roughly 50,000–100,000 words in a single focused session before fatigue degrades comprehension. The LPBBTI corpus alone exceeds that — seven regulations totaling roughly 150,000+ words of dense legal text. Reading the full corpus requires multiple sessions; holding the full corpus in active working memory across those sessions is essentially impossible.
+Sustained focused reading of dense legal text is bounded by two factors: reading rate and attention persistence. Meta-analyses place average adult reading rates for non-fiction at ~238 wpm (Brysbaert, 2019); for dense technical or legal text with full comprehension, effective rates drop to roughly 150–200 wpm. At those rates, the LPBBTI corpus — seven regulations totaling roughly 150,000 words of dense legal text — represents 12–16 hours of continuous reading time before any cross-referencing or note-taking. Even split across multiple focused sessions, holding the integrated structure of the full corpus in active working memory is bounded by the ~4-chunk capacity of focal attention (Cowan, 2001), which is why expert review relies heavily on long-term working memory and external aids (notes, indexes, Ctrl+F) rather than pure recall.
 
 ### 5.2 Cross-reference complexity growth
 
-The complexity of regulatory friction scales super-linearly with corpus size. With two documents, there is one possible dependency pair. With seven documents, there are 21. With 50 documents (OJK's full Consumer Protection domain), there are 1,225. Human review can audit dependency pairs exhaustively at low corpus counts; it cannot at higher counts.
+The complexity of regulatory friction scales quadratically with corpus size for pairwise dependencies, and polynomially (O(nᵏ)) for k-hop chains. With two documents, there is one possible dependency pair. With seven documents, there are 21. With 50 documents (OJK's full Consumer Protection domain), there are 1,225 pairwise dependencies — and many actual frictions are not pairwise. The orphaned-Chapter-XI pattern documented in §4.2, for example, is a 4-hop dependency (POJK 22/2023 → POJK 10/2022 Art. 104(2) → SEOJK 19/2023 Chapter XI ← POJK 40/2024 saving clause). Human review can audit pairwise dependencies exhaustively at low corpus counts; multi-hop dependency traversal becomes intractable far earlier.
 
 ### 5.3 Temporal drift
 
@@ -222,7 +222,7 @@ Claude Opus 4.7 supports a 1M-token context window. This is the first commercial
 
 ### 6.2 Prompt caching with extended TTL
 
-Naively, loading a 500K-token corpus per inference would cost $5–10 per query — prohibitive for routine use. Anthropic's prompt caching with extended 1-hour TTL (via the `extended-cache-ttl-2025-04-11` beta header) changes the economics: the corpus is cached once, reads are ~10% of write cost, and the cache persists across multiple consecutive queries. Runs 2+ in a warm window cost roughly $0.58 each — economically routine.
+Naively, loading a 500K-token corpus per inference would cost $5–10 per query — prohibitive for routine use. Anthropic's prompt caching with extended 1-hour TTL (via the `extended-cache-ttl-2025-04-11` beta header) changes the economics: the corpus is cached once, reads are ~10% of write cost, and the cache persists across multiple consecutive queries. Runs 2+ in a warm window cost roughly $1.70 each — economically routine.
 
 ### 6.3 Streaming with intermediate reasoning
 
@@ -287,6 +287,13 @@ The code, corpus, manual baseline, and validation outputs are all open-source an
 
 ---
 
+## References
+
+- Brysbaert, M. (2019). How many words do we read per minute? A review and meta-analysis of reading rate. *Journal of Memory and Language*, 109, 104047.
+- Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87–114.
+- Ericsson, K. A., & Kintsch, W. (1995). Long-term working memory. *Psychological Review*, 102(2), 211–245.
+
+---
 **Author:** Ziffany Firdinal
 **Credentials:** Former Regulatory Officer, Indonesia Stock Exchange (IDX). OJK-registered Capital Markets Legal Consultant.
 **Date:** April 2026

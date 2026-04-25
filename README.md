@@ -9,7 +9,7 @@
 
 ---
 
-> *"I worked as a Regulatory Officer at the Indonesia Stock Exchange. When a draft crossed my desk, I had two tools: asking senior colleagues who drew from their experience and memory, and Ctrl+F. For a handful of documents, that worked. For hundreds, context slips — not from negligence, but because a thousand documents cannot live in anyone's working memory. I built LexHarmoni for the regulator I used to be."*
+> *"I worked as a Regulatory Officer at the Indonesia Stock Exchange. When a draft crossed my desk, I had two tools: asking senior colleagues who drew from their experience and memory, and Ctrl+F. For a handful of documents, that worked. For hundreds, context slips — not from negligence, but because the dependency web between regulations exceeds what any single reviewer can hold in active working memory while drafting. I built LexHarmoni for the regulator I used to be."*
 
 LexHarmoni loads an entire regulatory corpus into Claude Opus 4.7's 1M-token context window, then compares a new draft against the full corpus simultaneously. The result: friction patterns that would otherwise take months to surface in manual review become visible in roughly two minutes.
 
@@ -49,18 +49,18 @@ For detailed methodology, corpus selection rationale, and case studies, see [`do
 
 ## The Approach
 
-Most LLM applications handle large document corpora via Retrieval-Augmented Generation (RAG) — retrieving top-K relevant chunks and reasoning over fragments. RAG works well for question-answering and summarization.
+Most LLM applications handle large document corpora via Retrieval-Augmented Generation (RAG) — retrieving top-K relevant chunks and reasoning over fragments. RAG is well-suited to question-answering and summarization, and recent work shows carefully designed RAG (graph-based retrieval, multi-hop query decomposition, OP-RAG) can be competitive with long-context models on multi-hop benchmarks.
 
-It does not work for friction detection. Detecting that Article A in Regulation 1 contradicts Article B in Regulation 2, while Saving Clause C in Regulation 3 keeps the conflict active, requires holding all three documents in the same reasoning chain. Retrieving fragments surfaces keywords, not cross-document dependencies.
+For friction detection in a small, stable regulatory corpus, the design trade-off tilts the other way. Detecting that Article A in Regulation 1 contradicts Article B in Regulation 2, while Saving Clause C in Regulation 3 keeps the conflict active, requires holding the relationships between all three documents in the same reasoning chain. RAG can do this, but it requires careful retrieval engineering — and a wrong retrieval at any hop silently drops a document the model needed to see. Loading the full corpus eliminates that design surface entirely, at the cost of higher per-inference compute.
 
-**Opus 4.7 is the first commercial model where loading an entire regulatory corpus per inference becomes architecturally sensible.** LexHarmoni loads all 7 regulations (~554K tokens including system prompt) via Anthropic prompt caching with 1-hour TTL, then lets Opus 4.7 traverse the full corpus rather than retrieve fragments.
+**Opus 4.7's 1M-token context window makes loading an entire regulatory corpus per inference architecturally practical at reasonable cost.** LexHarmoni loads all 7 regulations (~554K tokens including system prompt) via Anthropic prompt caching with 1-hour TTL, then lets Opus 4.7 traverse the full corpus rather than retrieve fragments.
 
-| Approach | Strong for | Weak for |
-|---|---|---|
-| RAG (top-K retrieval) | Q&A, summarization, keyword lookup | Cross-document reasoning, friction detection, delegation chain analysis |
-| LexHarmoni (full-context) | Cross-document reasoning, friction detection, citation integrity | Corpora exceeding context limits, workflows where cost-per-inference matters more than coverage |
+| Approach | Better fit when |
+|---|---|
+| RAG (top-K retrieval) | Corpus is large or dynamic; per-query retrieval cost dominates; questions are localized to a few documents |
+| LexHarmoni (full-context) | Corpus is small and stable; every document matters per query; reasoning crosses many document boundaries; coverage matters more than per-inference cost |
 
-This is the architecture RAG cannot do.
+This is a deliberate design choice, not a categorical claim about RAG. The advantage for this task class is asserted from the corpus characteristics; a controlled benchmark against a tuned RAG baseline is left to future work.
 
 ---
 
@@ -75,8 +75,7 @@ LexHarmoni demonstrates its capability by retroactively analyzing POJK 40/2024 �
 4. It flags the terminology inconsistency between POJK 10/2022 (*LPBBTI*) and the then-active POJK 31/2020 (*Pinjam Meminjam*) during their 17-month overlap.
 5. Every finding includes temporal window, severity level, and a recommended resolution path.
 
-**Duration:** Roughly two minutes from draft submission to complete findings (validated across three recorded Opus runs). The friction patterns themselves persisted for 17–19 months before being resolved by subsequent OJK regulation.
-
+**Duration:** Roughly two minutes from draft submission to complete findings (validated across three recorded Opus runs). For comparison: the manual review baseline that established these friction patterns took ~8 hours of focused expert work. The 17–19 month resolution timeline cited elsewhere is a separate metric — it measures the gap from friction onset to enactment of corrective regulation, which includes drafting, public consultation, and enactment cycles, not just analytical detection time.
 The validation baseline — a manual legal analysis conducted prior to the hackathon — is documented in [`ground-truth/manual-analysis.md`](ground-truth/manual-analysis.md).
 
 ---
@@ -205,6 +204,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000), click **Load POJK 40/2024 (Demo)**, then **Analyze**.
 
 Full setup and troubleshooting: [`docs/USER_MANUAL.md`](docs/USER_MANUAL.md).
+If you want to replicate this project, see [`docs/REPLICATION_GUIDEv1.md`](docs/REPLICATION_GUIDEv1.md).
 
 **Mock mode:** Select "Mock (no API)" in the model dropdown to stream pre-canned findings without API cost. Useful for UI development or offline demos.
 
