@@ -47,6 +47,8 @@ write terjadi lebih dari 1×.
 | R2 (confirmed) | 1,311 | 409,540 | 3 | 9,980 | ~$0.28 |
 | **ST1 est.** | | | | | **~$1.80** |
 
+> **Note:** Figures in this section are pre-flight estimates from early planning. Actual measured costs from the validated recording session (Stage 3): **~$1.70 per warm-cache run, ~$6.75 cold**. See README §Cost Reference for ground-truth figures.
+
 ### Smoke Test 2 — Opus 4.7
 
 | Call | cache_creation | cache_read | input | output | Est. cost |
