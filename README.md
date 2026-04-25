@@ -80,7 +80,7 @@ The validation baseline — a manual legal analysis conducted prior to the hacka
 
 **Demo video:** [https://youtu.be/v1EbVazszEs](https://youtu.be/v1EbVazszEs)
 
-Watch a 3-minute walkthrough showing draft submission, real-time reasoning stream, and three friction findings:
+Watch a 3-minute walkthrough showing draft submission, real-time reasoning stream, and  friction findings:
 
 
 ---
