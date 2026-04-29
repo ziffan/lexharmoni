@@ -143,6 +143,17 @@ The 7 regulation files in `corpus/active/` and `corpus/historical/` are the grou
 
 Corpus integrity: run `python tests/validate_corpus.py` to check against `manifest.json`.
 
+### Corpus Preparation (Stage 0)
+
+File `.txt` di `corpus/` disiapkan menggunakan [`regulasi-id-corpus-prep`](https://github.com/ziffan/regulasi-id-corpus-prep):
+
+```bash
+pip install regulasi-id-corpus-prep
+regulasi-id-corpus-prep run dokumen.pdf --profile ojk-pojk --output-dir ./corpus/
+```
+
+Lihat `docs/REPLICATION_GUIDEv1.md` Stage 0 untuk instruksi lengkap. Jangan replace file corpus yang ada tanpa menjalankan round-trip test (target: 100.00% SequenceMatcher ratio).
+
 ---
 
 ## Smoke Test Status
