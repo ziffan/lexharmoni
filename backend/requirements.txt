@@ -4,4 +4,4 @@ python-multipart
 pydantic
 anthropic>=0.39.0
 python-dotenv>=1.0.0
-sse-starlette>=2.0.0
+sse-starlette>=3.4.1
