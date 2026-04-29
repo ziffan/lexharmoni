@@ -24,6 +24,13 @@ All notable changes to LexHarmoni are documented here.
 ### Changed
 - `backend/main.py`, `backend/prompt_loader.py` — ruff formatting baseline (no logic changes).
 - `README.md` — CI badge added.
+- github-actions bumped: `actions/checkout` v4→v6, `actions/setup-python` v5→v6, `actions/setup-node` v4→v6 (fixes Node.js 20 deprecation warning in CI).
+
+### Deferred (not merged)
+- Dependabot pip PRs: `anthropic` (≥0.39.0→≥0.97.0), `python-dotenv`, `sse-starlette` — deferred to v0.2.0. The anthropic SDK jump spans 58 minor versions with known breaking changes in streaming and beta headers.
+- Dependabot npm PRs: `typescript` (5→6), `eslint` (9→10), `@types/node` (20→25), `react`, `react-dom` — deferred to v0.2.0. Major version bumps require CI verification before merging into a locked submission.
+- See `DECISIONS.md` for full rationale.
+- `README.md` — CI badge added.
 
 ---
 
