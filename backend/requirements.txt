@@ -3,5 +3,5 @@ uvicorn[standard]
 python-multipart
 pydantic
 anthropic>=0.39.0
-python-dotenv>=1.0.0
+python-dotenv>=1.2.2
 sse-starlette>=2.0.0
