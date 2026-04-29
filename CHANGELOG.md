@@ -6,9 +6,21 @@ All notable changes to LexHarmoni are documented here.
 
 ## [Unreleased]
 
-- Video editing: review B1/B2/B3 footage, pilih best take, edit demo video
-- Submit ke Anthropic hackathon (deadline: 27 April 07:00 WIB)
 - Pertimbangkan `temperature=0` untuk output lebih deterministik
+- Dependabot PRs: review dan merge pip/npm PRs saat mulai v0.2.0 (prioritas: `anthropic` SDK)
+- Stabilisasi Terminology Drift (stochastic 1/2 post-patch)
+
+---
+
+## [corpus-prep-tool] — 2026-04-29
+
+### Added
+- Stage 0 di `docs/REPLICATION_GUIDEv1.md`: instruksi konversi PDF regulasi OJK ke corpus `.txt` menggunakan [`regulasi-id-corpus-prep`](https://github.com/ziffan/regulasi-id-corpus-prep).
+- `CLAUDE.md` — tambah section Stage 0 di bawah Corpus — IMMUTABLE.
+
+### Notes
+- `regulasi-id-corpus-prep` v0.1.0 kini tersedia di PyPI: `pip install regulasi-id-corpus-prep`
+- Round-trip match 100.00% terhadap seluruh 4 PDF corpus LexHarmoni (verified 2026-04-29)
 
 ---
 
