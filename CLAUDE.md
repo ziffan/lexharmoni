@@ -45,9 +45,13 @@ docs/
   SMOKE_TEST_1_RESULTS.md
   SMOKE_TEST_2_RESULTS.md
   BUDGET_TRACKER.md
-  INTEGRATION_SPEC_MT-3.2_MT-4.2.md
 tests/
   smoke_test_draft_minimal.txt  ← DO NOT MODIFY (500-token synthetic draft for plumbing tests)
+.github/
+  workflows/ci.yml        Primary CI (lint, type-check, build, hygiene)
+  workflows/security.yml  Security scan (pip-audit, npm audit, gitleaks) — weekly + on PR
+  dependabot.yml          Auto-update PRs for pip/npm/github-actions — weekly Monday
+pyproject.toml            ruff, mypy, pytest baseline config
 ```
 
 ---
@@ -81,6 +85,42 @@ tests/
 - Manual parsing via `fetch()` + `ReadableStream` reader (not `EventSource`)
 - Tracks `currentEvent` across newline-delimited chunks
 - `data:` lines decoded per event type
+
+---
+
+## CI/CD
+
+### Workflows
+
+| Workflow | Trigger | Jobs |
+|---|---|---|
+| `ci.yml` | push/PR → master | backend-lint-and-test, frontend-lint-and-build, repo-hygiene |
+| `security.yml` | weekly Mon 06:00 UTC, PR → master, manual | python-deps-audit, node-deps-audit, secret-scan |
+
+**CI jobs detail:**
+- `backend-lint-and-test`: ruff check + format, mypy, pytest (exit-5 tolerant — no pytest-discoverable tests yet)
+- `frontend-lint-and-build`: `npm ci` → `npm run lint` (ESLint 9 flat config) → `npm run build`
+- `repo-hygiene`: `python scripts/validate_manifest.py` → `python scripts/add_license_headers.py --check` → lychee offline link check
+
+**Tool config (`pyproject.toml`):**
+- ruff: `select = ["E","F"]`, `ignore = ["E501"]`, `line-length = 100`, `target-version = "py311"`
+- mypy: `ignore_missing_imports = true`, `follow_imports = "silent"` (no strict mode)
+- pytest marker: `requires_api` — tag tests that need ANTHROPIC_API_KEY so CI can skip them
+
+### Dependabot PRs — current state (2026-04-29)
+
+github-actions bumps (#2–#4) merged immediately. All pip/npm PRs **intentionally deferred** to v0.2.0:
+
+| PR | Update | Why deferred |
+|---|---|---|
+| #8 | `anthropic` ≥0.39.0 → ≥0.97.0 | 58-minor-version jump; breaking changes in streaming/beta headers likely |
+| #10 | `eslint` 9 → 10 | Major version; may break lint step |
+| #6 | `typescript` 5 → 6 | Major version; may introduce type errors |
+| #9 | `@types/node` 20 → 25 | Large jump; may conflict with Node 20 CI runtime |
+| #11, #12 | `react`/`react-dom` patch | Safe but needs UI smoke test |
+| #5, #7 | `sse-starlette`, `python-dotenv` | Minor; low risk but no urgency |
+
+Full rationale in `DECISIONS.md`. Do not merge these without explicit decision and CI verification.
 
 ---
 
@@ -118,24 +158,24 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 
 ---
 
-## Budget (kumulatif s.d. 2026-04-24)
+## Budget (kumulatif s.d. 2026-04-29)
 
 | Sesi | API | Claude Code |
 |---|---|---|
 | 2026-04-23 | $14.16 | $11.11 |
 | 2026-04-24 | $33.21 | $30.96 |
-| **Total** | **$47.37** | **$42.07** |
+| 2026-04-29 (CI/CD setup) | — | TBD |
+| **Total (API)** | **$47.37** | — |
 
-**Grand total: $89.44** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
+**Grand total s.d. 2026-04-24: $89.44** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
 
 ---
 
 ## Pending Work (Next Session)
 
-1. **Video editing**: review footage B1/B2/B3 di CapCut, pilih best take, edit demo video (mock intro + Opus full run + narasi/VO)
-2. **Submit**: deadline 27 April 07:00 WIB — upload video + submission form
-3. **Pertimbangkan `temperature=0`** untuk output lebih deterministik (findings count 4–5 stochastic)
-4. **Stabilisasi Terminology Drift** (stochastic 1/2 post-patch)
+1. **Dependabot PRs** — review dan merge pip/npm PRs satu per satu saat mulai v0.2.0 development. Prioritas pertama: `anthropic` SDK (cek breaking changes di CHANGELOG SDK dulu).
+2. **Pertimbangkan `temperature=0`** untuk output lebih deterministik (findings count 4–5 stochastic).
+3. **Stabilisasi Terminology Drift** (stochastic 1/2 post-patch).
 
 ---
 
@@ -145,3 +185,4 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 - Branch: `master`
 - License: Apache 2.0 (headers on all `.py` files)
 - History is clean — sensitive strings removed via filter-branch in earlier session
+- **CI badge** on README: green = master passing all 3 CI jobs
