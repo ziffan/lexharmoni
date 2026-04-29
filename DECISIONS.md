@@ -38,3 +38,13 @@ README.md
 - **Ground Truth:** Moving manual analysis to its own folder allows for automated evaluation of the model's performance against human findings.
 
 **Signed off by:** Engineering Review
+
+---
+
+## Decision: CI scope excludes Anthropic API calls
+
+Date: 2026-04-29
+Context: CI/CD added post-hackathon for repo hygiene and security. Project is a locked v0.1.0 hackathon submission.
+Decision: CI does NOT call the Anthropic API. Smoke testing of API integration is performed manually pre-release.
+Rationale: cost ($1.70–$6.75 per run), API key secret management complexity, and preference for deterministic CI.
+Consequence: regression in API integration may not be caught by CI; compensating control is the manual smoke test (ST1/ST2 protocol in `docs/`) before tagging releases.

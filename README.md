@@ -4,6 +4,7 @@
 *"Test the impact, before it's enacted."*
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![CI](https://github.com/ziffan/lexharmoni/actions/workflows/ci.yml/badge.svg)](https://github.com/ziffan/lexharmoni/actions/workflows/ci.yml)
 [![Built with](https://img.shields.io/badge/Built%20with-Claude%20Opus%204.7-D97757.svg)](https://www.anthropic.com/claude)
 [![Hackathon](https://img.shields.io/badge/Built%20with%20Opus%204.7-Hackathon-8B5CF6.svg)](https://cerebralvalley.ai/e/built-with-4-7-hackathon)
 

@@ -110,41 +110,101 @@ _MOCK_CHUNKS = [
 _MOCK_FINDINGS = {
     "findings": [
         {
-            "id": "F001", "type": "normative", "severity": "critical",
+            "id": "F001",
+            "type": "normative",
+            "severity": "critical",
             "title": "[MOCK] Konflik jam penagihan via saving clause Pasal 235",
             "summary": "POJK 22/2023 dan SEOJK 19/2023 memiliki ketentuan jam penagihan berbeda. Pasal 235 POJK 40/2024 memperpanjang SEOJK 19/2023 tanpa resolusi konflik.",
             "affected_regulations": [
-                {"regulation_id": "POJK-22-2023", "article_or_section": "Pasal 62 ayat (2) huruf f", "quoted_text": "08.00-20.00 WIB", "role": "conflicting_norm"},
-                {"regulation_id": "SEOJK-19-2023", "article_or_section": "Bab XI angka 5", "quoted_text": "hari penagihan Senin-Sabtu", "role": "conflicting_norm"},
+                {
+                    "regulation_id": "POJK-22-2023",
+                    "article_or_section": "Pasal 62 ayat (2) huruf f",
+                    "quoted_text": "08.00-20.00 WIB",
+                    "role": "conflicting_norm",
+                },
+                {
+                    "regulation_id": "SEOJK-19-2023",
+                    "article_or_section": "Bab XI angka 5",
+                    "quoted_text": "hari penagihan Senin-Sabtu",
+                    "role": "conflicting_norm",
+                },
             ],
-            "reasoning_steps": ["Identifikasi dua norma berlaku bersamaan", "Verifikasi tidak ada hierarki eksplisit", "Klasifikasi sebagai normative conflict"],
-            "temporal_window": {"friction_active_from": "2024-01-01", "friction_active_until": None, "duration_months": None},
+            "reasoning_steps": [
+                "Identifikasi dua norma berlaku bersamaan",
+                "Verifikasi tidak ada hierarki eksplisit",
+                "Klasifikasi sebagai normative conflict",
+            ],
+            "temporal_window": {
+                "friction_active_from": "2024-01-01",
+                "friction_active_until": None,
+                "duration_months": None,
+            },
             "recommended_resolution": "Tambahkan sunset clause pada Pasal 235 atau harmonisasi eksplisit ketentuan jam penagihan.",
             "confidence": 0.95,
         },
         {
-            "id": "F002", "type": "hierarchical", "severity": "major",
+            "id": "F002",
+            "type": "hierarchical",
+            "severity": "major",
             "title": "[MOCK] Orphaned delegation: SEOJK 19/2023 kehilangan cantolan parent",
             "summary": "Pasal 236 POJK 40/2024 mencabut POJK 10/2022 selaku parent delegasi SEOJK 19/2023, sementara SEOJK 19/2023 masih dipertahankan via saving clause.",
             "affected_regulations": [
-                {"regulation_id": "POJK-10-2022", "article_or_section": "Pasal 25", "quoted_text": "delegasi ke SEOJK", "role": "revoked_parent"},
-                {"regulation_id": "SEOJK-19-2023", "article_or_section": "Bab XI", "quoted_text": "Bab Penagihan", "role": "orphaned_child"},
+                {
+                    "regulation_id": "POJK-10-2022",
+                    "article_or_section": "Pasal 25",
+                    "quoted_text": "delegasi ke SEOJK",
+                    "role": "revoked_parent",
+                },
+                {
+                    "regulation_id": "SEOJK-19-2023",
+                    "article_or_section": "Bab XI",
+                    "quoted_text": "Bab Penagihan",
+                    "role": "orphaned_child",
+                },
             ],
-            "reasoning_steps": ["Trace delegation chain", "Verifikasi pencabutan parent", "Konfirmasi anak masih berlaku"],
-            "temporal_window": {"friction_active_from": "2024-01-01", "friction_active_until": None, "duration_months": None},
+            "reasoning_steps": [
+                "Trace delegation chain",
+                "Verifikasi pencabutan parent",
+                "Konfirmasi anak masih berlaku",
+            ],
+            "temporal_window": {
+                "friction_active_from": "2024-01-01",
+                "friction_active_until": None,
+                "duration_months": None,
+            },
             "recommended_resolution": "Cantumkan dasar delegasi baru di POJK 40/2024 yang menggantikan POJK 10/2022.",
             "confidence": 0.92,
         },
         {
-            "id": "F003", "type": "operational", "severity": "minor",
+            "id": "F003",
+            "type": "operational",
+            "severity": "minor",
             "title": "[MOCK] Terminology drift: 'multiguna' vs 'konsumtif'",
             "summary": "SEOJK 19/2023 menggunakan 'Pendanaan multiguna', POJK 40/2024 menggunakan 'Pendanaan konsumtif' untuk kategori yang sama tanpa pasal bridging.",
             "affected_regulations": [
-                {"regulation_id": "SEOJK-19-2023", "article_or_section": "Bab I", "quoted_text": "Pendanaan multiguna", "role": "source_term"},
-                {"regulation_id": "POJK-40-2024", "article_or_section": "Pasal 1 angka 5", "quoted_text": "Pendanaan konsumtif", "role": "target_term"},
+                {
+                    "regulation_id": "SEOJK-19-2023",
+                    "article_or_section": "Bab I",
+                    "quoted_text": "Pendanaan multiguna",
+                    "role": "source_term",
+                },
+                {
+                    "regulation_id": "POJK-40-2024",
+                    "article_or_section": "Pasal 1 angka 5",
+                    "quoted_text": "Pendanaan konsumtif",
+                    "role": "target_term",
+                },
             ],
-            "reasoning_steps": ["Temukan penggunaan istilah", "Verifikasi tidak ada pasal ekuivalensi", "Klasifikasi sebagai terminologi drift"],
-            "temporal_window": {"friction_active_from": "2024-01-01", "friction_active_until": None, "duration_months": None},
+            "reasoning_steps": [
+                "Temukan penggunaan istilah",
+                "Verifikasi tidak ada pasal ekuivalensi",
+                "Klasifikasi sebagai terminologi drift",
+            ],
+            "temporal_window": {
+                "friction_active_from": "2024-01-01",
+                "friction_active_until": None,
+                "duration_months": None,
+            },
             "recommended_resolution": "Tambahkan pasal definisi yang menyamakan kedua istilah.",
             "confidence": 0.85,
         },
@@ -160,12 +220,14 @@ _MOCK_FINDINGS = {
 @app.post("/analyze/mock")
 async def analyze_mock(req: AnalyzeRequest):
     """Mock SSE endpoint — streams pre-canned text with delays, no API call."""
+
     async def mock_stream():
         for chunk in _MOCK_CHUNKS:
             yield {"event": "reasoning", "data": chunk}
             await asyncio.sleep(0.15)
         yield {"event": "findings", "data": json.dumps(_MOCK_FINDINGS)}
         yield {"event": "done", "data": "complete"}
+
     return EventSourceResponse(mock_stream())
 
 
@@ -243,4 +305,5 @@ async def analyze(req: AnalyzeRequest):
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)

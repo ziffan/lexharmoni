@@ -117,7 +117,12 @@ def load_system_blocks() -> list[dict]:
         active_text += "\n\n"
 
     historical_dir = BASE / "corpus" / "historical"
-    historical_files = ["POJK-77-2016.txt", "POJK-31-2020.txt", "POJK-10-2022.txt", "SEOJK-19-2023.txt"]
+    historical_files = [
+        "POJK-77-2016.txt",
+        "POJK-31-2020.txt",
+        "POJK-10-2022.txt",
+        "SEOJK-19-2023.txt",
+    ]
     historical_text = (
         "# HISTORICAL REGULATIONS CORPUS\n"
         "# These regulations have been revoked or superseded.\n"
@@ -130,7 +135,11 @@ def load_system_blocks() -> list[dict]:
         historical_text += "\n\n"
 
     def block(text: str) -> dict:
-        return {"type": "text", "text": text, "cache_control": {"type": "ephemeral", "ttl": "1h"}}
+        return {
+            "type": "text",
+            "text": text,
+            "cache_control": {"type": "ephemeral", "ttl": "1h"},
+        }
 
     return [
         block(BLOCK1_ROLE),
@@ -276,6 +285,7 @@ def parse_findings(text: str) -> dict:
         return json.loads(raw)
     except json.JSONDecodeError as e:
         import sys
+
         print(f"[PARSE_ERROR] JSONDecodeError: {e}", file=sys.stderr, flush=True)
         print(f"[PARSE_ERROR] raw preview: {repr(raw[:300])}", file=sys.stderr, flush=True)
         raise
