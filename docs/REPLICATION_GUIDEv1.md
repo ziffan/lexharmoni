@@ -27,12 +27,73 @@ A working LexHarmoni-style application — backend + frontend — configured for
 | Claude.ai account (Pro recommended) | Stage 2 design conversation with Opus 4.7 | $20/month or pay-per-use |
 | Claude Code installation | Stage 4 build phase | Free CLI; usage billed via API |
 | Anthropic API key | Backend deployment + smoke testing | Pay-per-use, see cost estimate below |
-| Your corpus as `.txt` files | Source material | Manual gathering (varies) |
+| Your corpus as `.txt` files | Source material — born-digital OJK PDFs: use `regulasi-id-corpus-prep` (see Stage 0) | Manual gathering (varies) |
 | Git + GitHub account | Fork the LexHarmoni repository | Free |
 | Python 3.11+ and Node.js 20+ | Runtime for backend + frontend | Free |
 | 8–12 hours of focused time, spread across 2–3 days | End-to-end replication | — |
 
 > *Catatan domain Indonesia:* Untuk korpus regulasi OJK/BI/Kemenkeu, sumber primer biasanya **JDIH** (Jaringan Dokumentasi dan Informasi Hukum) masing-masing instansi. Pastikan Anda mengambil **versi resmi** (bukan summary atau hukumonline paywall) untuk akurasi corpus.
+
+---
+
+## Stage 0 — Corpus Preparation (OJK Regulatory Documents)
+
+**Time: 15–30 menit per dokumen · Tool: `regulasi-id-corpus-prep` CLI**
+
+> *Catatan:* Stage ini hanya relevan jika korpus Anda adalah **PDF regulasi OJK (POJK atau SEOJK) yang born-digital**. Jika corpus Anda sudah dalam format `.txt`, atau berasal dari sumber lain, lewati stage ini dan lanjut ke Stage 1.
+
+Sebelum analisis, Anda butuh corpus dalam format `.txt` bersih. LexHarmoni menggunakan teks yang diekstrak dari PDF JDIH OJK dan dinormalisasi dengan `regulasi-id-corpus-prep` — alat CLI yang dirancang khusus untuk pipeline ini.
+
+### Apa yang dilakukan alat ini
+
+`regulasi-id-corpus-prep` mengonversi PDF regulasi OJK (born-digital, bukan scan) menjadi file `.txt` yang bersih dan konsisten:
+- Menghapus noise: footer JDIH, nomor halaman, URL
+- Menyatukan teks yang terpotong antar-halaman
+- Menambahkan struktur berbasis BAB/Pasal (POJK) atau bagian Romawi (SEOJK)
+- Menghasilkan audit trail (`.meta.json`) untuk setiap transformasi
+
+### Syarat: PDF Born-Digital
+
+Alat ini **hanya** bekerja pada PDF yang memiliki text layer (born-digital). Untuk memastikan:
+1. Buka PDF di browser atau Adobe Reader
+2. Coba pilih teks — jika teks bisa di-highlight dan disalin, PDF Anda born-digital ✓
+3. Jika tidak bisa, PDF Anda hasil scan — lihat [docs/DECISION_TREE.md](https://github.com/ziffan/regulasi-id-corpus-prep/blob/master/docs/DECISION_TREE.md)
+
+### Instalasi dan penggunaan
+
+```bash
+pip install git+https://github.com/ziffan/regulasi-id-corpus-prep.git
+```
+
+**Untuk POJK:**
+```bash
+regulasi-id-corpus-prep run folder-pojk/ --profile ojk-pojk --output-dir corpus/
+```
+
+**Untuk SEOJK:**
+```bash
+regulasi-id-corpus-prep run folder-seojk/ --profile ojk-seojk --output-dir corpus/
+```
+
+Setiap PDF menghasilkan:
+- `<nama>.txt` — teks corpus siap pakai (input ke Stage 1–5 pipeline LexHarmoni)
+- `<nama>.meta.json` — audit trail transformasi
+
+### Validasi output sebelum lanjut ke Stage 1
+
+Jalankan pemeriksaan otomatis:
+```bash
+regulasi-id-corpus-prep validate corpus/<nama>.txt --profile ojk-pojk
+```
+
+Kemudian lakukan spot-check manual (5–10 menit per dokumen) mengikuti [docs/VALIDATION_GUIDE.md](https://github.com/ziffan/regulasi-id-corpus-prep/blob/master/docs/VALIDATION_GUIDE.md). Jangan skip ini — corpus yang buruk akan menghasilkan ground truth yang buruk di Stage 1.
+
+### Output Stage 0
+
+Folder `corpus/` berisi file `.txt` untuk setiap dokumen regulasi. File-file ini menjadi input langsung di tahap selanjutnya.
+
+> **Repo:** https://github.com/ziffan/regulasi-id-corpus-prep
+> **Dokumentasi:** README, DECISION_TREE.md, VALIDATION_GUIDE.md, PROFILE_GUIDE.md
 
 ---
 
