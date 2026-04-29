@@ -105,15 +105,11 @@ def _read(path: Path) -> str:
 
 def load_system_blocks() -> list[dict]:
     manifest_path = BASE / "corpus" / "manifest.json"
-    manifest_text = json.dumps(
-        json.loads(_read(manifest_path)), ensure_ascii=False, indent=2
-    )
+    manifest_text = json.dumps(json.loads(_read(manifest_path)), ensure_ascii=False, indent=2)
 
     active_dir = BASE / "corpus" / "active"
     active_files = ["POJK-22-2023.txt", "POJK-40-2024.txt", "SEOJK-19-2025.txt"]
-    active_text = (
-        "# ACTIVE REGULATIONS CORPUS\n# These regulations are currently in force.\n\n"
-    )
+    active_text = "# ACTIVE REGULATIONS CORPUS\n# These regulations are currently in force.\n\n"
     for fname in active_files:
         reg_id = fname.replace(".txt", "")
         active_text += f"--- REGULATION: {reg_id} ---\n"
@@ -291,7 +287,5 @@ def parse_findings(text: str) -> dict:
         import sys
 
         print(f"[PARSE_ERROR] JSONDecodeError: {e}", file=sys.stderr, flush=True)
-        print(
-            f"[PARSE_ERROR] raw preview: {repr(raw[:300])}", file=sys.stderr, flush=True
-        )
+        print(f"[PARSE_ERROR] raw preview: {repr(raw[:300])}", file=sys.stderr, flush=True)
         raise

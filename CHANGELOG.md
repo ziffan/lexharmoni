@@ -12,6 +12,21 @@ All notable changes to LexHarmoni are documented here.
 
 ---
 
+## [ci-setup] — 2026-04-29
+
+### Added
+- GitHub Actions CI workflow (`.github/workflows/ci.yml`): lint, type-check, build, manifest validation, license header check, markdown link check.
+- GitHub Actions security workflow (`.github/workflows/security.yml`): pip-audit, npm audit, gitleaks secret scan.
+- Dependabot configuration (`.github/dependabot.yml`) for pip, npm, and github-actions ecosystems — weekly, Monday.
+- `pyproject.toml` — ruff, mypy, and pytest baseline configuration.
+- `--check` flag on `scripts/add_license_headers.py` (dry-run mode for CI).
+
+### Changed
+- `backend/main.py`, `backend/prompt_loader.py` — ruff formatting baseline (no logic changes).
+- `README.md` — CI badge added.
+
+---
+
 ## [docs-final] — 2026-04-24
 
 ### Added
