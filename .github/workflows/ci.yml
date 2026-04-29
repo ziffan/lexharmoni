@@ -38,15 +38,16 @@ jobs:
 
       - name: Run tests
         # validate_severity_lock.py requires a live server + API key — excluded.
-        # No pytest-discoverable test functions exist yet (exit 5 = no tests collected = OK).
+        # Exit 5 = no tests collected = OK for this project (no pytest-discoverable tests yet).
+        # Use "|| ret=$?" to capture exit code without triggering set -e.
         run: |
+          ret=0
           python -m pytest tests/ \
             --ignore=tests/validate_severity_lock.py \
             -m "not requires_api" \
-            --tb=short -q
-          ret=$?
+            --tb=short -q || ret=$?
           if [ $ret -ne 0 ] && [ $ret -ne 5 ]; then exit $ret; fi
-          if [ $ret -eq 5 ]; then echo "No pytest-discoverable tests collected (expected)."; fi
+          echo "Pytest exit: $ret (5 = no tests collected, expected for this project)"
 
   frontend-lint-and-build:
     name: Frontend — lint, build
