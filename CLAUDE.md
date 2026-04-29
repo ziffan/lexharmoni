@@ -164,10 +164,12 @@ Corpus integrity: run `python tests/validate_corpus.py` to check against `manife
 |---|---|---|
 | 2026-04-23 | $14.16 | $11.11 |
 | 2026-04-24 | $33.21 | $30.96 |
-| 2026-04-29 (CI/CD setup) | — | TBD |
-| **Total (API)** | **$47.37** | — |
+| 2026-04-29 (CI/CD setup) | — | $2.76 |
+| **Total** | **$47.37** | **$44.83** |
 
-**Grand total s.d. 2026-04-24: $89.44** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
+**Grand total s.d. 2026-04-29: $92.20** — See `docs/BUDGET_TRACKER.md` for per-call breakdown.
+
+**Sesi 2026-04-29 breakdown:** Sonnet 4.6 $2.75 + Haiku 4.5 $0.004. 6.0M cache read tokens (corpus warm dari sesi sebelumnya).
 
 ---
 
