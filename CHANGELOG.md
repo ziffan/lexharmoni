@@ -4,6 +4,26 @@ All notable changes to LexHarmoni are documented here.
 
 ---
 
+## [0.1.0-final] — 2026-04-30
+
+### Archived
+- Repository archived as hackathon submission snapshot
+- No further development planned in this repository
+
+### Added (post-submission, before archive)
+- CI/CD workflows: GitHub Actions CI, security scan, Dependabot configuration (see `[ci-setup]` entry)
+- `regulasi-id-corpus-prep` spawned as independent tool for Indonesian regulatory PDF corpus preparation
+  — now available on PyPI: [`pip install regulasi-id-corpus-prep`](https://github.com/ziffan/regulasi-id-corpus-prep)
+- Archive documentation: bilingual archive notice in README, KNOWN_ISSUES.md
+
+### Notes
+- Original hackathon submission preserved at tag `v0.1.0`
+- All routine (non-security) Dependabot PRs (#5–#11) closed without merge to maintain scope discipline;
+  no security-related advisories were identified — see DECISIONS.md for rationale
+- Successor project to be linked when initialized
+
+---
+
 ## [Unreleased]
 
 - Pertimbangkan `temperature=0` untuk output lebih deterministik

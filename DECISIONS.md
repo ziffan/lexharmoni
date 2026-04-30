@@ -63,3 +63,26 @@ Context: CI/CD added post-hackathon for repo hygiene and security. Project is a 
 Decision: CI does NOT call the Anthropic API. Smoke testing of API integration is performed manually pre-release.
 Rationale: cost ($1.70–$6.75 per run), API key secret management complexity, and preference for deterministic CI.
 Consequence: regression in API integration may not be caught by CI; compensating control is the manual smoke test (ST1/ST2 protocol in `docs/`) before tagging releases.
+
+---
+
+## Decision: Archive v0.1.0 as Hackathon Submission Snapshot
+
+Date: 2026-04-30
+Context: v0.1.0 was submitted to Cerebral Valley × Anthropic "Built with Opus 4.7" Hackathon in April 2026 with locked scope (see prior decisions and CHANGELOG `[ci-setup]` entry). Post-submission validation feedback from law firm prospects identified three features required for production use: multi-provider LLM support, flexible corpus selection, and prompt tuning from UI. These changes are architecturally incompatible with the hackathon submission's single-provider, fixed-corpus design. Continuing development in this repository would either (1) compromise hackathon submission integrity, or (2) create a confusing dual-purpose repository.
+
+Decision: Archive this repository as a read-only snapshot. Two-tier tag preservation:
+- `v0.1.0` — preserves exact hackathon submission state (do not modify)
+- `v0.1.0-final` — preserves archived state including post-submission CI activation, Dependabot triage, and documentation updates
+
+Continue development in a separate successor repository (to be initialized).
+
+Rationale:
+- Clean separation between hackathon artifact and commercial-direction successor
+- Reproducibility preserved via two-tier tags
+- Portfolio narrative remains coherent: submission → spawned tool → successor
+- No scope confusion for visitors, reviewers, or potential users
+
+Consequence: Bug reports cannot be resolved in this repository. Dependency rot will eventually compromise runnability; mitigated by pinned versions in dependency manifests, documented Python/Node versions, and KNOWN_ISSUES.md transparency. Successor repository link to be added post-archive via pinned GitHub issue (no unarchive needed).
+
+Dependabot PRs categorized: no security advisories were identified; all 7 routine version-bump PRs (#5–#11) closed without merge. The spawned tool `regulasi-id-corpus-prep` (separate repository) remains independent and active under its own development lifecycle.
