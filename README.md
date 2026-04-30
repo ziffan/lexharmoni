@@ -22,12 +22,12 @@
 > "Built with Opus 4.7" Hackathon (April 2026)**.
 >
 > **Dua tag tersedia untuk reprodusibilitas:**
-> - [`v0.1.0`](../../releases/tag/v0.1.0) — state asli submisi hackathon
-> - [`v0.1.0-final`](../../releases/tag/v0.1.0-final) — state arsip dengan
+> - [`v0.1.0`](https://github.com/ziffan/lexharmoni/releases/tag/v0.1.0) — state asli submisi hackathon
+> - [`v0.1.0-final`](https://github.com/ziffan/lexharmoni/releases/tag/v0.1.0-final) — state arsip dengan
 >   improvement post-submisi (CI, security patches, dokumentasi)
 >
 > **Status CI terakhir:** ✅ Green pada **2026-04-29** (lihat
-> [Actions tab](../../actions))
+> [Actions tab](https://github.com/ziffan/lexharmoni/actions))
 >
 > **Tidak ada pengembangan lanjutan, bug fix, atau pull request yang akan
 > diterima di repositori ini.** Issues boleh dibuka untuk arsip diskusi tapi
@@ -53,12 +53,12 @@
 > "Built with Opus 4.7" Hackathon (April 2026)**.
 >
 > **Two tags are available for reproducibility:**
-> - [`v0.1.0`](../../releases/tag/v0.1.0) — original hackathon submission state
-> - [`v0.1.0-final`](../../releases/tag/v0.1.0-final) — archived state with
+> - [`v0.1.0`](https://github.com/ziffan/lexharmoni/releases/tag/v0.1.0) — original hackathon submission state
+> - [`v0.1.0-final`](https://github.com/ziffan/lexharmoni/releases/tag/v0.1.0-final) — archived state with
 >   post-submission improvements (CI, security patches, documentation)
 >
 > **Last CI status:** ✅ Green on **2026-04-29** (see
-> [Actions tab](../../actions))
+> [Actions tab](https://github.com/ziffan/lexharmoni/actions))
 >
 > **No further development, bug fixes, or pull requests will be accepted in
 > this repository.** Issues may be opened for archival discussion but will
