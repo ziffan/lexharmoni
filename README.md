@@ -7,6 +7,75 @@
 [![CI](https://github.com/ziffan/lexharmoni/actions/workflows/ci.yml/badge.svg)](https://github.com/ziffan/lexharmoni/actions/workflows/ci.yml)
 [![Built with](https://img.shields.io/badge/Built%20with-Claude%20Opus%204.7-D97757.svg)](https://www.anthropic.com/claude)
 [![Hackathon](https://img.shields.io/badge/Built%20with%20Opus%204.7-Hackathon-8B5CF6.svg)](https://cerebralvalley.ai/e/built-with-4-7-hackathon)
+![Status](https://img.shields.io/badge/status-archived-lightgrey)
+![Type](https://img.shields.io/badge/type-hackathon%20submission-blue)
+![Version](https://img.shields.io/badge/version-v0.1.0--final-green)
+
+---
+
+> ## ⚠️ Repositori Diarsipkan / Repository Archived
+>
+> ### 🇮🇩 Indonesia
+>
+> Repositori ini diarsipkan pada **30 April 2026** sebagai snapshot proyek
+> hackathon. LexHarmoni v0.1.0 dikembangkan untuk **Cerebral Valley × Anthropic
+> "Built with Opus 4.7" Hackathon (April 2026)**.
+>
+> **Dua tag tersedia untuk reprodusibilitas:**
+> - [`v0.1.0`](../../releases/tag/v0.1.0) — state asli submisi hackathon
+> - [`v0.1.0-final`](../../releases/tag/v0.1.0-final) — state arsip dengan
+>   improvement post-submisi (CI, security patches, dokumentasi)
+>
+> **Status CI terakhir:** ✅ Green pada **2026-04-29** (lihat
+> [Actions tab](../../actions))
+>
+> **Tidak ada pengembangan lanjutan, bug fix, atau pull request yang akan
+> diterima di repositori ini.** Issues boleh dibuka untuk arsip diskusi tapi
+> tidak akan diresolve di sini.
+>
+> 🔄 **Pengembangan aktif dilanjutkan di proyek successor:** _[link akan
+> ditambahkan saat repo successor diinisialisasi]_
+>
+> 📚 **Untuk corpus preparation Indonesian regulatory PDFs**, lihat tool
+> independent yang di-spawn dari proyek ini:
+> [regulasi-id-corpus-prep](https://github.com/ziffan/regulasi-id-corpus-prep)
+>
+> Untuk konteks keputusan arsitektur dan constraint hackathon, lihat
+> [DECISIONS.md](./DECISIONS.md), [CHANGELOG.md](./CHANGELOG.md), dan
+> [KNOWN_ISSUES.md](./KNOWN_ISSUES.md).
+>
+> ---
+>
+> ### 🇬🇧 English
+>
+> This repository was archived on **April 30, 2026** as a hackathon project
+> snapshot. LexHarmoni v0.1.0 was built for the **Cerebral Valley × Anthropic
+> "Built with Opus 4.7" Hackathon (April 2026)**.
+>
+> **Two tags are available for reproducibility:**
+> - [`v0.1.0`](../../releases/tag/v0.1.0) — original hackathon submission state
+> - [`v0.1.0-final`](../../releases/tag/v0.1.0-final) — archived state with
+>   post-submission improvements (CI, security patches, documentation)
+>
+> **Last CI status:** ✅ Green on **2026-04-29** (see
+> [Actions tab](../../actions))
+>
+> **No further development, bug fixes, or pull requests will be accepted in
+> this repository.** Issues may be opened for archival discussion but will
+> not be resolved here.
+>
+> 🔄 **Active development continues in the successor project:** _[link to be
+> added when successor repository is initialized]_
+>
+> 📚 **For Indonesian regulatory PDF corpus preparation**, see the independent
+> spawned tool:
+> [regulasi-id-corpus-prep](https://github.com/ziffan/regulasi-id-corpus-prep)
+>
+> For context on architectural decisions and hackathon constraints, see
+> [DECISIONS.md](./DECISIONS.md), [CHANGELOG.md](./CHANGELOG.md), and
+> [KNOWN_ISSUES.md](./KNOWN_ISSUES.md).
+>
+> ---
 
 ---
 
